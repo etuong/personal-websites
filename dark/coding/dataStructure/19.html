@@ -1,0 +1,42 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class CutTheStick {
+    //https://www.hackerrank.com/challenges/cut-the-sticks/problem
+
+    public CutTheStick() {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] array = new int[n];
+
+        // Build array
+        for (int i = 0; i < n; i++) {
+            array[i]= scan.nextInt();
+        }
+
+        // Sort array
+        Arrays.sort(array);
+
+        // Loop through array and cut with smallest stick
+        System.out.println(n);
+        for (int i = 0; i < n - 1; i++) {
+            if (array[i] != array[i+1]) {
+                // The following for loop is not necessary for this problem but is useful if we
+                // want to print the array for each cut
+                for (int j = i + 1; j < n; j++) {
+                    array[j] -= array[i];
+                }
+                System.out.println(n - (i + 1));
+            }
+        }
+    }
+}
+
+
+</code></pre>
+</body>
+</html>

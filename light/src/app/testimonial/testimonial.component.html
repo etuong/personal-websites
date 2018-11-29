@@ -1,0 +1,32 @@
+<!-- Testimonial -->
+<section class="text-center" id="testimonial">
+
+  <!-- Carousel Wrapper -->
+  <div id="carousel-testimonial" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
+    data-interval="false">
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <div *ngFor="let testimonial of testimonials" class="carousel-item" [class.active]="testimonial==testimonials[0]">
+        <div class="testimonial">
+          <p><i class="fa fa-quote-left"></i>{{testimonial.message}}</p>
+          <h4 class="font-weight-bold">- {{testimonial.person}}</h4>
+          <h6 class="my-3">{{testimonial.title}}</h6>
+        </div>
+      </div>
+
+    </div>
+    <!--Slides-->
+
+    <!--Controls-->
+    <ol class="carousel-indicators">
+        <li *ngFor="let testimonial of testimonials; let i = index" [class.active]="testimonial==testimonials[0]"
+        data-target="#carousel-testimonial" attr.data-slide-to="{{i}}"></li>
+    </ol>
+    <!--Controls-->
+
+  </div>
+  <!-- Carousel Wrapper -->
+
+</section>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Author" lang="en-us" content="Ethan Uong" />
+    <meta name="keywords" content="ethan, uong, photography, travels, new york, usa" />
+    <link href="../css/photoGallery.css" rel="stylesheet" type="text/css" />
+    <link href="photoData/visualNewYork/vlb_files4/visuallightbox.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="photoData/visualNewYork/vlb_files4/vlightbox4.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="title">
+            <p>New York City, USA</p>
+            <hr /><img src="../pictures/stamps/flags/new-york-flag.png" alt="" />
+        </div>
+        <div class="fact">
+            <p style="font-weight:normal;">New York (aka the Big Apple) is the most populous city in America. The diversity here is literally the interpretation of the melting pot. NYC is also home to one of the most famous skylines in the world, and possibly the best view is from the Empire State Building. The city has 5 boroughs and its gross product makes up 9 percent of the American economy. While there, make sure to eat the street food, check out the informative and comprehensive museums, and of course spend sparely in Times Square!</p> <br />
+            <div id="text1">
+                <p>Currency</p>
+                <p>Language</p>
+                <p>Land Area</p>
+                <p>Population</p>
+            </div>
+            <div id="text2">
+                <p>American Dollar (USD)</p>
+                <p>English</p>
+                <p>305 Square Miles</p>
+                <p>Approximately 8.2 million</p>
+            </div>
+        </div>
+    </div>
+    <!-- End of header -->
+    <!-- Sydney -->
+
+
+    <div class="gallery">
+
+        <!-- Hong Kong -->
+        <div id="vlightbox4">
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/1.jpg" title="Some sort of a festival in Downtown"><img src="photoData/visualNewYork/vlb_thumbnails4/1.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/2.jpg" title="Chinatown"><img src="photoData/visualNewYork/vlb_thumbnails4/2.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/3.jpg" title=""><img src="photoData/visualNewYork/vlb_thumbnails4/3.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/4.jpg" title=""><img src="photoData/visualNewYork/vlb_thumbnails4/4.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/5.jpg" title="Subway (in HDR)"><img src="photoData/visualNewYork/vlb_thumbnails4/5.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/6.jpg" title="Sunset on a ferry across the Statue of Liberty"><img src="photoData/visualNewYork/vlb_thumbnails4/6.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/7.jpg" title="Skyline from Brooklyn park"><img src="photoData/visualNewYork/vlb_thumbnails4/7.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/8.jpg" title=""><img src="photoData/visualNewYork/vlb_thumbnails4/8.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/9.jpg" title="Central Park"><img src="photoData/visualNewYork/vlb_thumbnails4/9.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/10.jpg" title="Skyline from the Empire State Building"><img src="photoData/visualNewYork/vlb_thumbnails4/10.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/11.jpg" title="Times Square at night"><img src="photoData/visualNewYork/vlb_thumbnails4/11.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/12.jpg" title="People here honk like crazy!"><img src="photoData/visualNewYork/vlb_thumbnails4/12.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/13.jpg" title="The awesome American Natural History Museum"><img src="photoData/visualNewYork/vlb_thumbnails4/13.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/14.jpg" title="Guggenheim Museum"><img src="photoData/visualNewYork/vlb_thumbnails4/14.jpg" alt="" /></a>
+            <a class="vlightbox4" href="photoData/visualNewYork/vlb_images4/15.jpg" title="Another view of the skyline"><img src="photoData/visualNewYork/vlb_thumbnails4/15.jpg" alt="" /></a>
+        </div>
+
+    </div>
+    <!-- End of gallery -->
+
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="photoData/visuallightbox.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            window.Lightbox = new jQuery().visualLightbox({
+                autoPlay: true,
+                borderSize: 57,
+                classNames: 'vlightbox4',
+                closeLocation: 'top',
+                descSliding: true,
+                enableRightClick: false,
+                enableSlideshow: true,
+                prefix: 'vlb4',
+                resizeSpeed: 5,
+                slideTime: 3,
+                startZoom: true
+            })
+            var a = jQuery;
+            a("#vlightbox4 .vlightbox4").mouseenter(function() {
+                var b = a("div.vlb_zoom", this);
+                if (!b.length) {
+                    b = a('<div class="vlb_zoom" style="position:absolute">').hide().appendTo(this);
+                    a("img:first", b).detach()
+                }
+                b.fadeIn("fast")
+            }).mouseleave(function() {
+                a("div", this).fadeOut("fast")
+            })
+        });
+    </script>
+
+</body>
+
+</html>

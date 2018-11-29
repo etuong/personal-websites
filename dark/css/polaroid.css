@@ -1,0 +1,5 @@
+body,div,img,p {margin:0;padding:0;}
+body {overflow:hidden;background-image:url(../images/bg.jpg);}
+.polaroid {width:368px;height:376px;background-image:url(../images/polaroid-bg.png);position:absolute;}
+.polaroid img {width:335px;height:275px;margin:25px 0 0 15px;}
+.polaroid p {text-align:center;font-family:Georgia,serif;font-size:20px;color:#2E2E2E;margin-top:15px;}

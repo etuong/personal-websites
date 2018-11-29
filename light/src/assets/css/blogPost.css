@@ -1,0 +1,94 @@
+body {
+  font-family: "Montserrat", sans-serif!important;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 13px;
+  color: #111;
+  height: 100%;
+  margin: 0;
+}
+
+.parallax {
+  width: 100%;
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.3);
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+
+.post-title {
+  position: relative;
+  top: 20%;
+  color: #fff;
+  padding: 150px 30px;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+}
+
+.post-title h2 {
+  font-size: 35px;
+}
+
+.post-title h3 {
+  font-size: 20px;
+  position: relative;
+  font-family: "Spectral SC", serif;
+  text-transform: uppercase;
+}
+
+.post-title h4 {
+  font-size: 15px;
+  position: relative;
+}
+
+.post {
+  margin-top: 50px;
+}
+
+p {
+  padding: 5px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p.text:first-letter {
+  color: #00627A;
+  font-family: georgia;
+  font-size: 70px;
+  line-height: 0px;
+}
+
+@media only screen and (max-width:479px) {
+  .container {
+    padding: 30px;
+  }
+  .post-title h2 {
+    font-size: 25px;
+  }
+  .post-title h3 {
+    font-size: 15px;
+  }
+  .post-title h4 {
+    font-size: 10px;
+  }
+  .post {
+    margin-top: 20px;
+  }
+}

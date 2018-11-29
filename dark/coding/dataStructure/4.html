@@ -1,0 +1,44 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class ArrayManipulation {
+    // https://www.hackerrank.com/challenges/crush/problem
+
+    public ArrayManipulation() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[] array = new int[n];
+
+        for (int i = 0 ; i < m; i++) {
+            int a = scanner.nextInt() - 1;
+            int b = scanner.nextInt() - 1;
+            int k = scanner.nextInt();
+
+            for (int j = a; j <= b; j++) {
+                array[j] += k;
+            }
+        }
+
+        scanner.close();
+
+        // Find max value of array
+        int maxValue = array[0];
+        for(int i = 1; i < array.length; i++){
+            if(array[i] > maxValue){
+                maxValue = array[i];
+            }
+        }
+
+        System.out.println(maxValue);
+    }
+}
+
+
+</code></pre>
+</body>
+</html>

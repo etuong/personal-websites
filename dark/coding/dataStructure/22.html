@@ -1,0 +1,42 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class DiagonalDifference {
+    // https://www.hackerrank.com/challenges/diagonal-difference/problem
+
+    public DiagonalDifference() {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int[][] arr = new int[N][N];
+
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < N; j++){
+                arr[i][j] = scanner.nextInt();
+            }
+        }
+
+        printAnswer(N, arr);
+    }
+
+    public static void printAnswer(int N, int[][] arr) {
+        int primaryDiagonal = 0;
+        int secondaryDiagonal = 0;
+        int j = N;
+
+        for (int i = 0 ; i < N; i++){
+            primaryDiagonal += arr[i][i];
+            secondaryDiagonal += arr[i][--j];
+        }
+
+        System.out.print(Math.abs(primaryDiagonal - secondaryDiagonal));
+    }
+}
+
+
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">// https://www.hackerrank.com/challenges/detect-whether-a-linked-list-contains-a-cycle/problem
+
+class Node {
+    int data;
+    Node next;
+}
+
+public class CycleDetection {
+    boolean hasCycle(Node head) {
+        if (head == null)
+            return false;
+
+        HashSet<Node> set = new HashSet<Node>();
+        Node node = head;
+        set.add(node);
+        int count = 0;
+
+        while (node.next != null) {
+            node = node.next;
+
+            if (set.contains(node)) return true;
+            else set.add(node);
+
+            if (++count >101)
+                break;
+        }
+
+        return false;
+    }
+}
+
+
+</code></pre>
+</body>
+</html>

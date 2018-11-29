@@ -1,0 +1,34 @@
+#vlightbox2 {
+	width:100%;
+	zoom:1;	
+}
+#vlightbox2 .vlightbox2 {
+	display:-moz-inline-stack;
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+	position:relative;
+	vertical-align:top;
+
+	width:60px;
+	font-family:Trebuchet,Tahoma,Arial,sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:center;
+	opacity:0.87;
+	outline:none;
+}
+#vlightbox2 .vlightbox2 a{
+	margin:0;
+}
+#vlightbox2 .vlightbox2:hover, #vlightbox2 .vlightbox2 a:hover{
+	text-decoration:underline;
+	opacity:1;
+}
+#vlightbox2 .vlightbox2 img{
+	display:block;
+	border:none;
+	margin:0;
+}
+#vlightbox2 .vlightbox2 div {display:none}

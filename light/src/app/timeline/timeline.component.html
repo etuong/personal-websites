@@ -1,0 +1,32 @@
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase" id="timelineLink">Timeline</h2>
+        <h3 class="section-subheading text-muted">Story of my life</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="timeline">
+
+            <li *ngFor="let story of stories; let isOdd = odd; let isEven = even"
+            [ngClass]="isOdd ? 'animated hiding': 'timeline-inverted animated hiding'"
+            [attr.data-animation]="isOdd ? 'slideInRight' : 'slideInLeft'" data-delay="100">
+                <div attr.class="timeline-badge {{story.badgeColor}}"><i attr.class="fa {{story.icon}}"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">{{story.title}}</h4>
+                  </div>
+                  <div class="timeline-body"><p>{{story.desc}}</p></div>
+                </div>
+              </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>

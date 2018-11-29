@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Author" lang="en-us" content="Ethan Uong" />
+    <meta name="keywords" content="ethan, uong, photography, travels" />
+    <link href="../css/photoGallery.css" rel="stylesheet" type="text/css" />
+    <link href="photoData/visualChicago/vlb_files6/visuallightbox.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="photoData/visualChicago/vlb_files6/vlightbox6.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="title">
+            <p>Chicago, USA</p>
+            <hr /><img src="../pictures/stamps/flags/chicago.png" alt="" />
+        </div>
+        <div class="fact">
+            <p style="font-weight:normal;">Chicago is a vibrant metropolitan city and home of the blues and jazz. It is arguably where the modern architecture movement started. Chicago is known for many things, including its picturesque skyline, theaters, and world-class museums. The city is called the "White City" because of its restoration after the Chicago Fire in the late 19th century and also the "Windy City" because of its strong winds in the winter. Make sure to check out the Millenium Park and Cloud Gate!</p> <br />
+            <div id="text1">
+                <p>Currency</p>
+                <p>Language</p>
+                <p>State</p>
+            </div>
+            <div id="text2">
+                <p>American Dollars (USD)</p>
+                <p>English</p>
+                <p>Ilinois</p>
+            </div>
+        </div>
+    </div>
+    <!-- End of header -->
+    <!-- Sydney -->
+
+
+    <div class="gallery">
+
+        <!-- Hong Kong -->
+        <div id="vlightbox6">
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/1.jpg" title="Buckingham Fountain"><img src="photoData/visualChicago/vlb_thumbnails6/1.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/2.jpg" title="Millenium Park"><img src="photoData/visualChicago/vlb_thumbnails6/2.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/3.jpg" title="Cloud Gate"><img src="photoData/visualChicago/vlb_thumbnails6/3.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/4.jpg" title=""><img src="photoData/visualChicago/vlb_thumbnails6/4.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/5.jpg" title="I don't know what's more impressive, the Cloud Gate or that buff guy..."><img src="photoData/visualChicago/vlb_thumbnails6/5.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/6.jpg" title="Cloud Gate in HDR"><img src="photoData/visualChicago/vlb_thumbnails6/6.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/7.jpg" title=""><img src="photoData/visualChicago/vlb_thumbnails6/7.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/8.jpg" title="Chinatown"><img src="photoData/visualChicago/vlb_thumbnails6/8.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/9.jpg" title="The most complete T-Rex in the world at Field Museum"><img src="photoData/visualChicago/vlb_thumbnails6/9.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/10.jpg" title=""><img src="photoData/visualChicago/vlb_thumbnails6/10.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/11.jpg" title="Chicago!"><img src="photoData/visualChicago/vlb_thumbnails6/11.jpg" alt="" /></a>
+            <a class="vlightbox6" href="photoData/visualChicago/vlb_images6/12.jpg" title="Chicago-style deep dish pizza"><img src="photoData/visualChicago/vlb_thumbnails6/12.jpg" alt="" /></a>
+        </div>
+
+    </div>
+    <!-- End of gallery -->
+
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="photoData/visuallightbox.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            window.Lightbox = new jQuery().visualLightbox({
+                autoPlay: true,
+                borderSize: 18,
+                classNames: 'vlightbox6',
+                closeLocation: 'nav',
+                descSliding: true,
+                enableRightClick: false,
+                enableSlideshow: true,
+                overlayOpacity: 0.8,
+                prefix: 'vlb6',
+                resizeSpeed: 6,
+                slideTime: 2,
+                startZoom: true
+            })
+        });
+    </script>
+
+</body>
+
+</html>

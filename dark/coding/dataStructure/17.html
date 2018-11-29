@@ -1,0 +1,74 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">class MaxMinSum
+{
+    private const int MAX = 50;
+    private const int MIN = -50;
+
+    public MaxMinSum()
+    {
+        // Find the largest sum and difference of n-1 numbers
+        // e.g 1, 5, 3, 6 -> Max sum = 5 + 3 + 6 = 14, max difference = 1 + 3 + 5 = 9
+
+        int[] arr = new int[10];
+        Random randNum = new Random();
+        Console.Write("Random generated array: ");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = randNum.Next(MIN, MAX);
+            Console.Write(arr[i] + ", ");
+        }
+
+        // Output answer
+        Console.WriteLine();
+        FindMaxMinSumMethod2(arr);
+        Console.ReadLine();
+    }
+
+    private void FindMaxMinSumMethod1(int[] arr)
+    {
+        // Time complexity -> O(nlogn), space complexity -> O(1)
+        // Algo: Sort first, find total sum and substract by first and last int
+
+        Array.Sort(arr);
+
+        int totalSum = arr.Sum();
+
+        Console.WriteLine("Largest sum of n-1 numbers: {0}", totalSum - arr[0]);
+        Console.WriteLine("Largest difference of n-1 numbers: {0}", totalSum - arr[arr.Length - 1]);
+    }
+
+    private void FindMaxMinSumMethod2(int[] arr)
+    {
+        // Time complexity -> O(n), space complexity -> O(1)
+        // Algo: Find max number, min number, and total sum all in one loop
+
+        int min = MAX;
+        int max = MIN;
+        int sum = 0;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int datum = arr[i];
+
+            sum += datum;
+
+            if (min > datum)
+                min = datum;
+
+            if (max < datum)
+                max = datum;
+        }
+
+        Console.WriteLine("Largest sum of n-1 numbers: {0}", sum - min);
+        Console.WriteLine("Largest difference of n-1 numbers: {0}", sum - max);
+    }
+}
+</code></pre>
+</body>
+</html>

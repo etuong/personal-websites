@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Author" lang="en-us" content="Ethan Uong" />
+    <meta name="keywords" content="ethan, uong, photography, travels" />
+    <link href="../css/photoGallery.css" rel="stylesheet" type="text/css" />
+    <link href="photoData/visualDC/vlb_files5/visuallightbox.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="photoData/visualDC/vlb_files5/vlightbox5.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="title">
+            <p>Washington DC, USA</p>
+            <hr /><img src="../pictures/stamps/flags/dc-flag.png" alt="" />
+        </div>
+        <div class="fact">
+            <p style="font-weight:normal;">[From WikiTravel], Washington DC is the capital of the United States and the seat of its three branches of government, has a collection of free, public museums unparalleled in size and scope throughout the history of mankind, and the lion's share of the nation's most treasured monuments and memorials. The bulk of the main attractions is at the National Mall and the Smithsonian is a can't-miss. District of Columbia is not a city or state, rather it's an artificial body born of politics, by politics, and for politics.</p> <br />
+            <div id="text1">
+                <p>Currency</p>
+                <p>Language</p>
+            </div>
+            <div id="text2">
+                <p>American Dollars (USD)</p>
+                <p>English</p>
+            </div>
+        </div>
+    </div>
+    <!-- End of header -->
+
+    <div class="gallery">
+
+        <div id="vlightbox5">
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/1.jpg" title=""><img src="photoData/visualDC/vlb_thumbnails5/1.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/2.jpg" title="Chinatown"><img src="photoData/visualDC/vlb_thumbnails5/2.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/3.jpg" title="Vietnamese Papaya Salad"><img src="photoData/visualDC/vlb_thumbnails5/3.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/4.jpg" title="T-Rex at the National History Museum"><img src="photoData/visualDC/vlb_thumbnails5/4.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/5.jpg" title=""><img src="photoData/visualDC/vlb_thumbnails5/5.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/6.jpg" title="The famous National History Museum"><img src="photoData/visualDC/vlb_thumbnails5/6.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/7.jpg" title="Smithsonian"><img src="photoData/visualDC/vlb_thumbnails5/7.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/8.jpg" title="White House!  This is the as far as anyone can get"><img src="photoData/visualDC/vlb_thumbnails5/8.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/9.jpg" title="Lincoln Memorial"><img src="photoData/visualDC/vlb_thumbnails5/9.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/10.jpg" title="A room in the American History Museum"><img src="photoData/visualDC/vlb_thumbnails5/10.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/11.jpg" title=""><img src="photoData/visualDC/vlb_thumbnails5/11.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/12.jpg" title="The Capitol!"><img src="photoData/visualDC/vlb_thumbnails5/12.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/13.jpg" title="Space Museum"><img src="photoData/visualDC/vlb_thumbnails5/13.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/14.jpg" title="My great friend Renata and her husband."><img src="photoData/visualDC/vlb_thumbnails5/14.jpg" alt="" /></a>
+            <a class="vlightbox5" href="photoData/visualDC/vlb_images5/15.jpg" title="National Monument"><img src="photoData/visualDC/vlb_thumbnails5/15.jpg" alt="" /></a>
+        </div>
+
+    </div>
+    <!-- End of gallery -->
+
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="photoData/visuallightbox.js"></script>
+    <script type="text/javascript" src="photoData/visualDC/thumbscript5.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            window.Lightbox = new jQuery().visualLightbox({
+                autoPlay: true,
+                borderSize: 57,
+                classNames: 'vlightbox5',
+                closeLocation: 'top',
+                descSliding: true,
+                enableRightClick: false,
+                enableSlideshow: true,
+                prefix: 'vlb5',
+                resizeSpeed: 5,
+                slideTime: 3,
+                startZoom: true
+            })
+        });
+    </script>
+
+</body>
+
+</html>

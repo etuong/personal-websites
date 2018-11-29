@@ -1,0 +1,122 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	height:100%;
+	text-align:center;
+	font: 75%/120% Arial, Helvetica, sans-serif;
+}
+a:focus { outline: none; }
+#panel {
+	background: transparent;
+	display: none; 
+	text-align:center;
+}
+.slide {
+	margin: 0 auto;
+	height:30px;
+	width:900px;
+	background:url(../images/btn-slide.gif) no-repeat center top;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)));
+    background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:    -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+}
+
+.btn-slide {
+	background:url(../images/white-arrow.gif) no-repeat right -50px;
+	text-align: center;
+	width: 140px;
+	padding:8px 0px;
+	margin: 0 auto;
+	display: block;
+	font: bold;
+	font-size:25px;
+	color: #C8C8C8;
+	text-decoration: none;
+}
+
+.btn-slide:hover {
+	color:#fff;
+}
+
+.active {
+	background-position: right 10px;
+}
+
+.jimgMenu {
+	position:relative;
+	margin: auto;
+	padding: 0px;
+	width:565px;
+	height:200px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 50px 8px #626262;
+}
+
+.jimgMenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	height: 200px;
+	position: relative;
+	}
+	
+.jimgMenu ul li {
+	width: 95px;
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+
+.jimgMenu ul li a {
+	text-indent: -1000px;
+	background:#fff repeat scroll 0%;
+	border-right: 2px solid #fff;
+	cursor:pointer;
+	display:block;
+	overflow: hidden;
+	height: 200px;
+}
+
+.jimgMenu ul li#home a {
+	background: url(../images/Menu-Home.jpg) repeat scroll 0%;
+  
+}
+
+.jimgMenu ul li#photography a {
+	background: url(../images/Menu-Photography.jpg) repeat scroll 0%;
+
+}
+
+.jimgMenu ul li#blog a {
+	background: url(../images/Menu-Blog.jpg) repeat scroll 0%;
+  
+}
+
+.jimgMenu ul li#coding a {
+	background: url(../images/Menu-Coding.jpg) repeat scroll 0%;
+  
+}
+
+.jimgMenu ul li#miscellaneous a {
+	background: url(../images/Menu-Miscellaneous.jpg) repeat scroll 0%;
+
+}
+
+.jimgMenu ul li#contact a {
+	background: url(../images/Menu-Contact.jpg) repeat scroll 0%;
+	border-right-style: none;
+}
+
+.jimgMenu ul li#aboutme a {
+	background: url(../images/Menu-Aboutme.jpg) repeat scroll 0%;
+	border-right-style: none;
+}
+
+.clear {
+	clear: both;
+}

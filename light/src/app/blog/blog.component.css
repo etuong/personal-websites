@@ -1,0 +1,35 @@
+/* ========================================================================= //
+//  BLOG
+// ========================================================================= */
+
+
+#blog {
+  background-color: var(--even-color);
+}
+
+
+#blog .card-body {
+  text-align: left;
+}
+
+#blog .card-body .card-title {
+  font-family: Book Antiqua;
+}
+
+#blog .card-body .card-text {
+  font-family: proxima-nova, sans-serif !important;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.carousel-cell {
+  width: 31%;
+  margin-right: 3%;  
+}
+
+@media (max-width: 770px) {
+  .carousel-cell {
+    width: 100%;
+    margin: 0%;
+  }
+}

@@ -1,0 +1,20 @@
+.sliderwrapper{
+position: relative; /*leave as is*/
+overflow: visible; /*leave as is*/
+width: 637px; /*width of featured content slider*/
+height: 700px;
+border:1px solid white;
+}
+
+.sliderwrapper .contentdiv{
+visibility: hidden; /*leave as is*/
+position: static; /*leave as is*/
+left: 0;  /*leave as is*/
+top: 0;  /*leave as is*/
+background: transparent;
+width: 980px; /*width of content DIVs within slider. Total width should equal slider's inner width (390+5+5=400) */
+height: 100%;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+-moz-opacity: 1;
+opacity: 1;
+}

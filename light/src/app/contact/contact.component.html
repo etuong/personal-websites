@@ -1,0 +1,49 @@
+<section id="contact">
+    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+      <path d="M0 0 L50 100 L100 0 Z" fill="var(--odd-color)" stroke="var(--odd-color)"></path>
+    </svg>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase" id="contactLink">Contact</h2>
+        <h3 class="section-subheading text-muted">Holla at me if you have any suggestions, comments or even concerns</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 animated hiding" data-animation="zoomIn" data-delay="200">
+        <div id="googlemap" style="width:100%; height:540px;"></div>
+      </div>
+      <br />
+      <div class="col-md-6 animated hiding" data-animation="zoomIn" data-delay="200">
+        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telephone</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <label for="message">Email your Message</label>
+            <textarea class="form-control form-control-lg" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message." rows="6"></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+          <button class="btn btn-success btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
+          <div id="success"></div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>

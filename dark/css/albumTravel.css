@@ -1,0 +1,149 @@
+
+/* Start albumTravel */
+body {
+	background:url(../images/navy_blue.png) repeat;
+	overflow-x:hidden;
+}
+
+h1 {
+	width:960px;
+	text-shadow: 0px 1px 0px #CCC,
+		     0px 2px 0px #C9C9C9,
+                     0px 3px 0px #BBB,
+                     0px 4px 0px #B9B9B9,
+                     0px 5px 0px #AAA,
+                     0px 6px 1px rgba(0,0,0,0.1),
+                     0px 0px 5px rgba(0,0,0,0.1),
+                     0px 1px 3px rgba(0,0,0,0.3),
+                     0px 3px 5px rgba(0,0,0,0.2),
+                     0px 5px 10px rgba(0,0,0,0.25),
+                     0px 10px 10px rgba(0,0,0,0.2),
+                     0px 20px 20px rgba(0,0,0,0.15);
+	font-size:2em;
+	text-align:center;
+	color:white;
+}
+
+.content {
+	width:980px;
+	height:280px;
+	margin:10px 0px;
+	padding:0px 30px;
+}
+
+.flag{
+	float:left;
+	width:300px;
+	text-align:left;
+	margin-bottom:17px;
+	color:white;
+	font-size:20px;
+
+}
+
+.flag img {
+	float:left;
+	margin-right:10px;
+}
+
+.picture span {
+	width: 30px;
+	height: 60px;
+	z-index:2;
+	display: block;
+	position: absolute;
+	-webkit-transform:rotate(10deg);
+	-moz-transform:rotate(10deg);
+	-o-transform:rotate(10deg);
+	top: 70px;
+	left: 15px;
+	background:url(../images/paper-clip.png) no-repeat;
+}
+
+.picture2 span {
+	width: 30px;
+	height: 60px;
+	z-index:2;
+	display: block;
+	position: absolute;
+	-webkit-transform:rotate(-40deg);
+	-moz-transform:rotate(10deg);
+	-o-transform:rotate(10deg);
+	top: 70px;
+	left: 265px;
+	background:url(../images/paper-clip.png) no-repeat;
+}
+
+.picture, .picture2 {
+	float:left;
+	height:auto;
+	width:300px;
+	position:relative;
+	padding:5px;
+	background:url(../images/spot.png) center no-repeat;
+}
+
+.picture img {
+	clear:both;
+	float:left;
+}
+
+.picture img.zoom:hover, .picture2 img.zoom:hover {
+	  -webkit-filter: brightness(1.1) contrast(1.2);
+	  -moz-filter: brightness(1.1) contrast(1.2);
+	  -o-filter: brightness(1.1) contrast(1.2);
+	  -ms-filter: brightness(1.1) contrast(1.2);
+	  filter: brightness(1.1) contrast(1.2);
+}
+
+/* End albumTravel */
+
+/*Start albumProject */
+.boundary {
+	width:980px; 
+	height:750px !important;
+}
+
+.polaroid { 
+	width:221px; 
+	height:226px; 
+	background-image:url(../pictures/stamps/polaroid-bg.png); 
+	position:absolute; 
+}
+
+.polaroid img { 
+	width:201px; 
+	height:165px; 
+	margin:17px 0 0 11px;
+	cursor:crosshair;
+}
+
+.polaroid p { 
+	text-align:center; 
+	font-family:Georgia,serif; 
+	font-size:18px;
+	color:#2E2E2E; 
+	margin-top:11px; 
+}
+
+/* End albumProject */
+
+/*Reset Style */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}

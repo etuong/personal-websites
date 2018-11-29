@@ -1,0 +1,259 @@
+#vlb3overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:190;
+	width:100%;
+	height:auto;
+	background-color:#080808;
+}
+
+#vlb3lightbox{
+	position:absolute;
+	top:20px;
+	left:0;
+	width:100%;
+	z-index:200;
+	text-align:center;
+	color:#707070;
+	line-height:0;
+}
+#vlb3lightbox td{
+	vertical-align:top;
+}
+#vlb3lightbox a, #vlb3lightbox a:hover{
+	border-bottom:none;
+	color:#707070;
+	text-decoration:underline;
+}
+
+#vlb3lightbox a img{ border:none; }
+
+#vlb3outerImageContainer{
+	width:auto;
+	height:auto; /* without this line error in IE8 detected */
+	margin:0 auto;
+	position:relative;
+}
+
+#vlb3lightboxImage{
+	width:100%;
+	height:100%;
+}
+
+#vlb3imageContainerMain{
+	margin:0 auto;
+	overflow:visible;
+	position:relative;
+	font-size:0;/* ie fix - big info bar*/
+}
+
+#vlb3imageContainer{
+	width:50px;
+	height:50px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+	font-size:0;/* ie fix - big info bar*/
+}
+
+#vlb3loading{
+	position:absolute;
+	top:40%;
+	left:0;
+	height:25%;
+	width:100%;
+	text-align:center;
+	font-size:10px;
+	z-index:1;
+}
+#vlb3loadingLink{
+	display:block;
+	margin:0 auto;
+	padding:0;
+	width:60%;
+	height:32px;
+	background:url(loading.gif) center center no-repeat;
+	text-indent:-9999px;
+}
+#vlb3hoverNav{
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:10;
+}
+#vlb3imageContainer>#hoverNav{ left:0;}
+#vlb3prevLinkImg, #vlb3nextLinkImg{
+	top:0;
+	width:48px;
+	height:100%;
+	position:absolute;
+	z-index:20;
+	outline-style:none;
+	display:block;
+	text-indent:-9999px;
+	background:none;
+	}
+* html #vlb3prevLinkImg,* html #vlb3nextLinkImg{
+	background-image:url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */
+}
+#vlb3prevLinkImg { left: 0; }
+#vlb3nextLinkImg { right: 0; }
+#vlb3prevLinkImg:hover, #vlb3prevLinkImg.hover, #vlb3prevLinkImg:visited:hover { 
+	background:url(prev.png) 5% center no-repeat; 
+	_background-image:url(prev.gif)
+}
+#vlb3nextLinkImg:hover, #vlb3nextLinkImg.hover, #vlb3nextLinkImg:visited:hover { 
+	background:url(next.png) 97% center no-repeat; 
+	_background-image:url(next.gif)
+}
+
+
+#vlb3imageDataContainer{
+    font: 12px/1.231 Trebuchet MS, "Lucida Grande", Arial;
+	width:100%;
+}
+
+#vlb3imageData{
+	overflow:hidden;
+	width:100%;
+}
+#vlb3imageDetails{ width:70%; float:left; text-align:left; 	padding:10px 10px 0 0;}
+#vlb3caption{ display:block;}
+#vlb3numberDisplay{ display:block; float:left; padding:2px 10px 0 0; color:#339EFF;}
+#vlb3detailsNav{display:block; float:left;   padding:0; }
+#vlb3prevLinkDetails, #vlb3nextLinkDetails, #vlb3slideShowControl{ background-repeat:no-repeat; outline-style:none; display:block; float:left;}
+#vlb3prevLinkDetails{
+	margin:2px; width:18px;height:18px; background-position:left 100%;
+	background-image:url(navigation.gif);
+}
+#vlb3prevLinkDetails:hover{
+	background-position:0 0;
+}
+
+#vlb3nextLinkDetails{
+	margin:2px; width:18px;height:18px; background-position:right 100%;
+	background-image:url(navigation.gif);
+}
+#vlb3nextLinkDetails:hover{
+	background-position:100% 0;
+}
+#vlb3slideShowControl{
+	display:block;
+	width:18px; 
+	height:18px; 
+	float:left;
+	margin:2px; 
+	background-image:url(navigation.gif);
+	background-position:-18px 100%;
+	background-repeat:no-repeat;
+}
+#vlb3slideShowControl:hover{
+	background-position:-18px 0;
+}
+#vlb3slideShowControl.started{
+	background-position:-36px 100%;
+}
+#vlb3slideShowControl.started:hover{
+	background-position:-36px 0;
+}
+
+#vlb3close{
+	padding:16px 0 0;
+	float:right;
+}
+#vlb3closeLink{
+	display:block; 
+	outline-style:none; 
+	margin:0; 
+	padding:0; 
+	text-decoration:none; 
+	width:32px;
+	height:32px;
+	background:url(close.gif) no-repeat 0 100%;
+}
+#vlb3closeLink:hover{
+	background-position:0 0;
+}
+
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden;}
+* html>body .clearfix{display:inline-block; width:100%;}
+
+* html .clearfix{
+	/* Hides from IE-mac \*/
+	height:1%;
+	/* End hide from IE-mac */
+}	
+
+
+#vlb3outerImageFrame{
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+
+#vlb3outerImageContainer{
+	overflow:visible;
+}
+#vlb3outerImageContainer td{
+	text-align:center;
+	padding:0;
+}
+
+#vlb3lightboxFrameBody{
+	background:white;
+}
+
+#vlb3outerImageContainer td, #vlb3outerImageContainer tr{
+	font-size:0;
+	border:0 none;
+}
+/* frame style */
+#vlb3outerImageContainer td.tl, #vlb3outerImageContainer td.br{
+	height:50px;
+	width:50px;
+}
+.vlb{display:none;}
+#vlb3outerImageContainer td.tl{
+	background:url(back_corvers.png) 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_lt.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.tc{
+	background:url(back_tb.png) 50% 0;
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_ct.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.tr{
+	background:url(back_corvers.png) 100% 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_rt.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.ml{
+	background:url(back_lr.png) 0 50%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_lc.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.mr{
+	background:url(back_lr.png) 100% 50%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_rc.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.bl{
+	background:url(back_corvers.png) 0 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_lb.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.bc{
+	background:url(back_tb.png) 50% 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_cb.png', sizingMethod='scale');
+}
+#vlb3outerImageContainer td.br{
+	background:url(back_corvers.png) 100% 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files3/back_rb.png', sizingMethod='scale');
+}

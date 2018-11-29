@@ -1,0 +1,8 @@
+body {background:url(../images/navy_blue.png) center repeat;background-attachment:fixed;color:#FFF;margin:0;padding:15px 0px;}
+#border {border:2px solid white;padding:15px;width:615px;margin-right:auto;margin-left:auto;}
+.title {height:auto;width:auto;clear:both;margin:25px 0;}
+.title h1 {font-size:32px;font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;color:#FFF;margin-bottom:15px;}
+.title p {color:#CCC;font-size:18px;text-indent:50px;font-style:italic;}
+p.text:first-letter {color:#00627A;font-family:georgia;font-size:40px;}
+.left {float:left;border-radius:10px;margin:0 15px 15px 0;}
+.right {float:right;border-radius:10px;margin:0 0 15px 15px;}

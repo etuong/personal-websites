@@ -1,0 +1,94 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-Java, line-numbers">// Prompt: Given a string, find the most frequent character
+
+static void Main(string[] args)
+{
+    string str = GetRandomString(1000000);
+    UsingArray(str);
+    UsingDictionary(str);
+    Console.ReadLine();
+}
+
+private static string GetRandomString(int iLength)
+{
+    StringBuilder sb = new StringBuilder(iLength);
+    Random rnd = new Random();
+
+    for (int i = 0; i < iLength; i++)
+    {
+        int c = rnd.Next('a', 'z');
+        char cc = (char)c;
+        sb.Append(cc);
+    }
+
+    return sb.ToString();
+}
+
+// Time complexity -> O(n), Space complexity -> O(n)
+// Faster but uses up all 255 keys
+private static void UsingArray(string str)
+{
+    // Initialize array to 255 chars
+    int[] charCountArray = new int[255];
+
+    // Loop through each char in string and keep count of characters
+    foreach (char c in str)
+    {
+        charCountArray[c]++;
+    }
+
+    char cLargest = (char)0;
+    int iLargest = 0;
+
+    for (int i = 0; i < charCountArray.Length; i++)
+    {
+        int ii = charCountArray[i];
+        if (ii > iLargest)
+        {
+            iLargest = ii;
+            cLargest = (char)i;
+        }
+    }
+
+    Console.WriteLine("Character with most the occurence is {0} at {1} count", cLargest, iLargest);
+}
+
+// Time complexity -> O(n), Space complexity -> O(n)
+private static void UsingDictionary(string str)
+{
+    // Create dictionary
+    Dictionary<char, int> dict = new Dictionary<char, int>();
+
+    // Loop through each char in string and keep count of characters
+    foreach (char c in str)
+    {
+        if (!dict.ContainsKey(c))
+            dict.Add(c, 1);
+        else
+            dict[c] = ++dict[c];
+    }
+
+    // Print result
+    char cLetter = str[0];
+    int iCount = dict[cLetter];
+    foreach (KeyValuePair<char, int> entry in dict)
+    {
+        if (entry.Value >= iCount)
+        {
+            cLetter = entry.Key;
+            iCount = entry.Value;
+        }
+    }
+
+    Console.WriteLine("Character with most the occurence is {0} at {1} count", cLetter, iCount);
+}
+
+</code></pre>
+</body>
+</html>

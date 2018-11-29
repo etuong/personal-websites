@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Author" lang="en-us" content="Ethan Uong" />
+    <meta name="keywords" content="ethan, uong, photography, travels" />
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="../css/photoGallery.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .w3-col.custom {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header" style="height:340px;">
+        <div class="title">
+            <p>Beijing, China</p>
+            <hr /><img src="../pictures/stamps/flags/china-flag.png" alt=""/>
+        </div>
+        <div class="fact">
+            <p style="font-weight:normal;">Beijing, also known as Peking, is the capital of the People's Republic of China.
+                Beijing has been the political center of the country for much of the past eight centuries.
+                The name Beijing, which means "Northern Capital" was applied to the city in 1403 during the Ming Dynasty to distinguish the 
+                city from Nanjing (the "Southern Capital"). Some must visit attractions are Great wall and Forbidden City.</p> <br />
+            <div id="text1">
+                <p>Currency</p>
+                <p>Government type</p>
+                <p>Major ethnic group</p>
+            </div>
+            <div id="text2">
+                <p>Renminbi (RMB)</p>
+                <p>Municipality</p>
+                <p>Han</p>
+            </div>
+        </div>
+    </div>
+    <!-- End of header -->
+
+    <div class="gallery">
+        <div class="w3-content">
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/1.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Love in Beijing
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/2.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Spicy cold noodle and Rou jia mo (Chinese hamburger)
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading transformImage" src="photoData/basicBeijing/images/3.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Peking duck!
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/4.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Art district 798
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/5.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Matcha cake and ice cream
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading transformImage" src="photoData/basicBeijing/images/6.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Beijing hotpot!
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/7.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Wheat cakes
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/8.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Forbidden City
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/9.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    View of Forbidden City
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/10.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Tiananmen square
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img class="w3-animate-fading" src="photoData/basicBeijing/images/11.jpg">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16">
+                    Great Wall Mutianyu
+                </div>
+            </div>
+
+            <div class="w3-row-padding w3-section">
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/1.jpg" onclick="showDiv(1)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/2.jpg" onclick="showDiv(2)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off transformImage" src="photoData/basicBeijing/thumbs/3.jpg" onclick="showDiv(3)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/4.jpg" onclick="showDiv(4)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/5.jpg" onclick="showDiv(5)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off transformImage" src="photoData/basicBeijing/thumbs/6.jpg" onclick="showDiv(6)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/7.jpg" onclick="showDiv(7)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/8.jpg" onclick="showDiv(8)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/9.jpg" onclick="showDiv(9)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/10.jpg" onclick="showDiv(10)">
+                </div>
+                <div class="w3-col custom">
+                    <img class="w3-opacity w3-hover-opacity-off" src="photoData/basicBeijing/thumbs/11.jpg" onclick="showDiv(11)">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- End of gallery -->
+
+    <script>
+        showDiv(1);
+
+        function showDiv(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+
+            x[n - 1].style.display = "block";
+            dots[n - 1].className += " w3-opacity-off";
+        }
+    </script>
+</body>
+
+</html>

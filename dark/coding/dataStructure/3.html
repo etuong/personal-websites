@@ -1,0 +1,62 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class Anagrams {
+    // https://www.hackerrank.com/challenges/java-anagrams/problem
+
+    public Anagrams() {
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+
+        boolean ret = isAnagram(a, b);
+        System.out.println((ret) ? "Anagrams" : "Not Anagrams");
+    }
+
+    private boolean isAnagram(String a, String b) {
+        // Get length of strings and verify
+        int n = a.length();
+        if (n != b.length())
+            return false;
+
+        // Make strings case insensitive
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+
+        Map<Character, Integer> map = new HashMap<>();
+
+        // First populate map for the first string
+        for (int i = 0; i < n; i++) {
+            Character charKey = a.charAt(i);
+            if (map.containsKey(charKey)) {
+                Integer count = map.get(charKey);
+                map.put(charKey, ++count);
+            } else {
+                map.put(charKey, 1);
+            }
+        }
+
+        // Second, verify character frequency on second string
+        for (int i = 0; i < n; i++) {
+            Character charKey = b.charAt(i);
+            if (map.containsKey(charKey)) {
+                Integer count = map.get(charKey);
+                if (count == 0) return false;
+                else map.put(charKey, --count);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+    
+
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {background:url(../images/bg.jpg) center repeat;background-attachment:fixed;color:white;padding:0;overflow-x:hidden;margin:0px auto;width:980px;}
+.hdr img:hover,.contentPortraits img:hover, .food img:hover, .foodPic img:hover {opacity:0.6;}
+
+/* iD Tech */
+.contentID {width:100%;clear:both;text-align:center;}
+.contentID img {opacity:1;filter:alpha(opacity=100);margin:0;}
+.contentID img:hover {opacity:0.4;filter:alpha(opacity=40);}
+.contentdivID a:link {color:#FFF;text-decoration:none;}
+.contentdivID a:visited {color:#FFF;}
+.contentdivID a:hover {color:red;}
+.contentdivID a:active {color:gray;}
+.contentdivID {color:#AEAEAE;font:"Comic Sans MS", cursive;}
+.contentdivID .header {font-size:25px !important;color:red; margin:0;}
+#titleID {width:44%;float:left;text-align:left;height:265px;font-size:20px;border:2px solid #000;border-radius:25px;padding:2%;}
+#video1 {float:right;height:265px;width:44%;padding:2% 0;}
+.iDimg {clear:both;padding:20px 0px;}
+.iDimg img {width:95px;height:64px;}
+#speech {float:right;height:295px;width:44%;font-size:14px;border:2px solid #000;border-radius:25px;padding:2%;}
+#speech p {font-size:14px;}
+#cramp {float:left;color:#FFF;font-size:16px;margin-right:10px;border-right:green 1px solid;}
+#cramp span {font-size:26px;font:"Trebuchet MS", Arial, Helvetica, sans-serif;line-height:25px;text-shadow:0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;}
+#paginate-slider {width:100%;height:950px;clear:both;margin:0 50px !important;}
+.work {float:left;border:2px solid #FFF;text-align:center;margin:30px 5px;}
+.work p {color:#D7D7D7;font-size:20px;font:Verdana, Geneva, sans-serif;margin:5px 0;}
+.wrapper_work {clear:both;}
+.wrapper_work .work img {width:190px;height:132px;border-top-right-radius:15px;border-top-left-radius:15px;}
+.wrapper_work .work {-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);-webkit-transition-duration:.6s;-moz-transition-duration:.6s;-o-transition-duration:.6s;}
+.wrapper_work .work:hover {-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-o-transform:scale(1.1);box-shadow:0 0 30px gray;-webkit-box-shadow:0 0 30px gray;-moz-box-shadow:0 0 30px gray;opacity:1;filter:alpha(opacity=100);}
+.sliderwrapper {position:relative;overflow:hidden;border:2px solid gray;border-bottom-width:6px;border-radius:30px;clear:both!important;width:650px;min-height:400px;max-height:500px;margin:0 auto;}
+.sliderwrapper .contentdiv {visibility:hidden;position:static;left:0;top:0;height:100%;text-align:center;filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);-moz-opacity:1;opacity:1;margin:50px auto;padding:0;}
+
+/* Friends */
+ul#friends {list-style:none;width:100%;margin:0;padding:0;}
+ul#friends li {float:left;width:150px;height:150px;}
+ul li a {display:inline;cursor:default;}
+ul li .nowandthen img {border:5px ridge #101010;}
+a.nowandthen {position:relative;display:block;overflow:hidden;cursor:pointer;width:150px;height:150px;}
+a.nowandthen img {position:absolute;left:0;top:0;width:100%;height:100%;z-index:2;clip:rect(0,150px,150px,0);-moz-transition: all .8s ease;-webkit-transition: all .8s ease;-o-transition: all .8s ease;-ms-transition: all .8s ease;transition: all .8s ease;}
+a.nowandthen:hover img:nth-of-type(1) {clip:rect(0,0,150px,0);opacity:0;}
+a.nowandthen img:nth-of-type(2) { z-index: 1; }
+
+/* HDR */
+.hdr img {opacity:1.0;border:1px ridge #FFF;width:275px;height:183px;}
+
+/* Portraits */
+.wrapper_portrait {clear:both;width:100%;height:2700px;}
+.contentPortraits {width:25%;text-align:center;float:left;}
+.contentPortraits img {opacity:1.0;width:217px;}
+.size_145,.size_200,.size_300 {width:100%;padding:5px;}
+
+/* Postcards */
+.contentPostcards img:hover,.contentManipulation img:hover {opacity:0.4;filter:alpha(opacity=40);}
+.contentPostcards img {border:3px ridge gray;width:290px;}
+img.postHeight {height:290px!important;width:auto;}
+.contentManipulation img {border:2px ridge gray;width:170px;height:170px;}
+
+/* Food */
+.food{width:480px;float:left;padding:15px;}
+.foodPic{width:350px;float:right;padding:20px 25px;}
+.foodPic img{width:110px;height:82px;float:right;border:1px solid white;}
+.food>p{font-size:25px;margin-bottom:25px;}
+.foodPic>p{font-size:20px;margin-bottom:25px;}
+.food .recipe {width:240px;float:left;margin-bottom:50px;}
+
+

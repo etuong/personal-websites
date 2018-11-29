@@ -1,0 +1,44 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">// Given two binary trees, write a function to check if they are equal or not
+// Two binary trees are considered equal if they are structurally identical and 
+// the nodes have the same value
+
+class TreeNode
+{
+    public TreeNode LeftNode;
+    public TreeNode RightNode;
+    public int Value;
+}
+
+class SameTree
+{
+    // Time and space complexities are both O(n)
+    public bool AreTreesTheSame(TreeNode tree1, TreeNode tree2)
+    {
+        // If both trees are null, then they are the same
+        if (tree1 == null && tree2 == null)
+            return true;
+
+        // If only either is null, then they are different
+        if (tree1 == null || tree2 == null)
+            return false;
+
+        // Trees are different if values are not the same
+        if (tree1.Value != tree2.Value)
+            return false;
+
+        // Recursively check trees
+        return AreTreesTheSame(tree1.LeftNode, tree2.LeftNode) &&
+            AreTreesTheSame(tree1.RightNode, tree2.RightNode);
+
+    }
+}
+</code></pre>
+</body>
+</html>

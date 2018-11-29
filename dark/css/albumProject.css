@@ -1,0 +1,102 @@
+
+/* Start albumTravel */
+body {
+	background:url(../images/navy_blue.png) repeat;
+	overflow-x:hidden;
+}
+
+.content {
+	width:980px;
+	height:280px;
+	margin:10px 0px;
+	padding:0px 30px;
+}
+
+.flag{
+	float:left;
+	width:300px;
+	text-align:left;
+	margin-bottom:17px;
+	color:white;
+	font-size:20px;
+
+}
+
+.flag img {
+	float:left;
+	margin-right:10px;
+}
+
+.picture{
+	float:left;
+	height:auto;
+	width:300px;
+	position:relative;
+	padding:5px;
+	background:url(../images/spot.png) center no-repeat;
+}
+
+.picture img {
+	clear:both;
+	float:left;
+}
+
+.picture img.zoom:hover {
+	  -webkit-filter: brightness(1.1) contrast(1.2);
+	  -moz-filter: brightness(1.1) contrast(1.2);
+	  -o-filter: brightness(1.1) contrast(1.2));
+	  -ms-filter: brightness(1.1) contrast(1.2);
+	  filter: brightness(1.1) contrast(1.2));
+}
+
+/* End albumTravel */
+
+/*Start albumProject */
+.boundary {
+	width:980px; 
+	height:750px !important;
+}
+
+.polaroid { 
+	width:221px; 
+	height:226px; 
+	background-image:url(../pictures/stamps/polaroid-bg.png); 
+	position:absolute; 
+}
+
+.polaroid img { 
+	width:201px; 
+	height:165px; 
+	margin:17px 0 0 11px;
+	cursor:crosshair;
+}
+
+.polaroid p { 
+	text-align:center; 
+	font-family:Georgia,serif; 
+	font-size:18px;
+	color:#2E2E2E; 
+	margin-top:11px; 
+}
+
+/* End albumProject */
+
+/*Reset Style */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}

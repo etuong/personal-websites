@@ -1,0 +1,299 @@
+#vlb6overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:190;
+	width:100%;
+	height:auto;
+	background-color:#000000;
+}
+
+#vlb6lightbox{
+	position:absolute;
+	top:20px;
+	left:0;
+	width:100%;
+	z-index:200;
+	text-align:center;
+	color:#707070;
+	line-height:0;
+}
+#vlb6lightbox td{
+	vertical-align:top;
+}
+#vlb6lightbox a, #vlb6lightbox a:hover{
+	border-bottom:none;
+	color:#707070;
+	text-decoration:underline;
+}
+
+#vlb6lightbox a img{ border:none; }
+
+#vlb6outerImageContainer{
+	width:auto;
+	height:auto; /* without this line error in IE8 detected */
+	margin:0 auto;
+	position:relative;
+}
+
+#vlb6lightboxImage{
+	width:100%;
+	height:100%;
+}
+
+#vlb6imageContainerMain{
+	margin:0 auto;
+	overflow:visible;
+	position:relative;
+	font-size:0;/* ie fix - big info bar*/
+}
+
+#vlb6imageContainer{
+	width:50px;
+	height:50px;
+	margin: 0 auto;
+	overflow:hidden;
+	position: relative;
+	font-size:0;/* ie fix - big info bar*/
+	background-color:#0a1a43;
+}
+
+#vlb6loading{
+	position: absolute;
+	top: 40%;
+	left: 0;
+	height:25%;
+	width:100%;
+	text-align:center;
+	font-size:10px;
+	z-index:1;
+}
+#vlb6loadingLink {
+	display:block;
+	margin:0 auto;
+	padding:0;
+	width:60%;
+	height:32px;
+	background:url(loading.gif) center center no-repeat;
+	text-indent:-9999px;
+}
+#vlb6hoverNav{
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	z-index:10;
+}
+#vlb6imageContainer>#hoverNav{ 
+	left: 0;
+}
+
+#vlb6prevLinkImg, #vlb6nextLinkImg{
+	top:0;
+	width:72px;
+	height: 100%;
+	position:absolute;
+	z-index:20;
+	outline-style:none;
+	display: block;
+	text-indent:-9999px;
+	background:none;
+}
+* html #vlb6prevLinkImg,* html #vlb6nextLinkImg{
+	background-image:url(data:image/gif;base64,AAAA); /* Trick IE into showing hover */
+}
+#vlb6prevLinkImg { 
+	left: 0; 
+}
+#vlb6nextLinkImg { 
+	right: 0;
+}
+#vlb6prevLinkImg:hover, #vlb6prevLinkImg.hover, #vlb6prevLinkImg:visited:hover { 
+	background:url(prev.png) 5% center no-repeat; 
+	_background-image:url(prev.gif)
+}
+#vlb6nextLinkImg:hover, #vlb6nextLinkImg.hover, #vlb6nextLinkImg:visited:hover { 
+	background:url(next.png) 97% center no-repeat; 
+	_background-image:url(next.gif)
+}
+
+#vlb6imageDataContainer{
+	font:normal 15px/1.2 Arial;
+	text-shadow: #000 0 -2px 0;
+	width:100%;
+	/*background-color:#0a1a43;
+	*opacity:0.8;*/
+	filter:alpha(opacity=80);
+}
+
+#vlb6imageData{
+	overflow:hidden;
+	width:100%;
+	padding-top:5px;
+}
+#vlb6imageDetails{ 
+}
+#vlb6caption{
+	display: inline; 
+	color:#FFF
+}
+#vlb6numberDisplay{ 
+	padding:2px 10px 0 0;
+	color:#339EFF;
+}
+#vlb6detailsNav{
+	display:block; 
+	padding:0; 
+	padding-top:6px;
+}
+#vlb6prevLinkDetails, #vlb6nextLinkDetails, #vlb6slideShowControl{ 
+	background-repeat:no-repeat; 
+	outline-style:none; 
+	display:-moz-inline-stack;
+	display:inline-block;
+}
+#vlb6prevLinkDetails{
+	margin:0; 
+	width:45px;
+	height:45px; 
+	background-position:left 100%;
+	background-image:url(navigation.png);
+	_background-image:url(navigation.gif);
+}
+#vlb6prevLinkDetails:hover{
+	background-position:0 0;
+}
+
+#vlb6nextLinkDetails{
+	margin:0; 
+	width:45px;
+	height:45px; 
+	background-position:right 100%;
+	background-image:url(navigation.png);
+	_background-image:url(navigation.gif);
+}
+#vlb6nextLinkDetails:hover{
+	background-position:100% 0;
+}
+#vlb6slideShowControl{
+	width:45px; 
+	height:45px; 
+	margin:0; 
+	background-image:url(navigation.png);
+	background-position:-45px 100%;
+	background-repeat:no-repeat;
+}
+* html #vlb6slideShowControl{
+	background-image: url(navigation.gif);
+}
+#vlb6slideShowControl:hover{
+	background-position:-45px 0;
+}
+#vlb6slideShowControl.started{
+	background-position:-90px 100%;
+}
+#vlb6slideShowControl.started:hover{
+	background-position:-90px 0;
+}
+
+#vlb6close{
+	padding:16px 0 0;
+	float:right;
+}
+#vlb6closeLink{
+	display:-moz-inline-stack;display:inline-block; 
+	outline-style:none; 
+	margin:0; 
+	padding:0; 
+	text-decoration:none; 
+	width:45px;
+	height:45px;
+	background:url(navigation.png) no-repeat -135px 100%;
+	_background-image: url(navigation.gif);
+}
+#vlb6closeLink:hover{
+	background-position:-135px 0;
+}
+
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden;}
+* html>body .clearfix{display:inline-block; width:100%;}
+
+* html .clearfix{
+	/* Hides from IE-mac \*/
+	height:1%;
+	/* End hide from IE-mac */
+}	
+
+
+#vlb6outerImageFrame{
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+
+#vlb6outerImageContainer{
+	overflow:visible;
+}
+#vlb6outerImageContainer td{
+	text-align:center;
+	padding:0;
+}
+
+#vlb6lightboxFrameBody{
+	background-image:url(bk.png);
+}
+
+#vlb6outerImageContainer td, #vlb6outerImageContainer tr{
+	font-size:0;
+	border:0 none;
+}
+
+/* frame style */
+#vlb6outerImageContainer td.tl, #vlb6outerImageContainer td.br{
+	height:17px;
+	width:17px;
+}
+.vlb{display:none;}
+#vlb6outerImageContainer td.tl{
+	background:url(back_corvers.png) 0 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_lt.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.tc{
+	background:url(back_tb.png) 50% 0;
+	_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_ct.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.tr{
+	background:url(back_corvers.png) 100% 0;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_rt.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.ml{
+	background:url(back_lr.png) 0 50%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_lc.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.mr{
+	background:url(back_lr.png) 100% 50%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_rc.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.bl{
+	background:url(back_corvers.png) 0 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_lb.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.bc{
+	background:url(back_tb.png) 50% 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_cb.png', sizingMethod='scale');
+}
+#vlb6outerImageContainer td.br{
+	background:url(back_corvers.png) 100% 100%;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='index_files/vlb_files6/back_rb.png', sizingMethod='scale');
+}
+

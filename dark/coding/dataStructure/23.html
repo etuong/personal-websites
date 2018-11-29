@@ -1,0 +1,44 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">class TwoSumSortedArray
+{
+    /* Given an array of integers that is already sorted in ascending order, find two
+        * numbers such that they add up to a specific target number
+        * For example, Input -> [2,7,11,15] target 9, Output -> indices 1 and 2 */
+
+    // The typical optimal approach for two sum is to use a hash table which occupies O(n) for space
+    // This problem can be done in O(n) for time and O(1) for space
+
+    public TwoSumSortedArray()
+    {
+        int[] array = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+        int target;
+        Int32.TryParse(Console.ReadLine(), out target);
+
+        int left = 0, right = array.Length - 1;
+        while (right > left)
+        {
+            int sum = array[left] + array[right];
+            if (sum == target)
+            {
+                Console.WriteLine("{0} {1}", left, right);
+                break;
+            }
+            else if (sum > target)                
+                right--;
+            
+            else if (sum < target)                
+                left--;                
+        }
+
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</body>
+</html>

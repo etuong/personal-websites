@@ -1,0 +1,512 @@
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="../css/blogPost.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div style="margin-bottom:20px;">
+            <p>Windows Presentation Foundation (or WPF) is a graphical subsystem by Microsoft for rendering user
+                interfaces in Windows-based applications. In my coding career I worked with this technology. This page
+                provides a mini project that has a few comprehensive examples of what WPF is capable of. The last topic
+                of this page talks about Model-View-ViewModel (MMVV), which is a software architectural patttern that
+                decouples the user interface with the business logic. This page is not meant to be a tutorial but
+                simply a refresher to those that have experiences with WPF and MVVM.</p>
+            <p><a href="img/wpf/wpf.zip"><img alt="" src="img/zip.png" style="vertical-align:middle;"></a> Click
+                on the icon to download the Visual Studio solution of this demo project</p>
+            <hr>
+            <video controls loop preload="none" style="float:left;margin-top:25px;">
+                <source src="img/wpf/animation2.mp4" type="video/mp4"></video>
+            <p style="float:left;width:70%;margin-left:25px;">This project demostrates a few WPF features through a
+                series
+                of examples. The first example is on animation. Here I have two images, one is a normal picture of me
+                and the another one is not so skinny picture of me. These two images are overlapped with each other
+                using the Canvas tag. In WPF, every control can only have one child, thus containers like StackPanel,
+                WrapPanel, and DockPanel are used to lay out the interface, howevever they are "stacked" relative to
+                each other except for the canvas and grid containers. Only Grid and Canvas allow for overlapping. Here
+                we use a trigger with a loaded event to begin an animation that changes the opacity of a target with
+                the name "pic" (which in this case is the not skinny picture) from fully visible to invisible within
+                two seconds. The "RepeatBehavior" is set to forever which means the animation loops infinitely.
+                Furthermore, we have two more routed events for mouse in and out which pauses and resumes the
+                storyboard, respectively.</p>
+
+            <pre style="clear:both;">
+                    <code class="hljs xml">
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Canvas</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Canvas.Triggers</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">EventTrigger</span> <span class="hljs-attr">RoutedEvent</span>=<span class="hljs-string">"Canvas.Loaded"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">BeginStoryboard</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"OpacityStoryboard"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Storyboard</span> <span class="hljs-attr">TargetName</span>=<span class="hljs-string">"pic2"</span> <span class="hljs-attr">TargetProperty</span>=<span class="hljs-string">"Opacity"</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">DoubleAnimation</span> <span class="hljs-attr">From</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">To</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">Duration</span>=<span class="hljs-string">"0:0:2"</span> <span class="hljs-attr">AutoReverse</span>=<span class="hljs-string">"True"</span> <span class="hljs-attr">RepeatBehavior</span>=<span class="hljs-string">"Forever"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">Storyboard</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">BeginStoryboard</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">EventTrigger</span>&gt;</span>
+                            
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">EventTrigger</span> <span class="hljs-attr">RoutedEvent</span>=<span class="hljs-string">"UIElement.MouseEnter"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">PauseStoryboard</span> <span class="hljs-attr">BeginStoryboardName</span>=<span class="hljs-string">"OpacityStoryboard"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">EventTrigger</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">EventTrigger</span> <span class="hljs-attr">RoutedEvent</span>=<span class="hljs-string">"UIElement.MouseLeave"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">ResumeStoryboard</span> <span class="hljs-attr">BeginStoryboardName</span>=<span class="hljs-string">"OpacityStoryboard"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">EventTrigger</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">Canvas.Triggers</span>&gt;</span>
+                                
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"pic1"</span> <span class="hljs-attr">Source</span>=<span class="hljs-string">"Images/Skinny.jpg"</span> /&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Image</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"pic2"</span> <span class="hljs-attr">Source</span>=<span class="hljs-string">"Images/NotSkinny.jpg"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Canvas</span>&gt;</span>
+                                                        </code>
+                </pre>
+            <hr>
+
+            <video controls loop preload="none" style="float:left;margin-top:30px;">
+                <source src="img/wpf/basicStyling.mp4" type="video/mp4"></video>
+            <p style="float:left;width:60%;margin-left:20px;margin-top:30px;text-align:justify">In this demo, we
+                observe some pretty amazing WPF styling. The first style targets the whole Window. It has a trigger
+                that listens to the binding of the property "IsChecked" of the element by the name of
+                "redColorCheckBox." If this value is true, then it sets the background to red. But what background? The
+                background of the specific type, which in this case is the window. The second block of code is inside
+                the Window.Resources which means any styling or defines in this block is applied to the whole window.
+                The first style in here applies to every button, hence in the video clip on the left you see that the
+                three buttons all look the same (height of 30px, height of 80px, font size of 12px, etc). Furthermore,
+                once again we have a trigger and this one is "IsMouseOver", meaning whenever the mouse is over the
+                control (button), the foreground turns red. Styles in WPF do not have to be defined under Resources, it
+                can be defined straight within the scope of the individual control. If you look at the second textbox,
+                you will see that I am manipulating the "Background" and "IsEnabled" properties. The background is
+                binded to whatever value I type in the textbox. This is done through RelativeSource to myself and
+                taking the text property. Similarly, I have a data trigger that compares to my typed text, if it is
+                equal to the string "disabled" then it will set the "IsEnabled" property to false. As you can see, the
+                possibilities of WPF styling is endless. The complete code snippet is below.</p>
+            <pre style="clear:both;">
+                    <code class="hljs xml">
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Window.Style</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Style</span> <span class="hljs-attr">TargetType</span>=<span class="hljs-string">"{x:Type Window}"</span>&gt;</span><span class="xml">
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">DataTrigger</span> <span class="hljs-attr">Binding</span>=<span class="hljs-string">"{Binding ElementName=redColorCheckBox, Path=IsChecked}"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"True"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"Background"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"Red"</span> /&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">DataTrigger</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                </span><span class="hljs-tag">&lt;/<span class="hljs-name">Style</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Window.Style</span>&gt;</span>
+                            
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Window.Resources</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Style</span> <span class="hljs-attr">TargetType</span> = <span class="hljs-string">"{x:Type Button}"</span>&gt;</span><span class="xml">
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span> = <span class="hljs-string">"Height"</span> <span class="hljs-attr">Value</span> = <span class="hljs-string">"30"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span> = <span class="hljs-string">"Width"</span> <span class="hljs-attr">Value</span> = <span class="hljs-string">"80"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span> = <span class="hljs-string">"Foreground"</span> <span class="hljs-attr">Value</span> = <span class="hljs-string">"Blue"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span> = <span class="hljs-string">"FontSize"</span> <span class="hljs-attr">Value</span> = <span class="hljs-string">"12"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span> = <span class="hljs-string">"Margin"</span> <span class="hljs-attr">Value</span> = <span class="hljs-string">"10"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Trigger</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"IsMouseOver"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"True"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"Foreground"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"red"</span> /&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">Trigger</span>&gt;</span>                
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Style.Triggers</span>&gt;</span>            
+                                </span><span class="hljs-tag">&lt;/<span class="hljs-name">Style</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Style</span> <span class="hljs-attr">x:Key</span>=<span class="hljs-string">"practiceStyle"</span> <span class="hljs-attr">TargetType</span>=<span class="hljs-string">"{x:Type TextBox}"</span> &gt;</span><span class="xml">
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">MultiTrigger</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">MultiTrigger.Conditions</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">Condition</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"IsMouseOver"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"True"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">Condition</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"IsKeyboardFocused"</span>  <span class="hljs-attr">Value</span>=<span class="hljs-string">"True"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">MultiTrigger.Conditions</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">MultiTrigger.Setters</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"Foreground"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"red"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"FontWeight"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"Bold"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"FontSize"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"18"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">MultiTrigger.Setters</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">MultiTrigger</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                </span><span class="hljs-tag">&lt;/<span class="hljs-name">Style</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">SolidColorBrush</span> <span class="hljs-attr">x:Key</span>=<span class="hljs-string">"staticBrush"</span> <span class="hljs-attr">Color</span>=<span class="hljs-string">"Yellow"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Window.Resources</span>&gt;</span>
+                            
+                            <span class="hljs-tag">&lt;<span class="hljs-name">StackPanel</span> <span class="hljs-attr">HorizontalAlignment</span>=<span class="hljs-string">"Center"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">Content</span> = <span class="hljs-string">"Button1"</span>/&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">Content</span> = <span class="hljs-string">"Button2"</span>/&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">Content</span> = <span class="hljs-string">"Button3"</span>/&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">TextBox</span> <span class="hljs-attr">Width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">Background</span>=<span class="hljs-string">"{StaticResource staticBrush}"</span> <span class="hljs-attr">Style</span>=<span class="hljs-string">"{StaticResource practiceStyle}"</span> /&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">TextBox</span> <span class="hljs-attr">Width</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"10"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">TextBox.Style</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Style</span> <span class="hljs-attr">TargetType</span>=<span class="hljs-string">"TextBox"</span>&gt;</span><span class="xml">
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">DataTrigger</span> <span class="hljs-attr">Binding</span>=<span class="hljs-string">"{Binding RelativeSource={RelativeSource Self}, Path=Text}"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"disabled"</span>&gt;</span>
+                                                    <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"IsEnabled"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"False"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;/<span class="hljs-name">DataTrigger</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">Style.Triggers</span>&gt;</span>
+                            
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"Background"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"{Binding RelativeSource={RelativeSource Self}, Path=Text}"</span> /&gt;</span>
+                                        </span><span class="hljs-tag">&lt;/<span class="hljs-name">Style</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">TextBox.Style</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">TextBox</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">x:Name</span> = <span class="hljs-string">"redColorCheckBox"</span> <span class="hljs-attr">Content</span> = <span class="hljs-string">"Set red as foreground color"</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">StackPanel</span>&gt;</span>
+                              </code>
+</pre>
+            <hr>
+            <video controls preload="none" style="float:left;margin-top:30px;">
+                <source src="img/wpf/dataTemplate.mp4" type="video/mp4"></video>
+            <p style="float:left;width:60%;margin-left:20px;margin-top:30px;">Data binding is what makes WPF so
+                powerful. In this demo, we will see how to properly create a data template. The XAML is pretty straight
+                forward, we have a listbox and a button. This button subscribes to a click event which we will discuss
+                later. The listbox contains an ItemsSource that populates the collection as well as an Item Template.
+                The StaticResource of this property points to a data template that "customizes" the appearance on how
+                to display the data, which in this sense I assign it to have a grid inside a border and in this grid we
+                get and set the name and age of a person. Note that the binding of "Name" and "Age" are actually
+                properties of an instance of the datum (from the item source). As for the population of the items and
+                the model itself, I handled them in the code behind. I have a class called Person that has name and age
+                as attributes and publicly expose them so the data template can retrieve them. In the constructor I
+                have a list of people and assign it to the item source of the listbox. Note that we can also use the
+                .NET ObservableCollection which implements the INotifyCollectionChanged that works well with MVVM. When
+                users change the name and age of each item, the properties automatically get updated because of the
+                binding, and when they click on the button, there's a message box that shows the person's information.</p>
+            <pre style="clear:both;">
+                    <code class="hljs xml">
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Window.Resources</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">DataTemplate</span> <span class="hljs-attr">x:Key</span> =<span class="hljs-string">"template"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Border</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"bord3r"</span> <span class="hljs-attr">BorderBrush</span>=<span class="hljs-string">"Red"</span> <span class="hljs-attr">BorderThickness</span>=<span class="hljs-string">"1"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Grid</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span> = <span class="hljs-string">"Auto"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span> = <span class="hljs-string">"Auto"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Grid.ColumnDefinitions</span>&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">ColumnDefinition</span> <span class="hljs-attr">Width</span> = <span class="hljs-string">"Auto"</span> /&gt;</span>
+                                                <span class="hljs-tag">&lt;<span class="hljs-name">ColumnDefinition</span> <span class="hljs-attr">Width</span> = <span class="hljs-string">"200"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;/<span class="hljs-name">Grid.ColumnDefinitions</span>&gt;</span>
+                            
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span> <span class="hljs-attr">Content</span>=<span class="hljs-string">"Name"</span>/&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">TextBox</span> <span class="hljs-attr">Grid.Column</span> = <span class="hljs-string">"1"</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span> <span class="hljs-attr">Text</span> = <span class="hljs-string">"{Binding Name}"</span> /&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span> <span class="hljs-attr">Grid.Row</span> = <span class="hljs-string">"1"</span> <span class="hljs-attr">Content</span>=<span class="hljs-string">"Age"</span>/&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">TextBox</span> <span class="hljs-attr">Grid.Column</span> = <span class="hljs-string">"1"</span> <span class="hljs-attr">Grid.Row</span> = <span class="hljs-string">"1"</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span> <span class="hljs-attr">Text</span> = <span class="hljs-string">"{Binding Age}"</span> /&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">Grid</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Border</span>&gt;</span>
+                            
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">DataTemplate.Triggers</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">DataTrigger</span> <span class="hljs-attr">Binding</span>=<span class="hljs-string">"{Binding Path=Name}"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"Yvonne"</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">Setter</span> <span class="hljs-attr">TargetName</span>=<span class="hljs-string">"bord3r"</span> <span class="hljs-attr">Property</span>=<span class="hljs-string">"BorderBrush"</span> <span class="hljs-attr">Value</span>=<span class="hljs-string">"blue"</span> /&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">DataTrigger</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">DataTemplate.Triggers</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">DataTemplate</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Window.Resources</span>&gt;</span>
+                            
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Grid</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span> = <span class="hljs-string">"Auto"</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span> = <span class="hljs-string">"*"</span> /&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">ListBox</span> <span class="hljs-attr">x:Name</span>=<span class="hljs-string">"listbox"</span> <span class="hljs-attr">ItemsSource</span> = <span class="hljs-string">"{Binding Source}"</span> <span class="hljs-attr">ItemTemplate</span>=<span class="hljs-string">"{StaticResource template}"</span> /&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">Grid.Row</span> = <span class="hljs-string">"1"</span>  <span class="hljs-attr">Content</span> = <span class="hljs-string">"_Show..."</span> <span class="hljs-attr">Click</span> = <span class="hljs-string">"Button_Click"</span> <span class="hljs-attr">Width</span> = <span class="hljs-string">"80"</span> <span class="hljs-attr">HorizontalAlignment</span> = <span class="hljs-string">"Left"</span> <span class="hljs-attr">Margin</span> = <span class="hljs-string">"10"</span>/&gt;</span>
+                            
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Grid</span>&gt;</span>
+                                </code>
+            </pre>
+            <pre>
+                    <code class="hljs cs">
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">partial</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DataTemplateExample</span> : <span class="hljs-title">Window</span>
+                            {
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DataTemplateExample</span>(<span class="hljs-params"></span>)
+                                </span>{
+                                    InitializeComponent();
+                            
+                                    List people = <span class="hljs-keyword">new</span> List();
+                                    people.Add(<span class="hljs-keyword">new</span> Person { Name = <span class="hljs-string">"Ethan"</span>, Age = <span class="hljs-number">27</span> });
+                                    people.Add(<span class="hljs-keyword">new</span> Person { Name = <span class="hljs-string">"Yvonne"</span>, Age = <span class="hljs-number">62</span> });
+                                    people.Add(<span class="hljs-keyword">new</span> Person { Name = <span class="hljs-string">"Thomas"</span>, Age = <span class="hljs-number">12</span> });
+                            
+                                    listbox.ItemsSource = people;
+                                }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Button_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, RoutedEventArgs e</span>)
+                                </span>{
+                                    Person selectedPerson = (Person)listbox.SelectedValue;
+                            
+                                    <span class="hljs-keyword">if</span> (selectedPerson != <span class="hljs-literal">null</span>)
+                                    {
+                                        <span class="hljs-keyword">string</span> message = <span class="hljs-keyword">string</span>.Format(<span class="hljs-string">"{0} is {1} years old"</span>, selectedPerson.Name, selectedPerson.Age);
+                                        MessageBox.Show(message);
+                                    }
+                                }
+                            }
+                            
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+                            {
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> _Name;
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> _Age;
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Name
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _Name; }
+                                    <span class="hljs-keyword">set</span> { _Name = <span class="hljs-keyword">value</span>; }
+                                }
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> Age
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _Age; }
+                                    <span class="hljs-keyword">set</span> { _Age = <span class="hljs-keyword">value</span>; }
+                                }
+                            }
+                                                        </code>
+                </pre>
+            <hr>
+            <video controls preload="none" style="display:table;margin:30px auto 10px auto;">
+                <source src="img/wpf/powerBallZ.mp4" type="video/mp4"></video>
+            <p><a href="img/wpf/PowerBallZ.zip"><img alt="" src="img/zip.png" style="vertical-align:middle;float:left;margin-right:8px;"></a>
+                Now this is a real treat. In 2016 there was a big PowerBall lottery of a half a billion jackpot. I was
+                inspired by the event to write a simple app just for fun. This side project utilizes many WPF and .NET
+                features ranging from storyboard animation to multi-threading. Click on the icon to <span style="color:yellow;">download
+                    the Visual Studio solution of this Powerball project</span></p>
+            <hr>
+            <video controls preload="none" style="display:table;margin:30px auto 10px auto;">
+                <source src="img/wpf/mvvm.mp4" type="video/mp4"></video>
+            <p>This is an example of a very basic and classic MVVM pattern. The main idea of MVVM is that the Model
+                should know nothing about the View and vice-versa. The Model is defined as any object that holds
+                information. The View is the front end presentational layer. The "link" between the two is the
+                ViewModel. The ViewModel should only know about the Model and not the View, and the View should only
+                know about the ViewModel and not the Model.</p>
+            <p>This example is very simple, we have a listbox, data grid, and combo box that shares the same items
+                source. There is a button that upon invoke will take a textbox string and adds to the collection. The
+                core of MVVM lies in the implementation of the INotifyPropertyChanged interface. This interface allows
+                any messages to be updated back to the View. Any property in the ViewModel that is bound to the View
+                should implement this.</p>
+            <pre style="clear:both;">
+                    <code class="hljs cs">
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ViewModelBase</span>: <span class="hljs-title">INotifyPropertyChanged</span>
+                            {
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> PropertyChangedEventHandler PropertyChanged;
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnPropertyChanged</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> propertyName</span>)
+                                </span>{
+                                    PropertyChangedEventHandler handler = PropertyChanged;
+                                    <span class="hljs-keyword">if</span> (handler != <span class="hljs-literal">null</span>)
+                                    {
+                                        handler(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> PropertyChangedEventArgs(propertyName));
+                                    }
+                                }
+                            }
+                                                        </code>
+                </pre>
+            <p>The second main component is the implementation of the ICommand interface. This is to bind commands in
+                the View such as button or any control event.</p>
+            <pre style="clear:both;">
+                    <code class="hljs cs">
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">DelegateCommand</span> : <span class="hljs-title">ICommand</span>
+                            {
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> Action _execute;
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">readonly</span> Func _canExecute;
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DelegateCommand</span>(<span class="hljs-params">Action executeMethod</span>)
+                                    : <span class="hljs-title">this</span>(<span class="hljs-params">executeMethod, <span class="hljs-literal">null</span></span>)
+                                </span>{
+                                }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DelegateCommand</span>(<span class="hljs-params">Action executeMethod, Func canExecuteMethod</span>)
+                                </span>{
+                                    <span class="hljs-keyword">if</span> (executeMethod == <span class="hljs-literal">null</span>)
+                                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArgumentNullException(<span class="hljs-string">"executeMethod"</span>);
+                            
+                                    _execute = executeMethod;
+                                    _canExecute = canExecuteMethod;
+                                }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Execute</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> parameter</span>)
+                                </span>{
+                                    _execute();
+                                }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">CanExecute</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> parameter</span>)
+                                </span>{
+                                    <span class="hljs-keyword">return</span> _canExecute == <span class="hljs-literal">null</span> ? <span class="hljs-literal">true</span> : _canExecute();
+                                }
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> EventHandler CanExecuteChanged
+                                {
+                                    <span class="hljs-keyword">add</span> { CommandManager.RequerySuggested += <span class="hljs-keyword">value</span>; }
+                                    <span class="hljs-keyword">remove</span> { CommandManager.RequerySuggested -= <span class="hljs-keyword">value</span>; }
+                                }
+                            }
+                                                        </code>
+                </pre>
+            <p>The model can be anything, here I choose to create a blueprint of a person that has a first name, last
+                name, and age.</p>
+            <pre style="clear:both;">
+                    <code class="hljs cs">
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> : <span class="hljs-title">INotifyPropertyChanged</span>
+                            {
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> _FirstName;
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> _LastName;
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _Age;
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> FirstName
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _FirstName; }
+                                    <span class="hljs-keyword">set</span>
+                                    {
+                                        <span class="hljs-keyword">if</span> (_FirstName != <span class="hljs-keyword">value</span>)
+                                        {
+                                            _FirstName = <span class="hljs-keyword">value</span>;
+                                            OnPropertyChanged(<span class="hljs-string">"FirstName"</span>);
+                                        }
+                                    }
+                                }
+                                
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> LastName
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _LastName;}
+                                    <span class="hljs-keyword">set</span>
+                                    {
+                                        <span class="hljs-keyword">if</span> (_LastName != <span class="hljs-keyword">value</span>)
+                                        {
+                                            _LastName = <span class="hljs-keyword">value</span>;
+                                            OnPropertyChanged(<span class="hljs-string">"LastName"</span>);
+                                        }
+                                    }
+                                }
+                                
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Age
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _Age;}
+                                    <span class="hljs-keyword">set</span>
+                                    {
+                                        <span class="hljs-keyword">if</span> (_Age != <span class="hljs-keyword">value</span>)
+                                        {
+                                            _Age = <span class="hljs-keyword">value</span>;
+                                            OnPropertyChanged(<span class="hljs-string">"Age"</span>);
+                                        }
+                                    }
+                                }
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> PropertyChangedEventHandler PropertyChanged;
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnPropertyChanged</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> propertyName</span>)
+                                </span>{
+                                    PropertyChangedEventHandler handler = PropertyChanged;
+                                    <span class="hljs-keyword">if</span> (handler != <span class="hljs-literal">null</span>)
+                                    {
+                                        handler(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> PropertyChangedEventArgs(propertyName));
+                                    }
+                                }
+                            }
+                                                        </code>
+                </pre>
+            <p>I daresay the ViewModel is the most complex part of the application. Afterall, it handles all the
+                business logic and serves as the mediator between the Model and View. Here, we populate the collection
+                in the constructor and listen to the change in selected person. Because the list box, data grid, and
+                combo box all shared the same ObservableCollection and because we notify the same messages back to the
+                view, all three get updated at the same time.</p>
+            <pre style="clear:both;">
+                    <code class="hljs cs">
+                            <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MainWindowViewModel</span> : <span class="hljs-title">ViewModelBase</span>
+                            {
+                                <span class="hljs-keyword">public</span> DelegateCommand AddUserCommand { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+                                <span class="hljs-keyword">public</span> ObservableCollection People { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+                                <span class="hljs-keyword">private</span> Person _SelectedPerson;
+                            
+                                <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> _SelectedItemString;
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> TextProperty { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MainWindowViewModel</span>(<span class="hljs-params"></span>)
+                                </span>{
+                                    AddUserCommand = <span class="hljs-keyword">new</span> DelegateCommand(OnAddUserCommand);
+                            
+                                    People = <span class="hljs-keyword">new</span> ObservableCollection
+                                    {
+                                        <span class="hljs-keyword">new</span> Person { FirstName=<span class="hljs-string">"Ethan"</span>, LastName=<span class="hljs-string">"Uong"</span>, Age=<span class="hljs-number">32</span> },
+                                        <span class="hljs-keyword">new</span> Person { FirstName=<span class="hljs-string">"Yvonne"</span>, LastName=<span class="hljs-string">"Liu"</span>, Age=<span class="hljs-number">26</span> },
+                                        <span class="hljs-keyword">new</span> Person { FirstName=<span class="hljs-string">"Happy"</span>, LastName=<span class="hljs-string">"Doggy"</span>, Age=<span class="hljs-number">3</span> },
+                                    };            
+                                }
+                                
+                                <span class="hljs-keyword">public</span> Person SelectedPerson
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _SelectedPerson; }
+                                    <span class="hljs-keyword">set</span>
+                                    {
+                                        <span class="hljs-keyword">if</span> (_SelectedPerson != <span class="hljs-keyword">value</span> &amp;&amp; <span class="hljs-keyword">value</span> != <span class="hljs-literal">null</span>)
+                                        {
+                                            _SelectedPerson = <span class="hljs-keyword">value</span>;
+                                            SelectedItemString = <span class="hljs-keyword">value</span>.FirstName;
+                                            OnPropertyChanged(<span class="hljs-string">"SelectedPerson"</span>);
+                                        }
+                                    }
+                                }
+                            
+                                <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> SelectedItemString
+                                {
+                                    <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> _SelectedItemString; }
+                                    <span class="hljs-keyword">set</span>
+                                    {
+                                        <span class="hljs-keyword">if</span> (_SelectedItemString != <span class="hljs-keyword">value</span>)
+                                        {
+                                            _SelectedItemString = <span class="hljs-keyword">value</span>;
+                                            OnPropertyChanged(<span class="hljs-string">"SelectedItemString"</span>);
+                                        }
+                                    }
+                                }
+                            
+                                <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnAddUserCommand</span>(<span class="hljs-params"></span>)
+                                </span>{
+                                    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">string</span>.IsNullOrEmpty(TextProperty))
+                                    {
+                                        People.Add(<span class="hljs-keyword">new</span> Person {
+                                            FirstName = TextProperty.ToString(),
+                                            LastName = TextProperty.ToString(),
+                                            Age = DateTime.Now.Second
+                                        });
+                                    }
+                                }
+                            }
+                                                        </code>
+                </pre>
+            <p>And finally we have the View. The last major concept is how exactlyl do we bind everything together? We
+                have established that the View must know nothing about the Model, but how precisely does the View
+                understand the ViewModel? This is done by setting the DataContext of the View to an instance of the
+                ViewModel.</p>
+            <pre style="clear:both;">
+                    <code class="hljs xml">
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Grid</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"20"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span>=<span class="hljs-string">"Auto"</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">RowDefinition</span> <span class="hljs-attr">Height</span>=<span class="hljs-string">"Auto"</span>/&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">Grid.RowDefinitions</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">StackPanel</span> <span class="hljs-attr">Grid.Row</span>=<span class="hljs-string">"0"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">StackPanel</span> <span class="hljs-attr">Orientation</span>=<span class="hljs-string">"Horizontal"</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">ListBox</span> <span class="hljs-attr">ItemsSource</span>=<span class="hljs-string">"{Binding People}"</span> <span class="hljs-attr">SelectedItem</span>=<span class="hljs-string">"{Binding SelectedPerson}"</span> 
+                                                 <span class="hljs-attr">DisplayMemberPath</span>=<span class="hljs-string">"FirstName"</span> <span class="hljs-attr">HorizontalAlignment</span>=<span class="hljs-string">"Left"</span>/&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">DataGrid</span> <span class="hljs-attr">ItemsSource</span>=<span class="hljs-string">"{Binding People}"</span> <span class="hljs-attr">SelectedItem</span>=<span class="hljs-string">"{Binding SelectedPerson}"</span> <span class="hljs-attr">CanUserAddRows</span>=<span class="hljs-string">"False"</span>
+                                                  <span class="hljs-attr">HorizontalAlignment</span>=<span class="hljs-string">"Left"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"5,0,0,0"</span>/&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">ComboBox</span> <span class="hljs-attr">ItemsSource</span>=<span class="hljs-string">"{Binding People}"</span> <span class="hljs-attr">SelectedItem</span>=<span class="hljs-string">"{Binding SelectedPerson}"</span> 
+                                                  <span class="hljs-attr">DisplayMemberPath</span>=<span class="hljs-string">"FirstName"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"5,0,0,5"</span> <span class="hljs-attr">VerticalAlignment</span>=<span class="hljs-string">"Top"</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">StackPanel</span>&gt;</span>            
+                                    
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">TextBlock</span> <span class="hljs-attr">FontWeight</span>=<span class="hljs-string">"Bold"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"5"</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"The selected person is "</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Run</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"{Binding SelectedItemString}"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">TextBlock</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">Content</span>=<span class="hljs-string">"Type in a name and hit button to add to collection"</span> /&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">StackPanel</span>&gt;</span>
+                            
+                                <span class="hljs-tag">&lt;<span class="hljs-name">StackPanel</span> <span class="hljs-attr">Grid.Row</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">Width</span>=<span class="hljs-string">"150"</span> <span class="hljs-attr">HorizontalAlignment</span>=<span class="hljs-string">"Left"</span>&gt;</span>            
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">TextBox</span> <span class="hljs-attr">Text</span>=<span class="hljs-string">"{Binding TextProperty}"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"5"</span>/&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">Content</span>=<span class="hljs-string">"Add person"</span> <span class="hljs-attr">Command</span>=<span class="hljs-string">"{Binding AddUserCommand}"</span> <span class="hljs-attr">Margin</span>=<span class="hljs-string">"5"</span> /&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">StackPanel</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Grid</span>&gt;</span>
+                                                        </code>
+                </pre>
+            <p><a href="img/wpf/mvvm.zip"><img alt="" src="img/zip.png" style="vertical-align:middle;"></a> Click
+                on the icon to download the Visual Studio solution of this basic MVVM example</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

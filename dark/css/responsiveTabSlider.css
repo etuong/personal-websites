@@ -1,0 +1,130 @@
+﻿/* Responsive Tabs - menucool.com/jquery-tabs */
+
+#tabs {background:rgba(0,0,0,0.5);}
+
+ol.rtabs
+{
+    text-align:center; /*set to left, center, or right to align the tabs as desired*/    
+    font-size:0;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+	width:100%;
+}
+        
+ol.rtabs li
+{
+    margin:0;
+    margin-right:4px; /*gap between tabs. Set it to -1px for no gap.*/
+    padding:0;
+    display:inline;
+}
+        
+ol.rtabs li a
+{
+    padding:0 38px; /* It determines tab width */
+    display:inline-block;   
+    font-weight:normal;
+    font-size:16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height:34px;/* height of tabs */
+    text-decoration: none;
+    color:#eee;
+    outline:none;
+    position:relative;
+}
+        
+ol.rtabs li a:link, ol.rtabs li a:visited
+{
+    color:#999999;
+}
+        
+ol.rtabs li a:hover
+{
+    color:white;
+}
+  
+/* Selected tab style */
+.activeTab
+{
+    color:white!important;
+    font-weight:bold!important;
+    border-bottom:3px solid white!important;
+}   
+        
+/*selected tab style on hover */
+ol.rtabs li.selected a:hover
+{
+    text-decoration:none;
+}
+
+/* container of content panels */
+div#tabs
+{
+    border:5px solid black;
+    border-radius:0 4px 4px 4px;
+    
+	overflow:hidden;
+    position:relative;    
+    padding:0px; margin:0px;
+    outline:none;
+    margin-top:-2px;
+}
+
+/* content panel */       
+div#tabs > div
+{
+    padding:20px;
+    
+    /* The two settings below should not be changed. */
+    display: block;
+    margin:0px;
+}  
+div#tabs div.inactive
+{
+    display: none;
+}
+
+/* For mobiles */
+@media only screen and (max-width:560px){
+    ol.rtabs{
+        box-sizing:border-box;
+        border-left:1px solid #ccc;
+        border-top:1px solid #ccc;
+        min-width:260px;
+    }
+
+    ol.rtabs li{
+        display:inline-block;
+        box-sizing:border-box;
+        margin-right:0;
+        width:50%; /* set it to 100% for one column, 33.33% for three-column */
+    }
+
+    ol.rtabs li:last-child:nth-child(odd){
+        width:100%;
+    }
+
+    ol.rtabs li a {
+        border:none;
+        border-right:1px solid #ccc;
+        border-bottom:1px solid #ccc;
+        display:block;
+        padding:0;
+        text-align:center;
+        border-radius:0;
+    }
+
+    ol.rtabs li.selected a {
+        background-color:rgba(0,0,0,0.5);
+        background-image: linear-gradient(#737373, #737373 50%, #4d4d4d 50%, #1a1a1a);
+    }
+
+    div#tabs {
+        border-radius:0;
+        min-width:260px;
+        box-sizing:border-box;
+		
+		overflow:hidden;
+    }
+}

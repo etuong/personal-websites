@@ -1,0 +1,48 @@
+<html>
+<head>
+<link href="prismPython.css" rel="stylesheet" />
+<script src="prismPython.js"></script>
+</head>
+
+<body>
+<pre><code class="language-python, line-numbers"># https://www.hackerrank.com/challenges/lilys-homework/problem
+# Time complexity -> O(nlogn), Space complexity -> O(n)
+
+def lilysHomework(arr):
+    # Create a dictionary to store initial ordering
+    d = {}
+    for i in range(len(arr)):
+        d[arr[i]] = i
+
+    # Sort array
+    s = sorted(arr)
+
+    # Keep count of swaps
+    c = 0
+
+    # Loop through array and swap if values between the beautiful array and given array are not the same
+    for i in range(len(arr)):
+        if s[i] != arr[i]:
+            c += 1
+
+            # Get the index that needs swapping
+            swappingIndex = d[s[i]]
+
+            # Update the dictionary
+            d[arr[i]] = d[s[i]]
+
+            # Swap
+            arr[swappingIndex] = arr[i]
+            arr[i] = s[i]
+
+    return c
+
+if __name__ == '__main__':
+    n = int(input().strip())
+    arr = list(map(int, input().strip().split(' ')))
+    asc = lilysHomework(list(arr))
+    desc = lilysHomework(list(reversed(arr)))
+    print(min(asc, desc))
+</code></pre>
+</body>
+</html>

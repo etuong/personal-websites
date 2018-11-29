@@ -1,0 +1,37 @@
+<!-- Portfolio -->
+<section id="portfolio">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase" id="portfolioLink">Portfolio</h2>
+        <h3 class="section-subheading text-muted">Samples of my artistic and creative works</h3>
+      </div>
+    </div>
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-12 justify-content-center mb-5 animated hiding" data-animation="zoomIn" >
+        <button type="button" class="btn btn-outline-black" data-filter="*">All</button>
+        <button type="button" class="btn btn-outline-black" data-filter=".hdr">HDR</button>
+        <button type="button" class="btn btn-outline-black" data-filter=".ps">Photoshop</button>
+        <button type="button" class="btn btn-outline-black" data-filter=".fav">Favorites</button>
+        <button type="button" class="btn btn-outline-black" data-filter=".pc">Postcards</button>
+        <button type="button" class="btn btn-outline-black" data-filter=".sw">SolidWorks</button>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+    <div class="row no-gutters text-center animated hiding" id="gallery" data-animation="fadeIn" data-delay="400">
+      <div *ngFor="let galleryItem of galleryItems" attr.class="col-lg-3 col-md-4 col-sm-6 mix {{galleryItem.filterGroup}}">
+        <a class="d-block h-100" attr.data-fancybox="{{galleryItem.filterGroup}}" attr.href="{{galleryItem.enlarge}}">
+          <img class="img-fluid img-thumbnail" attr.src="{{galleryItem.thumb}}" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- Grid row -->
+
+    <!-- /.container -->
+  </div>
+</section>

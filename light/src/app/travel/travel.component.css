@@ -1,0 +1,24 @@
+/* ========================================================================= //
+//  TRAVEL
+// ========================================================================= */
+
+#travel {
+  background-color: var(--odd-color);
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0;
+}
+
+#gmap {
+  width: 100%!important;
+  height: 500px;
+}
+
+@media (max-width: 500px) {
+  #gmap {
+    height: 400px;
+  }
+}
