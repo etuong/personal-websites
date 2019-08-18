@@ -17,12 +17,6 @@ export class BlogComponent implements OnInit {
   }
 
   populateBlogs(): void {
-    this.blogs.push({
-      title: 'Climbing the Rooftop of the World',
-      dest: 'Beijing, China',
-      text: 'China was a very interesting experience. I haven\'t gone abroad in over 6 years before this! Last time I traveled abroad was in 2011 to Germany and it felt like an eternity. China has a very rich history with many areas to explore.',
-      post: 'china'
-    });
 
     if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
       this.blogs.push({
@@ -45,8 +39,22 @@ export class BlogComponent implements OnInit {
         text: 'Chaos theory is a field of study in mathematics that concerns the behavior of dynamical systems with sensitive initial conditions. It is based on the notion that a small difference in initial conditions such as loss of significance and rounding errors can cause diverging outcomes to the system (deterministic or stochastic), thus rendering it predictable in the long term',
         post: 'numericalAnalysis'
       });
+
+      this.blogs.push({
+        title: 'A quick study on Windows Presentation Foundation',
+        dest: 'Model-View-ViewModel',
+        text: 'Windows Presentation Foundation (or WPF) is a graphical subsystem by Microsoft for rendering user interfaces in Windows-based applications. In my coding career I worked with this technology. This page provides a mini ',
+        post: 'wpf'
+      });
     }
 
+    this.blogs.push({
+      title: 'Climbing the Rooftop of the World',
+      dest: 'Beijing, China',
+      text: 'China was a very interesting experience. I haven\'t gone abroad in over 6 years before this! Last time I traveled abroad was in 2011 to Germany and it felt like an eternity. China has a very rich history with many areas to explore.',
+      post: 'china'
+    });
+    
     this.blogs.push({
       title: 'One Big Chinatown, One Beautiful Skyline',
       dest: 'Hong Kong, China',
@@ -109,15 +117,6 @@ export class BlogComponent implements OnInit {
       text: 'Toronto also has some of the biggest and best malls I\'ve ever been to, namely Eaton Mall across Yonge and Dunedas street. The buskers there are so different and amazing as well',
       post: 'toronto'
     });
-
-    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-      this.blogs.push({
-        title: 'A quick study on Windows Presentation Foundation',
-        dest: 'Model-View-ViewModel',
-        text: 'Windows Presentation Foundation (or WPF) is a graphical subsystem by Microsoft for rendering user interfaces in Windows-based applications. In my coding career I worked with this technology. This page provides a mini ',
-        post: 'wpf'
-      });
-    }
 
     this.blogs.push({
       title: 'America, Land of Freedom and Opportunity',
