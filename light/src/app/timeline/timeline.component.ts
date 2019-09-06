@@ -20,7 +20,7 @@ export class TimelineComponent implements OnInit {
       icon : 'fa-globe-americas',
       badgeColor : 'primary',
       title : 'America',
-      desc : 'Immigrated to the land of freedom from Vietnam and grew up in central Los Angeles. Loved all sports and hated Pikachu.'
+      desc : 'Immigrated to the land of freedom from Vietnam and grew up in central Los Angeles. Favorite sport is football and favorite instrument is piano.'
     });
 
     this.stories.push( {
@@ -48,7 +48,7 @@ export class TimelineComponent implements OnInit {
       icon : 'fa-code',
       badgeColor : 'success',
       title : 'Software Engineering',
-      desc : 'Started a career in software developement at Michael Baker International writing algorithms for bridge analysis and currently working at Raytheon on the PATRIOT command and control interface.'
+      desc : 'Started a career in software developement. Dabbled with .NET, Java technology, and web services.'
     });
 
     this.stories.push( {

@@ -16,7 +16,7 @@ nav#templatemo_menu ul li a:hover, .activePage{background:url(../images/template
 /* HOME */
 .home_intro {background:url(../images/home_intro.png) no-repeat;}
 .slidr-home .head {clear:both;width:940px;float:left;height:auto;margin-top:20px;background:transparent;padding:20px;}
-.slidr-home .content {font-family: 'Overlock', cursive;width:500px;text-align:left;float:left;font-size:17px;color:#E8E8E8;}
+.slidr-home .content {font-family: 'Overlock', cursive;width:500px;text-align:left;float:left;font-size:20px;color:#E8E8E8;}
 .slidr-home .content s {color:red;}
 .slidr-home .content s span {color:#C1C1C1;}
 .slidr-home .content p#depth {text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #C2C2C2, 0 0 30px #C2C2C2, 0 0 40px #88D065, 0 0 50px #919191, 0 0 75px #1A1A1A;font:40px 'ChunkFiveRegular';}
@@ -112,10 +112,6 @@ a.dataStructure:hover {text-decoration:underline}
 .slidr-miscellaneous .content p {color:#D7D7D7;font-size:15px;margin-bottom:25px;}
 .non-semantic-protector .top {background:url(../images/up-arrow-round-blue.png) no-repeat;width:53px;height:55px;float:right;}
 .non-semantic-protector .top:hover {background:url(../images/up-arrow-round-blue2.png) no-repeat;}
-.humor {float:left;width:45%;padding:20px;}
-.humor img {float:left;padding-right:20px;}
-.humor p {margin-top:10px;}
-.humor span {color:white;}
 #resume {width:100%;height:auto;font-size:17px;font-family: 'Open Sans Condensed', sans-serif;}
 #resume h3 {font-size:18px;font-weight:700;border-top:solid #FFF 1px;border-bottom:solid #FFF 1px;}
 .pdf_helper {text-align:left;font-size:20px;font-weight:600;margin-bottom:10px;}
@@ -130,6 +126,10 @@ a.dataStructure:hover {text-decoration:underline}
 .ribbon .ribbon-content:before,.ribbon .ribbon-content:after {content:"";position:absolute;display:block;bottom:-1em;border-color:#121212 transparent transparent;border-style:solid;}
 .ribbon .ribbon-content:before {left:0;border-width:1em 0 0 1em;}
 .ribbon .ribbon-content:after {right:0;border-width:1em 1em 0 0;}
+.humor {float:left;width:45%;padding:20px;}
+.humor img {float:left;padding-right:20px;}
+.humor p {margin-top:10px;}
+.humor span {color:white;}
 
 /* CONTACT */
 .contact_intro {background:url(../images/contact_intro.jpg) no-repeat;}
@@ -152,7 +152,6 @@ a.dataStructure:hover {text-decoration:underline}
 .boxShape {float:right;margin-left:20px;background:rgba(0,0,0,0.2);border:solid gray 2px;padding:10px;width:280px;}
 .boxShape .column_1 {clear:both;float:left;font-weight:bold;font-size:14px;width:30%;margin-top:8px;}
 .boxShape .column_2 {font-size:14px;float:left;margin-top:8px;margin-left:20px;text-align:left;}
-.aboutme #tableContent {background:rgba(0,0,0,0.2);width:200px;border:solid gray 2px;padding:30px;}
 .family {float:left;font-size:13px;text-align:center;margin-right:30px;margin-bottom:15px;border:solid gray 2px;padding-bottom:10px;}
 
 /* SLIDR */

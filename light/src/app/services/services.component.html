@@ -29,14 +29,18 @@
       <div class="flex flex-50-gt-sm animated hiding" data-animation="slideInLeft">
         <img src="assets/images/profile.png" class="me">
         <div class="desc">
-            I love to solve problems. At a young age, I had a candid characteristic to break things apart and put them back together. My curiosity in engineering and technology led me to my current position at the Raytheon Company as a software engineer on the PATRIOT system. This website was created out of my vast collection of photographs that I captured throughtout the years and my deep passion for coding. You will learn more about me and skillsets through my photographs, travels, and blogs. 
+          I love to solve problems. At a young age, I had a candid characteristic to break things apart and put them
+          back together. My curiosity in engineering and technology led me to pursue my passion in computer science and
+          software development. This website was created out of my vast collection of
+          photographs that I captured throughtout the years and my curiosity to try out Angular! You will learn more about me
+          and my skillsets through my photographs, travels, and blogs.
         </div>
       </div>
 
       <div class="flex flex-50-gt-sm bars-wrap">
         <div *ngFor="let skill of skills; let i = index" class="bar flex">
-          <div class="bar fill animated hiding" [style.width.%]="skill.percentage" 
-          data-animation="slideInLeft" [attr.data-delay]="i * 100">
+          <div class="bar fill animated hiding" [style.width.%]="skill.percentage" data-animation="slideInLeft"
+            [attr.data-delay]="i * 100">
             <div class="tag bold flex">{{skill.name}}</div>
           </div>
           <span>{{skill.percentage}}%</span>

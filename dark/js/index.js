@@ -1,13 +1,3 @@
-$("#introSlideshow > img:gt(0)").hide();
-setInterval(function () {
-    $('#introSlideshow > img:first')
-        .fadeOut(1000)
-        .next()
-        .fadeIn(1000)
-        .end()
-        .appendTo('#introSlideshow');
-}, 3000);
-
 $('#slider').nivoSlider({
     effect: 'random', // Specify sets like: 'fold,fade,sliceDown'
     slices: 15, // For slice animations
@@ -26,8 +16,46 @@ $('#slider').nivoSlider({
     randomStart: true, // Start on a random slide
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("body").fadeIn(2000);
+
+    var e = function (a, b) {
+        if (Array.prototype.indexOf) return a.indexOf(b);
+        if (a && a.length)
+            for (var c = 0, d = a.length; c < d; c++)
+                if (a[c] == b) return c;
+        return -1
+    }
+
+    var u = ["#home", "#photography", "#blog", "#coding", "#miscellaneous", "#contact", "#aboutme"],
+        q = function () {
+            var a = window.location.hash;
+            return 0 <= e(u, a) ? a.slice(1) : null
+        },
+
+        v = slidr.create("slidr", {
+            controls: "none",
+            timing: { 'cube': '1.0s ease-in' },
+            transition: 'cube',
+            fade: true,
+            keyboard: true,
+            touch: true,
+        }).start();
+
+    $(window).bind("hashchange",
+        function (a) {
+            if (a = q()) v.slide(a)
+        })
+
+    setInterval(function () {
+        $('#introSlideshow > img:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#introSlideshow');
+    }, 2000);
+
     $("#openAlbumTravel").pageslide({});
     $("#openAlbumProject").pageslide({
         direction: "left"
@@ -50,16 +78,16 @@ $(document).ready(function() {
         maxWidth: 950,
         type: 'iframe',
         autoCenter: true,
-        scrolling : 'yes',
+        scrolling: 'yes',
         width: '100%',
         height: '100%',
     });
 
-	$('pre code').each(function(i, block) {
-		hljs.highlightBlock(block);
-	});
-	
-    $("a.animateScroll").on('click', function(event) {
+    $('pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+    });
+
+    $("a.animateScroll").on('click', function (event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
             // Prevent default anchor click behavior
@@ -69,7 +97,7 @@ $(document).ready(function() {
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
                 scrollTop: $(this.hash).offset().top
-            }, 1000, function() {
+            }, 1000, function () {
 
             });
         } // End if
@@ -82,23 +110,20 @@ $(document).ready(function() {
     });
 
     // Coding page
-    $(function () {
-        $("#tabs").tabs();
-    });
+    $("#tabs").tabs();
+
     // Set active tab on the navigation menu
     $('ol.rtabs li a').click(function () {
         $('ol.rtabs li a').removeClass("activeTab");
         $(this).addClass("activeTab");
     });
-}); // ready
 
-$(function() {
     $(".draggable").draggable({
         cursor: "crosshair",
         containment: 'parent'
     });
-    google.setOnLoadCallback(function() {
-        $(".draggable").each(function() {
+    google.setOnLoadCallback(function () {
+        $(".draggable").each(function () {
             var tempVal = Math.round(Math.random());
             if (tempVal == 1) {
                 var rotDegrees = randomXToY(330, 360);
@@ -125,14 +150,7 @@ $(function() {
             return typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
         }
     });
-});
-
-function moveHash() {
-    if (!window.location.hash) {
-        window.location.hash = "home";
-        window.location.reload();
-    }
-}
+}); // ready
 
 function bgChange(image) {
     $('.layout').css('background', 'url(' + image + ') no-repeat');
@@ -141,21 +159,3 @@ function bgChange(image) {
 function bgNormal() {
     $('.layout').css('background', '');
 }
-
-$("#hideShowTable").click(function () {
-    $header = $(this);
-
-    // Get the next element
-    $content = $header.next();
-
-    // Open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-    $content.slideToggle(500, function () {
-        // Execute this after slideToggle is done
-        // Change text of header based on visibility of content div
-        $header.text(function () {
-            // Change text based on condition
-            return $content.is(":visible") ? "Table of Content - Hide" : "Table of Content - Show";
-        });
-    });
-
-});

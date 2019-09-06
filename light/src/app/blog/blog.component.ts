@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
 
   populateBlogs(): void {
 
-    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
       this.blogs.push({
         title: 'A quick study on Computer Vision',
         dest: 'Tracking and Spatial Pyramid Matching',
@@ -54,7 +54,7 @@ export class BlogComponent implements OnInit {
       text: 'China was a very interesting experience. I haven\'t gone abroad in over 6 years before this! Last time I traveled abroad was in 2011 to Germany and it felt like an eternity. China has a very rich history with many areas to explore.',
       post: 'china'
     });
-    
+
     this.blogs.push({
       title: 'One Big Chinatown, One Beautiful Skyline',
       dest: 'Hong Kong, China',
@@ -119,26 +119,12 @@ export class BlogComponent implements OnInit {
     });
 
     this.blogs.push({
-      title: 'America, Land of Freedom and Opportunity',
-      dest: 'United States of America',
-      text: 'I traveled with a photographer\'s mindset, and I always strive to get that "postcard" photo. One of the things I love to do when I travel is visit a gift shop to get inspirations',
-      post: 'usa'
-    });
-
-    this.blogs.push({
-      title: 'Imperial Sights, Coffee Houses',
-      dest: 'Vienna, Austria',
-      text: 'the country has a very nice policy regarding to unemployment. If you work for a company for more than 6 months, quit, and can’t find another job, the government gives you a fancy stipend',
-      post: 'vienna'
-    });
-
-    this.blogs.push({
       title: 'Visiting the Ghetto and Exploring Warsaw',
       dest: 'Warsaw, Poland',
       text: 'The Germans opened fire first and killed 15 Polish soldiers but the Polish retaliated and killed around a hundred Nazis. The following day we went to the Malbork',
       post: 'warsaw'
     });
- 
+
   }
 
 
