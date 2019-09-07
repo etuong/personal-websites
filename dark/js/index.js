@@ -30,6 +30,12 @@ $(document).ready(function () {
     var u = ["#home", "#photography", "#blog", "#coding", "#miscellaneous", "#contact", "#aboutme"],
         q = function () {
             var a = window.location.hash;
+            if (a === "#miscellaneous") {
+                $('body').css('overflow', 'visible');
+            }
+            else {
+                $('body').css('overflow', 'hidden ');
+            }
             return 0 <= e(u, a) ? a.slice(1) : null
         },
 
@@ -38,6 +44,7 @@ $(document).ready(function () {
             timing: { 'cube': '1.0s ease-in' },
             transition: 'cube',
             fade: true,
+            overflow: true,
             keyboard: true,
             touch: true,
         }).start();
