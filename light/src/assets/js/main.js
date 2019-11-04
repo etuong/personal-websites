@@ -135,6 +135,16 @@ $(document).ready(function () {
           .replace('$desc', 'Cappadocia is an area in Central Anatolia in Turkey best known for its unique moon-like landscape, underground cities, cave churches and houses carved in the rocks. Its valley, canyon, hills and unusual rock formation created as a result of the eroding rains and winds of thousands of years of the level, lava-covered plain located between the volcanic mountains. Staying in one of those cave hotels is a must! Make sure to get up super early to watch the hot air ballons over the sunrise!')
       },
       {
+        lat: 47.6062,
+        lon: -122.3321,
+        flag: 'usa.png',
+        title: 'Seattle, Washington, USA',
+        html: template.replace('$pic', 'seattle.jpg')
+          .replace('$title', 'Seattle, Washington, USA')
+          .replace('$bgColor', 'darkgreen')
+          .replace('$desc', 'Seattle is a very hip, artistic, and modern city with great prominence in technology. Summer is absolutely the best time to visit. There is a great varity of activities to do including eating and trying delicious food at the Pike Place market and observing the city on the Space Needle.')
+      },
+      {
         lat: 39.922478,
         lon: 116.443710,
         flag: 'china.png',
@@ -155,6 +165,16 @@ $(document).ready(function () {
           .replace('$desc', 'Berlin is the capital city of Germany and one of the 16 states of the Federal Republic of Germany. Berlin is known for many things, but during my visit, some of the things that stood out for me were its historical associations as the German capital and history, internationalism and tolerance, architecture and street art, and numerous museums, bars, and cafes. The reunification of the country after the fall of the Berlin Wall in 1989 restored classical and medieval buildings as well as introduced ultramodern architecture (Potsdamer Platz).')
       },
       {
+        lat: 34.0522,
+        lon: -118.2437,
+        flag: 'usa.png',
+        title: 'Los Angeles, California, USA',
+        html: template.replace('$pic', 'losangeles.jpg')
+          .replace('$title', 'Los Angeles, California, USA')
+          .replace('$bgColor', 'green')
+          .replace('$desc', 'Aah the city of angels! My beautiful hometown offers essentially everything from sun-bathing beaches to grand mountainous hikes. There is just about every ethnicity and nationality here and there are enclaves for everyone including Little Italy and Chinatown. Hollywood and Santa Monica beach are a must visit and make sure to check out some rooftop bars in downtown!')
+      },
+      {
         lat: 13.3550,
         lon: 103.8552,
         flag: 'cambodia.png',
@@ -163,7 +183,7 @@ $(document).ready(function () {
           .replace('$title', 'Siem Reap, Cambodia')
           .replace('$bgColor', '#ba695e')
           .replace('$desc', 'The town Siem Reap (literally means "Siam Defeated") in northern Cambodia is the primary gateway for the Angkor Archaeological Park. The park stretches over some 400 square kilometers including forested area and contains the magnificent remains of several capitals of the Khmer Empire of the 9th to the 15th centuries. The passes are for one day, three days, or 7 days. I highly recommend exploring at least 3 days as one day is simply not enough and 7 days will make you temple sick. Also, be prepared to try some of the most delicious food in the world!')
-      },
+      },     
       {
         lat: 30.5728,
         lon: 104.0668,
@@ -188,11 +208,21 @@ $(document).ready(function () {
         lat: 41.8781,
         lon: -87.6298,
         flag: 'usa.png',
-        title: 'Chicago, USA',
+        title: 'Chicago, Illinois, USA',
         html: template.replace('$pic', 'chicago.jpg')
-          .replace('$title', 'Chicago, USA')
+          .replace('$title', 'Chicago, Illinois, USA')
           .replace('$bgColor', '#76928d')
           .replace('$desc', 'Chicago is a vibrant metropolitan city and home of the blues and jazz. It is arguably where the modern architecture movement started. Chicago is known for many things, including its picturesque skyline, theaters, and world-class museums. The city is called the "White City" because of its restoration after the Chicago Fire in the late 19th century and also the "Windy City" because of its strong winds in the winter. Make sure to check out the Millenium Park and Cloud Gate!')
+      },
+      {
+        lat: 25.2048,
+        lon: 55.2708,
+        flag: 'uae.png',
+        title: 'Dubai, United Arab Emirates',
+        html: template.replace('$pic', 'dubai.jpg')
+          .replace('$title', 'Dubai, United Arab Emirates')
+          .replace('$bgColor', '#6b9596')
+          .replace('$desc', 'I love Dubai! is the largest and most populous city in the United Arab Emirates (UAE) and the capital of the Emirate of Dubai. UAE is a sovereign constitutional monarchy that is actually a federation made up of seven emirates. My impression is that Dubai is very wealthy due to its rich oil resources, and what do you do when you have all this money? Well, you can build the biggest water fountain, you can build the biggest structure, you can build the biggest mall, or hey may you can build an artificial island? Well, in Dubai you can have all these! There is just a little bit of everything for everyone. Dubai is definitely one of my top 10 destinations to visit!')
       },
       {
         lat: 38.9072,
@@ -203,6 +233,16 @@ $(document).ready(function () {
           .replace('$title', 'District of Columbia, USA')
           .replace('$bgColor', '#e69900')
           .replace('$desc', 'Washington DC is the capital of the United States and the seat of its three branches of government, has a collection of free, public museums unparalleled in size and scope throughout the history of mankind, and the lion\'s share of the nation\'s most treasured monuments and memorials. The bulk of the main attractions is at the National Mall and the Smithsonian is a can\'t-miss. District of Columbia is not a city or state, rather it\'s an artificial body born of politics, by politics, and for politics.')
+      },
+      {
+        lat: 32.7157,
+        lon: -117.1611,
+        flag: 'usa.png',
+        title: 'San Diego, California, USA',
+        html: template.replace('$pic', 'sandiego.jpg')
+          .replace('$title', 'San Diego, California, USA')
+          .replace('$bgColor', '#ada39a')
+          .replace('$desc', 'When people think of San Diego, words and descriptions like beautiful weather and sunny beaches come in mind. Indeed, San Diego is famous for its all-round weather in the 60s and friendly people. San Diego County is made up of 18 incorporate cities and towns along with other charismatic neighborhoods and communities, such as Carlsbad, Coronado, and La Jolla. Because it houses University of California, San Diego, the city is a major hub for biotechnology companies.')
       },
       {
         lat: 43.769562,
@@ -243,6 +283,16 @@ $(document).ready(function () {
           .replace('$title', 'Hong Kong, China')
           .replace('$bgColor', '#85772d')
           .replace('$desc', 'This former British colony is one of the major tourism destinations in China. Hong Kong has a different political system from mainland China under the principle of "one country, two systems." It has the longest life expectancy of any country in the world from 2012 and one of the highest per capita incomes in the world. I recommend a visit of mininum 4 days as Hong Kong has a lot to offer including the Lantau island where the Giant Buddha lives and Victoria Peak where you can see the amazing skyline.')
+      },
+      {
+        lat: 32.7767,
+        lon: -96.7970,
+        flag: 'usa.png',
+        title: 'Dallas, Texas, USA',
+        html: template.replace('$pic', 'dallas.jpg')
+          .replace('$title', 'Dallas, Texas, USA')
+          .replace('$bgColor', '#274c5d')
+          .replace('$desc', 'Dallas is the ninth-largest city and part of the fourth-largest metropolitan area in the nation. Did you know that the frozen margarita machine was invented in Dallas. What is really cool about this metropolitan is that it also includes Fort Worth and Arlington, making the area more touristy. Many companies are headquarted around here such as American Airlines and Exxon Mobil.')
       },
       {
         lat: 55.6761,
@@ -318,9 +368,9 @@ $(document).ready(function () {
         lat: 40.7128,
         lon: -74.0060,
         flag: 'usa.png',
-        title: 'New York, USA',
+        title: 'New York City, New York, USA',
         html: template.replace('$pic', 'newyork.jpg')
-          .replace('$title', 'New York, USA')
+          .replace('$title', 'New York City, New York, USA')
           .replace('$bgColor', '#3c4822')
           .replace('$desc', 'New York (aka the Big Apple) is the most populous city in America. The diversity here is literally the interpretation of the melting pot. NYC is also home to one of the most famous skylines in the world, and possibly the best view is from the Empire State Building. The city has 5 boroughs and its gross product makes up 9 percent of the American economy. While there, make sure to eat the street food, check out the informative and comprehensive museums, and of course spend sparely in Times Square!')
       },
@@ -355,6 +405,16 @@ $(document).ready(function () {
           .replace('$desc', 'Rome, or the \'Eternal City\', is the capital and largest city of Italy. It is famous for the Roman Empire, Vatican City, and Trevi Fountains among many more things. Rome is one of the world\'s most visited, famous, influential and beautiful capitals because of its romantic atmosphere, ornate statues and graceful fountains. and millenium-old churches and basilicas. There are so many things to do in this city that never sleeps such as shopping or simply enjoying a shot of expresso! The architecture also bears a high contrast from pompously huge majestic palaces surrounded by tiny alleyways to medival streets with lushful trees.')
       },
       {
+        lat: 25.2854,
+        lon: 51.5310,
+        flag: 'qatar.png',
+        title: 'Doha, Qatar',
+        html: template.replace('$pic', 'doha.jpg')
+          .replace('$title', 'Doha, Qatar')
+          .replace('$bgColor', '#6b9596')
+          .replace('$desc', 'Doha is the capital and most populous city of the State of Qatar. To me, it is a more quiet destination in the middle east but still has a lot to offer nevertheless. Being in a desert with an extremely hot temperature especially in the summer, most people would opt to chill in the malls. The city, like most other cool cities, have a section called Old Town where it houses historical architecture and landscape, and other section that is newer with state of the art skyline and buildings. Doha is also the educational center of the country and contains the highest preponderance of schools and colleges including a satellite campus to my alma mater, Carnegie Mellon!')
+      },
+      {
         lat: 10.8231,
         lon: 106.6297,
         flag: 'vietnam.png',
@@ -378,9 +438,9 @@ $(document).ready(function () {
         lat: 37.7749,
         lon: -122.4194,
         flag: 'usa.png',
-        title: 'San Francisco, USA',
+        title: 'San Francisco, California, USA',
         html: template.replace('$pic', 'sf.jpg')
-          .replace('$title', 'San Francisco, USA')
+          .replace('$title', 'San Francisco, California, USA')
           .replace('$bgColor', '#545456')
           .replace('$desc', 'San Francisco is a major city in California known for its hilly terrain, liberal community, a world famous bridge, and great diversity. After WWII, San Francisco, being the heart of the Bay area, also became the centerpiece for the gay men and hippie movement. The metro system (BART) is very efficient and there are so many things to do such as enjoying a beautiful walk across the Golden Gate Bridge, eating great seafood at the Fisherman\'s Wharf, and hitching a ride on a cable car! San Francisco is definitely a top tourist spot on my list!')
       },
@@ -435,6 +495,16 @@ $(document).ready(function () {
           .replace('$desc', 'Phuket is a tourist island in Thailand. It was on one of the major trading routes between India and China in the early days but now enjoys great popularity as a travel destination. Many great films including Leonardo Dicaprio\'s The Beach and James Bond movie were filmed here. Snorkeling and a day trip to an exclusive island is highly recommended. ')
       },
       {
+        lat: 42.3314,
+        lon: -83.0458,
+        flag: 'usa.png',
+        title: 'Detroit, Michigan, USA',
+        html: template.replace('$pic', 'detroit.jpg')
+          .replace('$title', 'Detroit, Michigan, USA')
+          .replace('$bgColor', '#545456')
+          .replace('$desc', 'Detroit, in my opinion, is very underrated. I think this city is a gem to the nation. It has been through a lot but still thriving in entertainment and tourism. Motown music and techno were both invented in Detroit. The city is also home to one of the biggest African American population. If you are into automotive, Detroit is a must visit. The Belle Isle park and Eastern market were my two favorite places to go in Detroit!')
+      },
+      {
         lat: 30.1534,
         lon: 88.7879,
         flag: 'china.png',
@@ -473,7 +543,17 @@ $(document).ready(function () {
           .replace('$title', 'Warsaw, Poland')
           .replace('$bgColor', '#baa884')
           .replace('$desc', 'Warsaw is the largest and capital city of Poland. It was completely destroyed by the Nazis during World War II, but restored itself from the ashes to its historical and classical style. Because of that, along with its survival from many wars throughout history, it is known as the "Phoenix City." Some touristy things to do here are to visit the Palace of Culture and Science (a "gift" from the Soviet Union) and learn about Frederic Chopin through the numerous museums the city has to offer for its famous composer.')
-      },           
+      },        
+      {
+        lat: 44.4280,
+        lon: -110.5885,
+        flag: 'usa.png',
+        title: 'Yellowstone, Wyoming, USA',
+        html: template.replace('$pic', 'yellowstone.jpg')
+          .replace('$title', 'Yellowstone, Wyoming, USA')
+          .replace('$bgColor', '#bcb895')
+          .replace('$desc', 'Yellowstone National Park is an American national park located mostly in Wyoming. An interesting fact is that Yellowstone was the first national park in the U.S. and is also widely held to be the first national park in the world. The park is known for its wildlife and its many geothermal features, especially Old Faithful geyser, one of its most popular features. If you are a national forest  or just an avid hiker, you HAVE to check out this wonder of the world! ')
+      },   
       {
         lat: -16.9186,
         lon: 145.7781,
