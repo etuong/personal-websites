@@ -10,7 +10,7 @@
     <!-- Grid row -->
     <div class="row">
       <!-- Grid column -->
-      <div class="col-md-12 justify-content-center mb-5 animated hiding" data-animation="zoomIn" >
+      <div class="col-md-12 justify-content-center mb-5 animated hiding" data-animation="zoomIn">
         <button type="button" class="btn btn-outline-black" data-filter="*">All</button>
         <button type="button" class="btn btn-outline-black" data-filter=".hdr">HDR</button>
         <button type="button" class="btn btn-outline-black" data-filter=".ps">Photoshop</button>
@@ -24,7 +24,8 @@
 
     <!-- Grid row -->
     <div class="row no-gutters text-center animated hiding" id="gallery" data-animation="fadeIn" data-delay="400">
-      <div *ngFor="let galleryItem of galleryItems" attr.class="col-lg-3 col-md-4 col-sm-6 mix {{galleryItem.filterGroup}}">
+      <div *ngFor="let galleryItem of galleryItems"
+        attr.class="col-lg-3 col-md-4 col-sm-6 mix {{galleryItem.filterGroup}}">
         <a class="d-block h-100" attr.data-fancybox="{{galleryItem.filterGroup}}" attr.href="{{galleryItem.enlarge}}">
           <img class="img-fluid img-thumbnail" attr.src="{{galleryItem.thumb}}" alt="">
         </a>

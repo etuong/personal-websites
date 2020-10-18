@@ -21,7 +21,7 @@
 
     <!--Controls-->
     <ol class="carousel-indicators">
-        <li *ngFor="let testimonial of testimonials; let i = index" [class.active]="testimonial==testimonials[0]"
+      <li *ngFor="let testimonial of testimonials; let i = index" [class.active]="testimonial==testimonials[0]"
         data-target="#carousel-testimonial" attr.data-slide-to="{{i}}"></li>
     </ol>
     <!--Controls-->

@@ -8,22 +8,23 @@
       </div>
     </div>
 
-    <div class="main-carousel" data-flickity='{ "cellAlign":"center", "contain":"true", "wrapAround":"true", "autoPlay":"true"}'>
+    <div class="main-carousel"
+      data-flickity='{ "cellAlign":"center", "contain":"true", "wrapAround":"true", "autoPlay":"true"}'>
 
-        <div *ngFor="let blog of blogs" class="carousel-cell">
-            <div class="card mb-2">
-              <img class="card-img-top" src="assets/posts/img/{{blog.post}}_400.jpg">
-              <div class="card-body">
-                <h4 class="card-title">{{blog.title}}</h4>
-                <p>{{blog.dest}}</p>
-                <p class="card-text">{{blog.text | truncate}}...</p>
-                <a class="btn btn-success btn-xl text-uppercase blogButton" data-iframe="true" 
-                attr.data-src="assets/posts/{{blog.post}}.html">Read more</a>
-              </div>
-            </div>
+      <div *ngFor="let blog of blogs" class="carousel-cell">
+        <div class="card mb-2">
+          <img class="card-img-top" src="assets/posts/img/{{blog.post}}_400.jpg">
+          <div class="card-body">
+            <h4 class="card-title">{{blog.title}}</h4>
+            <p>{{blog.dest}}</p>
+            <p class="card-text">{{blog.text | truncate}}...</p>
+            <a class="btn btn-success btn-xl text-uppercase blogButton" data-iframe="true"
+              attr.data-src="assets/posts/{{blog.post}}.html">Read more</a>
           </div>
-
+        </div>
       </div>
+
+    </div>
 
   </div>
 

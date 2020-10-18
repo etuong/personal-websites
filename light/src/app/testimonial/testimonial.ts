@@ -1,5 +1,5 @@
 export class Testimonial {
-    message : string;
-    person : string;
-    title : string;
+  message: string;
+  person: string;
+  title: string;
 }

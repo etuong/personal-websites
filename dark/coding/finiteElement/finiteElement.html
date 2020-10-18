@@ -14,18 +14,18 @@
 
     <h2 class="handcursor" id="fem1-title">Linear & Quadratic Interpolation of Continuous Function</h2>
     <div class="femSwitchGroup" id="fem1">
-        <h2>§ Methods of Weighted Residual to Obtain Governing Weak Form</h2>
+        <h2>ï¿½ Methods of Weighted Residual to Obtain Governing Weak Form</h2>
         Consider: $-(k\hat{u}')'+b\hat{u}'+c\hat{u}=f$ <br /> Residual: $r(\hat{u})=-(k\hat{u}')'+b\hat{u}'+c\hat{u}-f$<br /> Multiply by test function v such that v and u are in the same space (thus v also satisfies EBC) and integrate over domain: $$\int_0^L r(\hat{u})vdx = 0 \rightarrow \int_0^L [-(k\hat{u}')'+b\hat{u}'+c\hat{u}-f]vdx=0 $$ Suppose v is sufficiently smooth so that we can integrate the 1st term by parts: $$\int_0^L -(k\hat{u}')'vdx=-(k\hat{u}')v|^L_0 + \int_0^Lk\hat{u}'v'dx$$ Suppose the initial boundary is zero, then u(0)=0, it follows that that v at x=0 must also be 0 and we have $$\int_0^L k\hat{u}'v'dx + \int_0^Lc\hat{u}vdx - \int_0^Lfvdx - T_vv(L)=0$$
 
-        <h2>§ Numerical Approximation: Galerkin Method in Weak Form</h2>
+        <h2>ï¿½ Numerical Approximation: Galerkin Method in Weak Form</h2>
         Let $\hat{u} \sim u_N = \sum_{k=1}^N \alpha_k \phi_k(x)$, then $\hat{u} \sim u_N = \sum_{i=1}^N \beta_i \phi_i(x)$ $$\int_0^L k \left( \sum_{k=1}^N \alpha_k \phi_k'(x) \right)\left( \sum_{i=1}^N \beta_i \phi_i'(x) \right)dx + \int_0^L c \left( \sum_{k=1}^N \alpha_k \phi_k(x) \right)\left( \sum_{i=1}^N \beta_i \phi_i(x) \right)dx - \int_0^L f \left( \sum_{i=1}^N \beta_i \phi_i(x) \right)dx-T_v \left( \sum_{i=1}^N \beta_i \phi_i(L) \right)dx$$ Let $$K_{kj}=\int_0^L k(x)\phi_j'(x)\phi_k'(x)dx=K_{jk}$$ $$C_{kj}=\int_0^Lc(x)\phi_j(x)\phi_k(x)dx$$ $$f_k=\int_0^L f\phi_k(x)dx+\phi_k(L)$$ The final equation to solve for is $$\sum_i B_i \left\{ \sum_k (K_{jk}+C_{jk})a_k -f_i \right\}=0 \rightarrow \left\{ \sum_k (K_{jk}+C_{jk})a_k -f_i \right\}=0 \forall B_i, \quad i=1, \dotsc ,n$$ The goal is to solve for $\alpha_k$ in $D\alpha=f$ where $D_{jk}=K_{jk}+C_{jk}$
 
-        <h2>§ Selecting Appropriate Basic Functions</h2>
+        <h2>ï¿½ Selecting Appropriate Basic Functions</h2>
         Consider the following linear basis functions<br />
         <img src="images/Linear.jpg" alt="" /><br /> Trial functions: $U_n(x)=\sum_{i=1}^n \alpha_i \phi_i(x)$<br /> Test functions: $V_n(x)=\sum_{i=1}^n \beta_i X_i(x)$<br /> How do we choose a $\phi(x)$ such that $\hat{u}$ satisfies the boundary conditions?<br /><br /> If we consider using quadratic basis<br />
         <img src="images/Basic.jpg" alt="" width="456" /><br /> Local Functions: $$\left\{ \begin{array}{c} \phi_A^e(\xi)=-\frac{1}{2}(\xi)(1-\xi)\\ \phi_B^e(\xi)=\frac{1}{2}(\xi)(1+\xi)\\ \phi_C^e(\xi)=(1-xi)(1+\xi)\\ \end{array} \right.$$ If we notice that $x=x_c+\xi \frac{h}{2} \rightarrow \xi=\frac{2(x-x_c)}{2}$ $$\left\{ \begin{array}{c} \phi_A^e(\xi)=\frac{-x(x_C)}{h} \frac{h-2x+2x_C)}{h}\\ \phi_B^e(\xi)=\frac{x(x_C)}{h} \frac{h+2x-2x_C)}{h}\\ \phi_C^e(\xi)=\frac{h-2x+2x_C}{h} \frac{h+2x+2x_C)}{h}\\ \end{array} \right. \to \left\{ \begin{array}{c} \phi_A^e(\xi)=\frac{(x_C-x)(x_B-x)}{(x_C-x_A)(x_B-x_A)}\\ \phi_B^e(\xi)=\frac{(x_A-x)(x_B-x)}{(x_A-x_C)(x_B-x-C)}\\ \phi_C^e(\xi)=\frac{(x_A-x)(x_C-x)}{(x_A-x_B)(x_C-x_B)}\\ \end{array} \right.$$ Procedure: Compute $K_{kj}=\int_0^1 \bar{x}^{1/2}\phi_j'\bar{x}\phi_j'\bar{x}d\bar{x}$ after normalization $$\left[ \begin{array}{ccc} \int_0^h \sqrt{\bar{x}}\phi_1'(\bar{x})\phi_1'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_1'(\bar{x})\phi_2'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_1'(\bar{x})\phi_3'(\bar{x})d\bar{x} \\ \int_0^h \sqrt{\bar{x}}\phi_2'(\bar{x})\phi_1'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_2'(\bar{x})\phi_2'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_2'(\bar{x})\phi_3'(\bar{x})d\bar{x} \\ \int_0^h \sqrt{\bar{x}}\phi_3'(\bar{x})\phi_1'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_3'(\bar{x})\phi_2'(\bar{x})d\bar{x} & \int_0^h \sqrt{\bar{x}}\phi_3'(\bar{x})\phi_3'(\bar{x})d\bar{x} \\ \end{array} \right]$$ Compute $C_{kj}=2\int_0^1\phi_j(\bar{x})\phi_k(\bar{x})d\bar{x}$ $$ \left [ \begin{array}{ccc} \int_0^h \phi_1(\bar{x})\phi_1(\bar{x})d\bar{x} &\int_0^h \phi_1(\bar{x})\phi_2(\bar{x})d\bar{x} &\int_0^h \phi_1(\bar{x})\phi_3(\bar{x})d\bar{x} \\ \int_0^h \phi_2(\bar{x})\phi_1(\bar{x})d\bar{x} &\int_0^h \phi_2(\bar{x})\phi_2(\bar{x})d\bar{x} &\int_0^h \phi_2(\bar{x})\phi_3(\bar{x})d\bar{x} \\ \int_0^h \phi_3(\bar{x})\phi_3(\bar{x})d\bar{x} &\int_0^h \phi_3(\bar{x})\phi_2(\bar{x})d\bar{x} &\int_0^h \phi_3(\bar{x})\phi_3(\bar{x})d\bar{x} \\ \end{array} \right] $$ Solve for $\alpha_k$ in $(K_{kj}+C_{kj})\alpha_k = f_k \to \alpha_k=(K_{kj}+C_{kj})^{-1}f_k$ Approximated Solution: $\hat{u} \sim u_N=\sum_{k=1}^N \alpha_k(\bar{x})$
 
-        <h2>§ Discussion: </h2>
+        <h2>ï¿½ Discussion: </h2>
         <ul>
             <li>Approximated solution using quadratic basic function converges to the analytical solution quicker than linear functions.</li>
             <li>We generally work with the weak form to minimize the residual</li>
@@ -43,7 +43,7 @@
         </p><br />
 
         <div id="procedure">
-            <h2> § Procedure</h2>
+            <h2> ï¿½ Procedure</h2>
             The following demonstrates the procedure in calculating the stiffness matrix and loading vector of the elements. <br />
 
             <b>1</b>
@@ -75,7 +75,7 @@
             <br />
         </div>
 
-        <h2>§ Numerical Integration </h2>
+        <h2>ï¿½ Numerical Integration </h2>
         For the integration, we use numerical method to determine the weights of the Gaussian Quadrature. <br /> $$\int_{-1}^1 f(x)dx=\sum_{i=1}^nw_if(t_i)$$ $$(n+1)L_{n+1}(t)-(2n+1)tL_n(t)+nL_{n-1}(t)=0, L_0(t)=1, L_1(t)=t$$ $$ L_{n+1}(t)=\frac{(2n+1)tL_n(t)-nL_{n-1}(t)}{n+1} $$ For all n values between 2 and 7, we have the following table
         <table>
             <tr>
@@ -118,10 +118,10 @@
             <img src="images/6.jpg" width="250" alt="" /><br /> Suppose $f(t)=t^k$ where $k=0,1,\ldots n$ $$\int_{-1}^1 f(t)dt = \int_{-1}^1 t^kdt = \frac{1-(-1)^{k+1}}{k+1} = \sum_{i=1}^n w_if(t_i)$$ Thus the integration weights can be determined by \begin{align}w_1t_1^k+\dots+w_nt_n^k=0 \qquad for \; k=1,3,\dots,2n-1\\ w_1t_1^k+\dots+w_nt_n^k=\frac{2}{k+1} \qquad for \; k=0,2,\dots,2n-2\end{align}
         </div>
 
-        <h2>§ Torsional Properties</h2>
+        <h2>ï¿½ Torsional Properties</h2>
         Physical quantities of interest, such as shear stresses and the relationship between the twisting moment, or torque, T, and the angle of twist $\theta$, per unit length of the shaft, can be determined as follows, once the potential function u is known. $$T =2G\theta \int_\Omega ud\Omega$$ The shear stresses on the elliptical cross-section are given by the following expressions: $$\sigma_{xz}=2G\theta \frac{\partial u}{\partial y}, \; \sigma_{yz}=-2G\theta \frac{\partial u}{\partial x}$$ The stress function may be written as $$\phi=B\lbrace(\frac{x}{a})^2+(\frac{y}{b})^2-1)\rbrace$$ But since $$\frac{\partial^2 \phi}{\partial x^2}+\frac{\partial^2 \phi}{\partial y^2}=-2G\theta$$ We get that $$B=-\frac{a^2b^2G\theta}{a^2+b^2}$$ $$ \sigma_{xz}=\frac{\partial \phi}{\partial y}=\frac{2By}{b^2}\quad \sigma_{yz}=-\frac{\partial \phi}{\partial x}=-\frac{2Bx}{a^2} $$ $$ T =2G\theta \int_\Omega ud\Omega=-\pi B ab $$ We can also verfiy that $$\phi=B\lbrace(\frac{x}{a})^2+(\frac{y}{b})^2-1)\rbrace=\phi=-\frac{a^2b^2G\theta}{a^2+b^2}\lbrace(\frac{x}{a})^2+(\frac{y}{b})^2-1)\rbrace$$
 
-        <h2>§ Procedure in Calculating Torsional Rigidity</h2>
+        <h2>ï¿½ Procedure in Calculating Torsional Rigidity</h2>
         $$u_h^e=\sum_{j=1}^{N_e}u_j^e \Phi_j^e$$ $$T =2G\theta \int_\Omega u_h^e d\Omega$$
         <ol>
             <li>With $u_h^e$ from part (i), multiply this with $\Phi_j$ for quadrilateral and triangular elements from page 198 and 204, respectively. You could ignore the nodes on boundary since it will be zero. For simplicity, consider working with one quadrant.</li>
@@ -132,7 +132,7 @@
             <li>Make sure to add node 1 three times since it's shared by all quadrants.</li>
         </ol>
 
-        <h2>§ Discussion: </h2>
+        <h2>ï¿½ Discussion: </h2>
         <ul>
             <li>Maximum shear stress occurs at the extreme values, namely at a and b (as it approaches the boundary). Furthermore, from Figure 9, we see that greater max stress occurs at the end of the minor axis of the ellipse</li>
             <li>Stress along the two axes of the centerlines is symmetrical due to the geometric symmetry of the membrane. This is expected since the heaviest concentration is the middle and distributed evenly across the membrane.</li>
@@ -141,33 +141,33 @@
 
     <h2 class="handcursor" id="fem3-title">Stress Analysis on Rectangular Membrane</h2>
     <div class="femSwitchGroup" id="fem3">
-        <h2>§ Derivation of Matrices</h2>
+        <h2>ï¿½ Derivation of Matrices</h2>
         Evaluations of $K_{ij}$<br /> $$K_{ij}^e=\int_{\Omega_e} k \left[\frac{\partial \phi_i}{\partial x} \frac{\partial \phi_y}{\partial x}+\frac{\partial \phi_i}{\partial y} \frac{\partial \phi_y}{\partial y} \right]$$ For rectangular elements $$\phi_1(x,y)=\frac{(x-a)(y-b)}{ab}$$ $$\phi_2(x,y)=\frac{-x(y-b)}{ab}$$ $$\phi_3(x,y)=\frac{xy}{ab}$$ $$\phi_4(x,y)=\frac{-(x-a)y}{ab}$$ Evaluations of $f_i$<br /> $$f_i^e=\int_{\Omega_e} f\phi_idxdy=\frac{1}{2A_e}\int_{\Omega_e}f(x,y)(\alpha_i +\beta_ix+\gamma_iy)dxdy$$ From the Law of Conservation Energy, the strain and potential energy must be equal and opposite from each other <br /> $S=-W=\frac{1}{2}u^{h^T} ku^h$
 
-        <h2>§ Sample Output</h2>
+        <h2>ï¿½ Sample Output</h2>
         <img src="images/Dome.jpg" alt="" /><br /> For a fine mesh, students should see the greater yield of higher stress distribution from the centroid of the membrane. <br /> Hint: Play with the mesh size on the element slider of the GUI. What would happen if there was a slit (cut) on the membrane?
 
 
-        <h2>§ Discussion: </h2>
+        <h2>ï¿½ Discussion: </h2>
         <ul>
             <li>The 4 by 4 matrix elementary stiffness matrix is the same for any given n.</li>
             <li>Stress deflection along the two axes of the centerlines is symmetrical due to the geometric symmetry of the membrane</li>
             <li>Introduction of a slit on any plane causes an uneven symmetry about both axes</li>
-            <li>Strain and potential energy derivation is consistent with the law of conservation of energy. Membrane is able to “store” more energy as we refine better meshes</li>
+            <li>Strain and potential energy derivation is consistent with the law of conservation of energy. Membrane is able to ï¿½storeï¿½ more energy as we refine better meshes</li>
             <li>Suppose a slit cut is on the left of the membrane, because the distribution of energy originates from the center of the membrane, one can presume that the stress on the right is always greater than the left.
         </ul>
     </div>
 
     <h2 class="handcursor" id="fem4-title">Thermal Analysis on Triangular Membrane</h2>
     <div class="femSwitchGroup" id="fem4">
-        <h2>§ Linear Triangular Elements</h2>
+        <h2>ï¿½ Linear Triangular Elements</h2>
         $$u^h(x,y)=a+bx+ct$$ $$\phi_i(x,y)=\frac{1}{2A_e}[\alpha_i +\beta_ix+\gamma_iy]$$ where $\alpha_i=x_jy_k-x_ky_j$
         <br /> $\beta_i=y_i-y_k$
         <br /> $\gamma_i=x_k-x_j$
         <br /> $A_e=\frac{\alpha}{2}$
         <br /><br />
 
-        <h2>§ Derivation of Matrices</h2>
+        <h2>ï¿½ Derivation of Matrices</h2>
         Evaluations of $K_{ij}$<br /> $$K_{ij}^e=\int_{\Omega_e} k \left[\frac{\partial \phi_i}{\partial x} \frac{\partial \phi_y}{\partial x}+\frac{\partial \phi_i}{\partial y} \frac{\partial \phi_y}{\partial y} \right]$$ since
         <table>
             <tr>
@@ -179,21 +179,21 @@
         </table>
         We could rewrite $K_{ij}$ as <br /> $$K_{ij}^e=\int_{\Omega_e} k \left[\frac{\beta_i}{2A_e} \frac{\beta_j}{2A_e} + \frac{\gamma_i}{2A_e} \frac{\gamma_j}{2A_e} \right]$$ Suppose k was 1 for simplicity, we then have <br /> $$K_{ij}^e=\frac{1}{2A_e \times 2A_e}(\beta_i \beta_j + \gamma_i \gamma_j)\int_{\Omega_e} dxdy= \frac{1}{4A_e}(\beta_i \beta_j + \gamma_i \gamma_j)$$ Evaluations of $f_i$<br /> $$f_i^e=\int_{\Omega_e} f\phi_idxdy=\frac{1}{2A_e}\int_{\Omega_e}f(x,y)(\alpha_i +\beta_ix+\gamma_iy)dxdy$$ Again, to simplify the concepts for the GUI implementation, we set f=1 to get <br /> $f_i^e=\frac{A_e}{3}$
 
-        <h2>§ Potential Strain Energy and Error Analysis</h2>
+        <h2>ï¿½ Potential Strain Energy and Error Analysis</h2>
         From the Law of Conservation Energy, the strain and potential energy must be equal and opposite from each other <br /> $S=-W=\frac{1}{2}u^{h^T} ku^h$ The error computation is derived using the triangle inequality $$||u^h-u^{h/2}||=||u-u^{h/2}||+||-u^h+u^h|| \leq ||u-u^{h/2}||+||u^h-u^h||$$ The energy norm is $||u^h-u^{h/2}\leq ch^{k+1}||$ in the order of 2 <br />
 
-        <h2>§ Discussion: </h2>
+        <h2>ï¿½ Discussion: </h2>
         <ul>
             <li>The 3 by 3 matrix elementary stiffness matrix is the same for both upright and inverted triangle (normal and upside down triangle) for any given n.</li>
             <li>Thermal heat from a vertex to the middle of the opposite end looks the same for any vertex due to the geometric symmetry of the membrane.</li>
             <li>The contour plot of the membrane should look like a dome instead of a volcano. As we refine the meshes even more, we are more likely to detect the center node that all the lines from the vertex to the opposite end will intersect, and that node will have most concentrated thermal.</li>
-            <li>Membrane is able to “store” more energy as we refine better meshes.</li>
+            <li>Membrane is able to ï¿½storeï¿½ more energy as we refine better meshes.</li>
         </ul>
     </div>
 
     <h2 class="handcursor" id="fem5-title">Steady-state Heat Transfer Using Tri-Quadratic Hexahedral Finite Element</h2>
     <div class="femSwitchGroup" id="fem5">
-        The 27-node hexahedron is the analog of the 8-node “serendipity” quadrilateral <br /> For example, the general formulas for the midside nodes are $$N_j=\frac{1}{4}(1-\xi^2)(1+\eta_j\eta)(1+\varsigma_j\varsigma)$$ $$N_j=\frac{1}{4}(1+\xi_j\xi)(1-\eta^2)(1+\varsigma_j\varsigma)$$ $$N_j=\frac{1}{4}(1+\xi_j\xi)(1+\eta_j\eta)(1-\varsigma^2)$$ Hexahedral element with tri-quadratic approximation functions <br /> $N_1=\frac{1}{8}(1-\xi)(1-\eta)(1-\varsigma)$ <br /> $N_2=\frac{1}{8}(1+\xi)(1-\eta)(1-\varsigma)$ <br /> $N_3=\frac{1}{8}(1+\xi)(1+\eta)(1-\varsigma)$ <br /> $N_4=\frac{1}{8}(1-\xi)(1+\eta)(1-\varsigma$ <br /> $N_5=\frac{1}{8}(1-\xi)(1-\eta)(1+\varsigma)$ <br /> $N_6=\frac{1}{8}(1+\xi)(1-\eta)(1+\varsigma)$ <br /> $N_7=\frac{1}{8}(1+\xi)(1+\eta)(1+\varsigma)$ <br /> $N_8=\frac{1}{8}(1-\xi)(1+\eta)(1+\varsigma)$ <br /> $N_9=\frac{1}{4}(1-\xi^2)(1-\eta)(1-\varsigma)$ <br /> $N_{10}=\frac{1}{4}(1+\xi)(1-\eta^2)(1-\varsigma)$ <br /> $N_{11}=\frac{1}{4}(1-\xi^2)(1+\eta)(1-\varsigma)$ <br /> $N_{12}=\frac{1}{4}(1-\xi)(1-\eta^2)(1-\varsigma)$ <br /> $N_{13}=\frac{1}{4}(1+\xi)(1-\eta)(1+\varsigma^2)$ <br /> $N_{14}=\frac{1}{4}(1+\xi)(1-\eta^2)(1+\varsigma^2)$
+        The 27-node hexahedron is the analog of the 8-node ï¿½serendipityï¿½ quadrilateral <br /> For example, the general formulas for the midside nodes are $$N_j=\frac{1}{4}(1-\xi^2)(1+\eta_j\eta)(1+\varsigma_j\varsigma)$$ $$N_j=\frac{1}{4}(1+\xi_j\xi)(1-\eta^2)(1+\varsigma_j\varsigma)$$ $$N_j=\frac{1}{4}(1+\xi_j\xi)(1+\eta_j\eta)(1-\varsigma^2)$$ Hexahedral element with tri-quadratic approximation functions <br /> $N_1=\frac{1}{8}(1-\xi)(1-\eta)(1-\varsigma)$ <br /> $N_2=\frac{1}{8}(1+\xi)(1-\eta)(1-\varsigma)$ <br /> $N_3=\frac{1}{8}(1+\xi)(1+\eta)(1-\varsigma)$ <br /> $N_4=\frac{1}{8}(1-\xi)(1+\eta)(1-\varsigma$ <br /> $N_5=\frac{1}{8}(1-\xi)(1-\eta)(1+\varsigma)$ <br /> $N_6=\frac{1}{8}(1+\xi)(1-\eta)(1+\varsigma)$ <br /> $N_7=\frac{1}{8}(1+\xi)(1+\eta)(1+\varsigma)$ <br /> $N_8=\frac{1}{8}(1-\xi)(1+\eta)(1+\varsigma)$ <br /> $N_9=\frac{1}{4}(1-\xi^2)(1-\eta)(1-\varsigma)$ <br /> $N_{10}=\frac{1}{4}(1+\xi)(1-\eta^2)(1-\varsigma)$ <br /> $N_{11}=\frac{1}{4}(1-\xi^2)(1+\eta)(1-\varsigma)$ <br /> $N_{12}=\frac{1}{4}(1-\xi)(1-\eta^2)(1-\varsigma)$ <br /> $N_{13}=\frac{1}{4}(1+\xi)(1-\eta)(1+\varsigma^2)$ <br /> $N_{14}=\frac{1}{4}(1+\xi)(1-\eta^2)(1+\varsigma^2)$
         <br /> $N_{15}=\frac{1}{4}(1-\xi^2)(1+\eta)(1+\varsigma)$
         <br /> $N_{16}=\frac{1}{4}(1-\xi)(1-\eta^2)(1+\varsigma)$
         <br /> $N_{17}=\frac{1}{4}(1-\xi)(1-\eta)(1-\varsigma^2)$
@@ -210,21 +210,21 @@
         <br /><br /> Derivatives of Shape Functions \begin{eqnarray} \frac{\partial N_i^{(e)}}{\partial x}=\frac{\partial N_i^{(e)}}{\partial \xi}\frac{\partial \xi}{\partial x}+\frac{\partial N_i^{(e)}}{\partial \eta}\frac{\partial \eta}{\partial x}+\frac{\partial N_i^{(e)}}{\partial \varsigma}\frac{\partial \varsigma}{\partial x}\\ \frac{\partial N_i^{(e)}}{\partial y}=\frac{\partial N_i^{(e)}}{\partial \xi}\frac{\partial \xi}{\partial y}+\frac{\partial N_i^{(e)}}{\partial \eta}\frac{\partial \eta}{\partial y}+\frac{\partial N_i^{(e)}}{\partial \varsigma}\frac{\partial \varsigma}{\partial y}\\ \frac{\partial N_i^{(e)}}{\partial z}=\frac{\partial N_i^{(e)}}{\partial \xi}\frac{\partial \xi}{\partial z}+\frac{\partial N_i^{(e)}}{\partial \eta}\frac{\partial \eta}{\partial z}+\frac{\partial N_i^{(e)}}{\partial \varsigma}\frac{\partial \varsigma}{\partial z} \end{eqnarray} The infinitesimals $d\xi$, $d\eta$ and $d\varsigma$ transform into $dx$, $dy$, and $dz$ can be written in matrix form as $$ \left[ \begin{array}{c} dx \\ dy \\ dz \end{array} \right]= \left[ \begin{array}{ccc} \frac{\partial x}{\partial \xi} & \frac{\partial x}{\partial \eta} & \frac{\partial x}{\partial \varsigma}\\ \frac{\partial y}{\partial \xi} & \frac{\partial y}{\partial \eta} & \frac{\partial y}{\partial \varsigma}\\ \frac{\partial z}{\partial \xi} & \frac{\partial z}{\partial \eta} & \frac{\partial z}{\partial \varsigma} \end{array} \right] \left[ \begin{array}{c} d\xi \\ d\eta \\ d\varsigma \end{array} \right] $$ Jacobian Matrix $$ \mathbf{J}=\frac{\partial (x,y,z)}{\partial (\xi,\eta,\varsigma)}= \left[ \begin{array}{ccc} \frac{\partial x}{\partial \xi} & \frac{\partial y}{\partial \xi} & \frac{\partial z}{\partial \xi}\\ \frac{\partial x}{\partial \eta} & \frac{\partial y}{\partial \eta} & \frac{\partial z}{\partial \eta}\\ \frac{\partial x}{\partial \varsigma} & \frac{\partial y}{\partial \varsigma} & \frac{\partial z}{\partial \varsigma} \end{array} \right] $$ The isoparametric definition of hexahedron element geometry is $$ x=\sum_{i=1}^{20}x_iN_i^{(e)} \qquad y=\sum_{i=1}^{20}y_iN_i^{(e)} \qquad z=\sum_{i=1}^{20}z_iN_i^{(e)} $$ Whenever $|J|\neq 0$, we can write $$ \left[ \begin{array}{ccc} \frac{\partial \xi}{\partial x} & \frac{\partial \xi}{\partial y} & \frac{\partial \xi}{\partial z}\\ \frac{\partial \eta}{\partial x} & \frac{\partial \eta}{\partial y} & \frac{\partial \eta}{\partial z}\\ \frac{\partial \varsigma}{\partial x} & \frac{\partial \varsigma}{\partial y} & \frac{\partial \varsigma}{\partial z}\\ \end{array} \right] = \mathbf{J^{-1}} $$ The derivatives of $\Phi_j^e$ are obtained by the chain rule: \begin{eqnarray} \frac{\partial \Phi_j^e}{\partial x}=\frac{\Phi_j}{\partial \xi} \frac{\partial \xi}{\partial x}+\frac{\Phi_j}{\partial \eta} \frac{\partial \eta}{\partial x}+\frac{\Phi_j}{\partial \varsigma} \frac{\partial \varsigma}{\partial x}\\ \frac{\partial \Phi_j^e}{\partial y}=\frac{\Phi_j}{\partial \xi} \frac{\partial \xi}{\partial y}+\frac{\Phi_j}{\partial \eta} \frac{\partial \eta}{\partial y}+\frac{\Phi_j}{\partial \varsigma} \frac{\partial \varsigma}{\partial y}\\ \frac{\partial \Phi_j^e}{\partial z}=\frac{\Phi_j}{\partial \xi} \frac{\partial \xi}{\partial z}+\frac{\Phi_j}{\partial \eta} \frac{\partial \eta}{\partial z}+\frac{\Phi_j}{\partial \varsigma} \frac{\partial \varsigma}{\partial z}\\ \end{eqnarray} Numerical Integration Over Hexahedral, the total number of Gauss points is $p^3$ $$ \int_{-1}^{1}\int_{-1}^{1}\int_{-1}^{1}F(\xi,\eta,\varsigma)d\xi d\eta d\varsigma \approx \sum_{i=1}^{p_1}\sum_{j=1}^{p_2}\sum_{k=1}^{p_3} w_iw_jw_k F(\xi_i,\eta_j,\varsigma_k) $$
         <br />
 
-        <h2>§ Bending of a Uniform, Homogeneous Elastic Beam (Euler-Bernoulli Theory)</h2>
+        <h2>ï¿½ Bending of a Uniform, Homogeneous Elastic Beam (Euler-Bernoulli Theory)</h2>
         Strong Form: $$\int_0^L\lbrace (EIw'')''-q\rbrace vdx-\lbrace -(EIw'')(L)-M_L\rbrace v'(L)+\lbrace (EIw'')(L)-v_L\rbrace v(L)=0 \quad \forall \;v \quad s.t \; v(0)=0, \; v'(0)=0$$ Weak Form: $$\int_0^L EIw''v''dx-\int_0^L qvdx+M_Lv'(L)-v_Lv(L)=0 \quad \forall \; v \quad s.t \; v(0)=0, \; v'(0)=0$$ Principal of Virtual Work $$\int_0^L EIw''v''dx=\int_0^L qvdx-M_Lv'(L)+v_Lv(L)$$ But since we don't have any applied moment of load at the supported end,our governing equation is actually $$\int_0^L EIw''v''dx=\int_0^L qvdx$$ The simplest Bernoulli-Euler plane beam element with two end nodes has four degrees of freedom $\mathbf{u^e}=[v_1 \theta_1 v_2 \theta_2]^T$.
         <br /> Shape functions for this problem are conveniently expressed in terms of the dimensionless coordinate $$\xi=\frac{2x}{h}-1 \qquad \frac{dx}{d\xi}=\frac{1}{2}h \qquad \frac{d\xi}{dx}=\frac{2}{h}$$
         <img src="images/Capture.PNG" alt="" /> \begin{eqnarray} N_1(\xi)=\frac{1}{4}(1-\xi)^2(2+\xi)\\ N_2(\xi)=\frac{h}{8}(1-\xi)^2(1+\xi)\\ N_3(\xi)=\frac{1}{4}(1+\xi)^2(2+\xi)\\ N_4(\xi)=\frac{h}{8}(1+\xi)^2(\xi-1)\\ \end{eqnarray} Local Stiffness Matrix $$K_{ij}=\int_eEI\frac{d^2N_i(x)}{dx^2} \frac{d^2N_j(x)}{dx^2}dx=\int_{-1}^1 EI\frac{d^2N_i(x)}{dx^2} \frac{d^2N_j(x)}{dx^2}\frac{1}{2}h d\xi$$ For a generic case with both free nodes, the matrix becomes \[ K^e = \frac{EI}{h^3}\left[ \begin{array}{cccc} 12 & 6h & -12 & 6h \\ 6h & 4h^2 & -6h & 2h^2 \\ -12 & -6h & 12 & -6h \\ 6h & 2h^2 & -6h & 4h^2 \end{array} \right]\] Local Force Vector $$f_i^{(e)}=\int_e q(x)N_i(x)dx=\int_{-1}^1 q(x)N_i(x)\frac{1}{2}h d\xi$$ For uniform load $q_0$ $$f^{(e)}=\frac{q_0h_e}{12} \left\{ \begin{array}{c} 6\\ h_e \\ 6 \\ -h_e \end{array} \right\} $$ System array is defined with dimensions $n\;x\;m$ where $n$ is 4 (the number of degree of freedom per element) and $m$ is 3 (the number of elements).
 
-        <h2>§ Distribution of Bending Moment Along the Beam</h2>
+        <h2>ï¿½ Distribution of Bending Moment Along the Beam</h2>
         Since moment is related to the distributed load by its second derivative, the approximate solution is $$M(x)=-EI\frac{d^2w}{dx^2}=-EI\sum_{j=1}^4 u_j^e \frac{d^2 \Phi_j^e}{dx^2}$$
 
-        <h2>§ Reactions at the Beam Ends</h2>
+        <h2>ï¿½ Reactions at the Beam Ends</h2>
         $$V(x)=\frac{dM}{dx}=-\frac{d}{dx}\left(EI\frac{d^2w}{dx^2}\right)=-EI\sum_{i=1}^4 u_j^e \frac{d^3 \Phi_j^e}{dx^3}$$
     </div>
 
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}, displayAlign: "left" });
     </script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

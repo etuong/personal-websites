@@ -9,12 +9,12 @@ if(empty($_POST['name'])      ||
    echo "No arguments Provided!";
    return false;
    }
-   
+
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
-   
+
 // Create the email and send the message
 $to = "etuong@gmail.com";
 
@@ -27,8 +27,8 @@ $email_body .="Phone: $phone\n\n";
 $email_body .="Message: $message";
 
 $headers = "From: etuong.com\n";
-$headers .= "Reply-To: $email_address";   
+$headers .= "Reply-To: $email_address";
 
 @mail($to, $email_subject, $email_body, $headers);
-return true;         
+return true;
 ?>

@@ -12,11 +12,11 @@
     <link href="css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
     <link href="css/fancyBox/jquery.fancybox.css" rel="stylesheet" type="text/css">
     <link href="css/gooeymenu.css" rel="stylesheet" type="text/css">
-    <link href="css/indexTabSlider.css" rel="stylesheet" type="text/css">    
-    <link href='http://fonts.googleapis.com/css?family=Overlock:400,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" rel="stylesheet">
+    <link href="css/indexTabSlider.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Overlock:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1114,7 +1114,7 @@
             &lt;ResumeStoryboard BeginStoryboardName="OpacityStoryboard" /&gt;
         &lt;/EventTrigger&gt;
     &lt;/Canvas.Triggers&gt;
-    
+
     &lt;Image x:Name="pic1" Source="Images/Skinny.jpg" /&gt;
     &lt;Image x:Name="pic2" Source="Images/NotSkinny.jpg" /&gt;
 &lt;/Canvas&gt;
@@ -1164,8 +1164,8 @@
 		&lt;Style.Triggers&gt;
 			&lt;Trigger Property="IsMouseOver" Value="True"&gt;
 				&lt;Setter Property="Foreground" Value="red" /&gt;
-			&lt;/Trigger&gt;                
-		&lt;/Style.Triggers&gt;            
+			&lt;/Trigger&gt;
+		&lt;/Style.Triggers&gt;
 	&lt;/Style&gt;
 
 	&lt;Style x:Key="practiceStyle" TargetType="{x:Type TextBox}" &gt;
@@ -1425,7 +1425,7 @@ public class Person : INotifyPropertyChanged
             }
         }
     }
-    
+
     public string LastName
     {
         get { return _LastName;}
@@ -1438,7 +1438,7 @@ public class Person : INotifyPropertyChanged
             }
         }
     }
-    
+
     public int Age
     {
         get { return _Age;}
@@ -1491,9 +1491,9 @@ public class MainWindowViewModel : ViewModelBase
             new Person { FirstName="Ethan", LastName="Uong", Age=32 },
             new Person { FirstName="Yvonne", LastName="Liu", Age=26 },
             new Person { FirstName="Happy", LastName="Doggy", Age=3 },
-        };            
+        };
     }
-    
+
     public Person SelectedPerson
     {
         get { return _SelectedPerson; }
@@ -1549,20 +1549,20 @@ public class MainWindowViewModel : ViewModelBase
 
     &lt;StackPanel Grid.Row="0"&gt;
         &lt;StackPanel Orientation="Horizontal"&gt;
-            &lt;ListBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" 
+            &lt;ListBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}"
                      DisplayMemberPath="FirstName" HorizontalAlignment="Left"/&gt;
             &lt;DataGrid ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" CanUserAddRows="False"
                       HorizontalAlignment="Left" Margin="5,0,0,0"/&gt;
-            &lt;ComboBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}" 
+            &lt;ComboBox ItemsSource="{Binding People}" SelectedItem="{Binding SelectedPerson}"
                       DisplayMemberPath="FirstName" Margin="5,0,0,5" VerticalAlignment="Top"/&gt;
-        &lt;/StackPanel&gt;            
-        
+        &lt;/StackPanel&gt;
+
         &lt;TextBlock FontWeight="Bold" Margin="5" Text="The selected person is "&gt;
         &lt;Run Text="{Binding SelectedItemString}"/&gt;&lt;/TextBlock&gt;
         &lt;Label Content="Type in a name and hit button to add to collection" /&gt;
     &lt;/StackPanel&gt;
 
-    &lt;StackPanel Grid.Row="1" Width="150" HorizontalAlignment="Left"&gt;            
+    &lt;StackPanel Grid.Row="1" Width="150" HorizontalAlignment="Left"&gt;
         &lt;TextBox Text="{Binding TextProperty}" Margin="5"/&gt;
         &lt;Button Content="Add person" Command="{Binding AddUserCommand}" Margin="5" /&gt;
     &lt;/StackPanel&gt;
@@ -1858,7 +1858,7 @@ public class MainWindowViewModel : ViewModelBase
                         </li>
                     </ul>
                 </div>
-                <!--End of Sub Menu -->                
+                <!--End of Sub Menu -->
                 <!--Resume -->
                 <div class="content" id="scrollResume">
                     <div class="non-semantic-protector">
@@ -2343,7 +2343,7 @@ public class MainWindowViewModel : ViewModelBase
                         New Zealand. It was through these experiences that he was able to see life in a more optimistic
                         perspective. With his camera, Uong has captured many famous landmarks including some classical
                         and modern Wonders of the World such as the Roman Colosseum and Milford Sound. It is his dream
-                        to capture the perfect picture in each continent.</p><br>                    
+                        to capture the perfect picture in each continent.</p><br>
                     <h2 id="scrollEarly">Early Life and Education</h2>
                     <hr>
                     <div class="family">
@@ -2441,7 +2441,7 @@ public class MainWindowViewModel : ViewModelBase
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
     </script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js">
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js">
     </script>
     <script src="js/slidr.min.js">
     </script>
@@ -2488,9 +2488,9 @@ public class MainWindowViewModel : ViewModelBase
     </script>
 -->
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js">
     </script>
-    <script src="http://www.google.com/jsapi">
+    <script src="https://www.google.com/jsapi">
     </script>
 </body>
 

@@ -76,7 +76,6 @@ $(document).ready(function () {
   $(window).scroll(navbarCollapse);
 
 
-
   // ========================================================================= //
   //  Portfolio
   // ========================================================================= //
@@ -88,7 +87,7 @@ $(document).ready(function () {
     },
     controls: {
       toggleDefault: 'none'
-  },
+    },
     animation: {
       effects: 'fade rotateY(-180deg)',
       duration: 600,
@@ -123,7 +122,7 @@ $(document).ready(function () {
           .replace('$title', 'Tasmania, Australia')
           .replace('$bgColor', '#baa884')
           .replace('$desc', 'Tasmania is Australia\'s only island state and the smallest land area and population. About 12,000 years ago sea level rises and separated Tasmania from the mainland. You\'ll see lots of brick prisons built by convicts themselves. These convicts overpopulated British\'s prisons and were sent to Australia when the continent was found. A roadtrip from Hobart to Launceston will give you an idea of how peaceful and beautiful this island state is.')
-      }, 
+      },
       {
         lat: 38.668997324,
         lon: 34.836829986,
@@ -183,7 +182,7 @@ $(document).ready(function () {
           .replace('$title', 'Siem Reap, Cambodia')
           .replace('$bgColor', '#ba695e')
           .replace('$desc', 'The town Siem Reap (literally means "Siam Defeated") in northern Cambodia is the primary gateway for the Angkor Archaeological Park. The park stretches over some 400 square kilometers including forested area and contains the magnificent remains of several capitals of the Khmer Empire of the 9th to the 15th centuries. The passes are for one day, three days, or 7 days. I highly recommend exploring at least 3 days as one day is simply not enough and 7 days will make you temple sick. Also, be prepared to try some of the most delicious food in the world!')
-      },     
+      },
       {
         lat: 30.5728,
         lon: 104.0668,
@@ -543,7 +542,7 @@ $(document).ready(function () {
           .replace('$title', 'Warsaw, Poland')
           .replace('$bgColor', '#baa884')
           .replace('$desc', 'Warsaw is the largest and capital city of Poland. It was completely destroyed by the Nazis during World War II, but restored itself from the ashes to its historical and classical style. Because of that, along with its survival from many wars throughout history, it is known as the "Phoenix City." Some touristy things to do here are to visit the Palace of Culture and Science (a "gift" from the Soviet Union) and learn about Frederic Chopin through the numerous museums the city has to offer for its famous composer.')
-      },        
+      },
       {
         lat: 44.4280,
         lon: -110.5885,
@@ -553,7 +552,7 @@ $(document).ready(function () {
           .replace('$title', 'Yellowstone, Wyoming, USA')
           .replace('$bgColor', '#bcb895')
           .replace('$desc', 'Yellowstone National Park is an American national park located mostly in Wyoming. An interesting fact is that Yellowstone was the first national park in the U.S. and is also widely held to be the first national park in the world. The park is known for its wildlife and its many geothermal features, especially Old Faithful geyser, one of its most popular features. If you are a national forest  or just an avid hiker, you HAVE to check out this wonder of the world! ')
-      },   
+      },
       {
         lat: -16.9186,
         lon: 145.7781,

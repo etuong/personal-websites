@@ -124,8 +124,5 @@ export class BlogComponent implements OnInit {
       text: 'The Germans opened fire first and killed 15 Polish soldiers but the Polish retaliated and killed around a hundred Nazis. The following day we went to the Malbork',
       post: 'warsaw'
     });
-
   }
-
-
 }

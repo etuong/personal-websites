@@ -1,5 +1,5 @@
 export class GalleryItem {
-    thumb : string;
-    enlarge: string;
-    filterGroup : string;
+  thumb: string;
+  enlarge: string;
+  filterGroup: string;
 }

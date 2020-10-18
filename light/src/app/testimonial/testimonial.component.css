@@ -7,7 +7,7 @@
     color: white;
     padding: 40px 0 60px 0;
   }
-  
+
   .testimonial-carousel .testimonial {
     margin-right: auto;
     margin-left: auto;
@@ -15,11 +15,11 @@
     padding-left: 50px;
     max-width: 1000px;
   }
-  
+
   .testimonial-carousel .testimonial p {
     font-size: 14px;
   }
-  
+
   .testimonial-carousel .carousel-indicators {
     text-align: center;
     position: absolute;
@@ -36,7 +36,7 @@
     margin-left: 15%;
     list-style: none;
   }
-  
+
   .testimonial-carousel .carousel-indicators li {
     width: 15px;
     height: 15px;
@@ -47,7 +47,7 @@
     background: transparent;
     border: 1px solid white;
   }
-  
+
   .testimonial-carousel .carousel-indicators li:hover, .testimonial-carousel .carousel-indicators li.active {
     background: white;
   }
