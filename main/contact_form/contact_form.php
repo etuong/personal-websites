@@ -2,13 +2,11 @@
 
 // configure
 $from = 'Contact form <yourmail@domain.com>';
-$sendTo = 'your@mail.com';
-$subject = 'New message from contact form';
+$sendTo = 'etuong@hotmail.com';
+$subject = 'New message from ethanuong.com;
 $fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message'); // array variable name => Text to appear in the email
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
 $errorMessage = 'There was an error while submitting the form. Please try again later';
-
-// let's do the sending
 
 if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
     //your site secret key
@@ -38,7 +36,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
                 'Reply-To: ' . $from,
                 'Return-Path: ' . $from,
             );
-            
+
             mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
             $responseArray = array('type' => 'success', 'message' => $okMessage);
