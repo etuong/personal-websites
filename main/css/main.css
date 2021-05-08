@@ -1484,6 +1484,10 @@ body > footer .copyrights {
   display: inline-block;
 }
 
+.portfolio-filters li a {
+  font-size: 14px;
+}
+
 .portfolio-filters li a,
 .portfolio-filters li a:hover {
   color: #9e9e9e;
@@ -1830,6 +1834,7 @@ body > footer .copyrights {
 /* =============================================================================
 8. Sliders
 ============================================================================= */
+
 /* Testimonials Carousel */
 .testimonials.owl-carousel .owl-nav {
   position: relative;
@@ -2801,5 +2806,16 @@ ul.timeline-body > p + p {
     border-right-width: 14px;
     left: -14px;
     right: auto;
+  }
+}
+
+#gmap {
+  width: 100% !important;
+  height: 500px;
+}
+
+@media (max-width: 500px) {
+  #gmap {
+    height: 400px;
   }
 }
