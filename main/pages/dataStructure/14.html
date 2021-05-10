@@ -1,0 +1,31 @@
+<html>
+<head>
+<link href="prismPython.css" rel="stylesheet" />
+<script src="prismPython.js"></script>
+</head>
+
+<body>
+<pre><code class="language-python, line-numbers"># Given a string that has set of words and spaces, write a
+# program to move the spaces to front of string, you need to
+# traverse the array only once and need to adjust the string in place
+
+# Time complexity -> O(n) and space complexity -> O(1)
+def moveTheSpaces(string):
+    count = len(string) - 1
+    for i in reversed(string):
+        if i is not " ":
+            string[count] = i
+            count -= 1
+
+    while count > -1:
+        string[count] = " "
+        count -= 1
+
+    return "".join(string)
+
+if __name__ == '__main__':
+    string = input().strip()
+    print(moveTheSpaces(list(string)))
+</code></pre>
+</body>
+</html>

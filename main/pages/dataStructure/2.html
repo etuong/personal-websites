@@ -1,0 +1,48 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">// Prompt: Reverse a given string
+    
+static void Main(string[] args)
+{
+    string str = "SomethingGoesInHere!";
+    Console.WriteLine("Original string: " + str);
+    Console.WriteLine("Reversed string (looping through every char): " + ReverseStringMethod1(str));
+    Console.WriteLine("Reversed string (looping half the array): " + ReverseStringMethod2(str));
+    Console.ReadLine();
+}
+
+// This method loops through every char and reverses the string -> O(n)
+// Space complexity is O(n) to create a new array
+private static string ReverseStringMethod1(string str)
+{
+    StringBuilder sb = new StringBuilder(str.Length);
+    for (int i = str.Length - 1; i >= 0; i--)
+    {
+        sb.Append(str[i]);
+    }
+    return sb.ToString();
+}
+
+// This method loops half and swap the char -> O(n)
+// Advantage is that space complexity is O(1)
+private static string ReverseStringMethod2(string str)
+{            
+    int length = str.Length;
+    for (int i= 0; i < str.Length / 2; i++)
+    {
+        int index = --length;
+        char c = str[i];
+        str[i] = str[index];
+        str[index] = c;
+    }
+    return str;
+}
+
+</code></pre>
+</body>
+</html>

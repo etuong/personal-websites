@@ -1,0 +1,27 @@
+1. [C#] Given a string, find the most frequent character
+2. [C#] Reverse a given string
+3. [Java] Anagrams
+4. [Java] Array manipulation
+5. [Python] Majority element
+6. [Java] Detect whether a linked list contains-a-cycle
+7. [Python] Mini max sum
+8. [Java] Grading students
+9. [Java] Beautiful days at the movies
+10. [Java] Palindrome 
+11. [C#] Recursive digit sum
+12. [Java] Sparse arrays
+13. [Java] Lexicographical substring comparison
+14. [Python] Move the spaces
+15. [Java] Two sum
+16. [C#] Caesar Cipher
+17. [C#] Max min sum
+18. [C#] Power sum
+19. [Java] Cut the sticks
+20. [Java] Sock merchant
+21. [Python] Lily's homework
+22. [Java] Diagonal difference
+23. [C#] Two sum for sorted array
+24. [Java] Viral advertising
+25. [C#] Plus one
+26. [Java] Substring comparisons
+27. [C#] Same tree

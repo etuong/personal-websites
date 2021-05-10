@@ -1,0 +1,44 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class ReverseIntegerBeautifulDays {
+    // https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+
+    public ReverseIntegerBeautifulDays() {
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        int j = scanner.nextInt();
+        int k = scanner.nextInt();
+        int count = 0;
+        for (int x = i; x <= j; x++) {
+            double n = reverseInt(x);
+            double m = Math.abs(x-n);
+            double o = m / k;
+            if (o % 1 == 0)
+                count++;
+        }
+
+        System.out.println(count);
+    }
+    public static int reverseInt(int a) {
+        int ret = 0;
+        int b;
+        while (a > 0) {
+            b = a % 10;
+            ret = ret * 10 + b;
+            a = a / 10;
+        }
+
+        return ret;
+    }
+
+}
+
+
+</code></pre>
+</body>
+</html>

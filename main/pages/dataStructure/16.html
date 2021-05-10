@@ -1,0 +1,100 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">/* In cryptography, a Caesar cipher is replaced by a letter some fixed number of positions down the alphabet. 
+* For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. */
+
+class CaesarCipher
+{
+    private const int SHIFT = 3;
+    private const int LOWERBOUND = 32;
+    private const int UPPERBOUND = 126 ;
+
+    private static int key = 0;
+
+    public CaesarCipher()
+    {
+        Console.WriteLine("Simple Caesar's Shift Encryption Program");
+        Console.WriteLine("INSTRUCTIONS");
+        Console.WriteLine("To establish or change key: key ###");
+        Console.WriteLine("To encrypt: --> string");
+        Console.WriteLine("To decrypt: <-- string");
+        Console.WriteLine("'quit' to close the app\r\n");
+
+        while (true)
+        {
+            string str = Console.ReadLine();
+
+            if (str.Length >= 4)
+            {
+                if (str.Substring(0, 4).ToLower().Equals("key "))
+                    if (!int.TryParse(str.Substring(4), out key))
+                        Console.WriteLine("Key is not valid!\r\n");
+                if (str.Substring(0, 4).Equals("--> "))
+                    Encrypt(str.Substring(4));
+                else if (str.Substring(0, 4).Equals("<-- "))
+                    Decrypt(str.Substring(4));
+                else if (str.ToLower().Equals("quit"))
+                    break;
+            }
+        }
+    }
+
+    private static void Encrypt(string str)
+    {
+        if (key == 0)
+        {
+            Console.WriteLine("Key is not entered!\r\n");
+            return;
+        }
+
+        int index = 0;
+        char[] buffer = new char[str.Length];
+        foreach (char c in str)
+        {
+            char letter = (char)(c + key);
+
+            if (letter > UPPERBOUND)
+                letter = (char)(letter - UPPERBOUND + LOWERBOUND);
+            else if (letter < LOWERBOUND)
+                letter = (char)(letter + LOWERBOUND);
+
+            buffer[index++] = letter;
+        }
+
+        Console.WriteLine(new string(buffer) + "\r\n");
+    }
+
+    private static void Decrypt(string str)
+    {
+        if (key == 0)
+        {
+            Console.WriteLine("Key is not entered!\r\n");
+            return;
+        }
+
+        char[] buffer = new char[str.Length];
+        int index = 0;
+        foreach (char c in str)
+        {
+            char letter = (char)(c - key);
+
+            if (letter > UPPERBOUND)
+                letter = (char)(letter + UPPERBOUND - LOWERBOUND);
+            else if (letter < LOWERBOUND)
+                letter = (char)(letter - LOWERBOUND + UPPERBOUND);
+
+            buffer[index++] = letter;
+        }
+
+        Console.WriteLine(new string(buffer) + "\r\n");
+    }        
+}
+
+</code></pre>
+</body>
+</html>

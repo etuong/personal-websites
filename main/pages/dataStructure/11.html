@@ -1,0 +1,43 @@
+<html>
+<head>
+<link href="prismCSharp.css" rel="stylesheet" />
+<script src="prismCSharp.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">class RecursiveDigitSum
+{
+    // https://www.hackerrank.com/challenges/recursive-digit-sum/problem 
+
+    public RecursiveDigitSum()
+    {
+        string[] tokens = Console.ReadLine().Split(' ');
+        string n = tokens[0];
+        int k = Convert.ToInt32(tokens[1]);
+
+        string str = string.Concat(Enumerable.Repeat(n, k));
+        int result = Solve(str);
+        Console.WriteLine(result);
+        Console.ReadLine();
+    }
+
+    private int Solve(string str)
+    {
+        int count = 0;
+
+        foreach (char c in str)
+        {
+            count += (int)Char.GetNumericValue(c);
+        }
+
+        string sRet = count.ToString();
+
+        if (count % 10 == count)
+            return count;
+        else
+            return Solve(sRet);
+    }
+}
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class GradingStudents {
+    // https://www.hackerrank.com/challenges/grading/problem
+
+    public GradingStudents() {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int sum = 0;
+
+        for(int i = 0; i < n; i++){
+            int temp = in.nextInt();
+
+            if (i != k) sum += temp;
+        }
+
+        int b = in.nextInt();
+        int c = sum / 2;
+        System.out.println(c== b ? "Bon Appetit" : b-c);
+    }
+}
+
+</code></pre>
+</body>
+</html>

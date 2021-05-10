@@ -1,0 +1,36 @@
+<html>
+<head>
+<link href="prismPython.css" rel="stylesheet" />
+<script src="prismPython.js"></script>
+</head>
+
+<body>
+<pre><code class="language-python, line-numbers"># https://www.hackerrank.com/challenges/mini-max-sum/problem
+
+# O(n log n)
+def miniMaxSum(arr):
+    arr.sort()
+    print(sum(arr[0:-1]), sum(arr[1:len(arr)]))
+
+# O(n)
+def miniMaxSum2(arr):
+    min = arr[0]
+    max = arr[0]
+    sum = 0
+
+    for x in arr:
+        if x > max:
+            max = x
+        if x < min:
+            min = x
+        sum += x
+
+    print (sum - max, sum - min)
+
+if __name__ == '__main__':
+    arr = list(map(int, input().strip().split(' ')))
+    miniMaxSum2(arr)
+
+</code></pre>
+</body>
+</html>

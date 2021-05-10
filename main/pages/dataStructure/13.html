@@ -1,0 +1,36 @@
+<html>
+<head>
+<link href="prismJava.css" rel="stylesheet" />
+<script src="prismJava.js"></script>
+</head>
+
+<body>
+<pre><code class="language-java, line-numbers">public class SubstringComparisons {
+    // https://www.hackerrank.com/challenges/java-string-compare/problem
+
+    public SubstringComparisons() {
+        // Brute force is O(n^2) by looping through array and using String.compareTo()
+        // We can achieve O(nlogn) by sorting first
+
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+
+        // Populate array
+        String[] array = new String[s.length() - k + 1];
+        for (int i = 0; i < s.length() - k + 1; i++) {
+            String substring = s.substring(i, i + k);
+            array[i] = substring;
+        }
+
+        // Sort array and write out answer
+        Arrays.sort(array);
+        System.out.println(array[0] + "\n" + array[array.length - 1]);
+    }
+}
+
+
+</code></pre>
+</body>
+</html>
