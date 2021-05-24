@@ -74,6 +74,16 @@ $(function () {
         .replace('$desc', 'Aah the city of angels! My beautiful hometown offers essentially everything from sun-bathing beaches to grand mountainous hikes. There is just about every ethnicity and nationality here and there are enclaves for everyone including Little Italy and Chinatown. Hollywood and Santa Monica beach are a must visit and make sure to check out some rooftop bars in downtown!')
     },
     {
+      lat: 21.3069,
+      lon: -157.8583,
+      flag: 'usa.png',
+      title: 'Oahu, Hawaii, USA',
+      html: template.replace('$pic', 'hawaii.jpg')
+        .replace('$title', 'Oahu, Hawaii, USA')
+        .replace('$bgColor', '#bcb895')
+        .replace('$desc', 'Situated nearly at the center of the north Pacific Ocean, Hawaii marks the northeast corner of Polynesia. While it was once a major hub for the whaling, sugar and pineapple industries, it is now economically dependent on tourism and the U.S. military. The natural beauty of the islands continues to be one of Hawaii\'s greatest assets. Honolulu is the state\'s capital, largest city, and cultural hub.')
+    },
+    {
       lat: 13.3550,
       lon: 103.8552,
       flag: 'cambodia.png',
