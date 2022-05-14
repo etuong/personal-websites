@@ -409,7 +409,7 @@ input[type="submit"]:hover {
 }
 
 /* Footer */
-body > footer {
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -417,7 +417,7 @@ body > footer {
 }
 
 /* copyrights block */
-body > footer .copyrights {
+footer .copyrights {
   display: block;
   margin-bottom: 12px;
   text-align: center;

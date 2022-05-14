@@ -269,7 +269,7 @@
       });
 
     //Google Maps
-    $("#googlemap").googleMap();
+    // $("#googlemap").googleMap();
   });
 
 })(jQuery);

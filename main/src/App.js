@@ -2,7 +2,7 @@ import React from 'react'
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="material-template">
 
       <div className="preloader">
         <div className="preloader-animation">
@@ -923,7 +923,11 @@ function App() {
       <footer>
         <div className="copyrights">© 2022 All Rights Reserved. Ethan Thomas Uong</div>
       </footer>
-    </React.Fragment>
+
+
+      <script type="text/javascript" src="%PUBLIC_URL%/js/pages-switcher.js"></script>
+      <script type="text/javascript" src="%PUBLIC_URL%/js/main.js"></script>
+    </div>
   );
 }
 
