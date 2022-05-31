@@ -1,6 +1,9 @@
 
 $(function () {
-  var template = '<div class="card mb-4"><img class="card-img-top" src="images/sites/$pic"><h5 class="card-title" style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5><div class="card-body"><p class="card-text">$desc</p></div></div>';
+  var template = `<div class="card mb-4">
+    <img class="card-img-top" src="images/sites/$pic">
+    <h5 class="card-title" style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
+    <div class="card-body"><p class="card-text">$desc</p></div></div>`;
 
   var sites = [
     {
@@ -475,44 +478,46 @@ $(function () {
     }
   ];
 
-  var map = new google.maps.Map(document.getElementById('gmap'), {
-    zoom: 3,
-    center: new google.maps.LatLng(33.9391, 67.7100),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
-
-
-  var infowindow = new google.maps.InfoWindow({ maxWidth: 300 });
-
-  var iconBase = 'images/flags/';
-
-  function createMarker(latlng, flag, title, html, timer) {
-    setTimeout(function () {
-      var marker = new google.maps.Marker({
-        position: latlng,
-        title: title,
-        icon: { url: iconBase + flag, scaledSize: new google.maps.Size(20, 20) },
-        draggable: false,
-        animation: google.maps.Animation.DROP,
-        map: map
-      })
-
-      google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(html);
-        infowindow.open(map, marker);
+  $(window)
+    .on('load', function () {
+      var map = new google.maps.Map(document.getElementById('gmap'), {
+        zoom: 3,
+        center: new google.maps.LatLng(33.9391, 67.7100),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      return marker;
-    }, timer)
-  }
 
-  for (var i = 0; i < sites.length; i++) {
-    createMarker(new google.maps.LatLng(sites[i].lat, sites[i].lon), sites[i].flag, sites[i].title, sites[i].html, i * 200 + 500);
-  }
+      var infowindow = new google.maps.InfoWindow({ maxWidth: 350 });
 
-  // Event that closes the Info Window with a click on the map
-  google.maps.event.addListener(map, 'click', function () {
-    infowindow.close();
-  });
+      var iconBase = 'images/flags/';
 
+      function createMarker(latlng, flag, title, html, timer) {
+        setTimeout(function () {
+          var marker = new google.maps.Marker({
+            position: latlng,
+            title: title,
+            icon: { url: iconBase + flag, scaledSize: new google.maps.Size(20, 20) },
+            draggable: false,
+            animation: google.maps.Animation.DROP,
+            map: map
+          })
+
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent(html);
+            infowindow.open(map, marker);
+          });
+
+          return marker;
+        }, timer)
+      }
+
+      for (var i = 0; i < sites.length; i++) {
+        createMarker(new google.maps.LatLng(sites[i].lat, sites[i].lon), sites[i].flag, sites[i].title, sites[i].html, i * 200 + 500);
+      }
+
+      // Event that closes the Info Window with a click on the map
+      google.maps.event.addListener(map, 'click', function () {
+        infowindow.close();
+      });
+    })
 });

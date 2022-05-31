@@ -58,17 +58,19 @@ const HomeComponent = () => {
 
             <div className="col-sm-6 col-md-6 col-lg-6">
               <ul className="info-list">
-                <li><span className="title">Residence</span><span className="value">Fort Wayne, Indiana, USA</span></li>
+                <li><span className="title">Residence</span><span className="value">Fort Wayne, Indiana</span></li>
                 <li><span className="title">E-mail</span><span className="value"><a
                   href="mailto:etuong@hotmail.com">etuong@hotmail.com</a></span></li>
                 <li><span className="title">Phone</span><span className="value">(412) 397-8149</span></li>
                 <li><span className="title">Freelance</span><span className="value available">Available</span></li>
-                <li><span className="title">Education</span><span className="value">B.S Structural Engineering</span>
-                </li>
-                <li><span className="title"></span><span className="value">M.S Computational Mechanics</span>
-                </li>
-                <li><span className="title"></span><span className="value">M.S Computer Science</span>
-                </li>
+                <div className="mobile-menu-hide">
+                  <li><span className="title">Education</span><span className="value">B.S Structural Engineering</span>
+                  </li>
+                  <li><span className="title"></span><span className="value">M.S Computational Mechanics</span>
+                  </li>
+                  <li><span className="title"></span><span className="value">M.S Computer Science</span>
+                  </li>
+                </div>
               </ul>
             </div>
 

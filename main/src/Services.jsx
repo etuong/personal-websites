@@ -37,7 +37,7 @@ const ServicesComponent = (props) => {
                     <img src="./images/service/photography_icon.png" alt="Photography" className="mCS_img_loaded" />
                   </div>
                   <h4>Photography</h4>
-                  <p>I specialized in bright high contrast photography with proficient knowledge in Adobe suites
+                  <p>I specialize in bright high contrast photography with proficient knowledge in Adobe suites
                     including Photoshop and Premiere</p>
                 </div>
               </div>
@@ -133,55 +133,55 @@ const ServicesComponent = (props) => {
                         sure he will prove to be an asset as he had in my team."</p>
                     </div>
                   </div>
-
-                  <div className="testimonial-item">
-                    <div className="testimonial-credits">
-                      <div className="testimonial-picture">
-                        <img src="./images/testimonials/woman.png" alt="" />
-                      </div>
-
-                      <div className="testimonial-author-info">
-                        <p className="testimonial-author">Alice Carr</p>
-                        <p className="testimonial-firm">UCSD Faculty Assistant</p>
-                      </div>
+                </div>
+                <div className="testimonial-item">
+                  <div className="testimonial-credits">
+                    <div className="testimonial-picture">
+                      <img src="./images/testimonials/woman.png" alt="" />
                     </div>
 
-                    <div className="testimonial-content">
-                      <div className="testimonial-text">
-                        <p>"Ethan is an incredibly talented photographer. I had the pleasure of working with him on
-                          my wedding day and let me just say that it was so much fun and the pictures turned out
-                          amazing! It was such a joyful experience to have his service on my very special day. Would
-                          love to hire him again, except I'm only getting married once in this life!"</p>
-                      </div>
+                    <div className="testimonial-author-info">
+                      <p className="testimonial-author">Alice Carr</p>
+                      <p className="testimonial-firm">UCSD Faculty Assistant</p>
                     </div>
                   </div>
 
-                  <div className="testimonial-item">
-                    <div className="testimonial-credits">
-                      <div className="testimonial-picture">
-                        <img src="./images/testimonials/woman.png" alt="" />
-                      </div>
-                      <div className="testimonial-author-info">
-                        <p className="testimonial-author">Caitlyn G.</p>
-                        <p className="testimonial-firm">Student at University of Pittsburgh, MATH 0125, Business
-                          Calculus</p>
-                      </div>
+                  <div className="testimonial-content">
+                    <div className="testimonial-text">
+                      <p>"Ethan is an incredibly talented photographer. I had the pleasure of working with him on
+                        my wedding day and let me just say that it was so much fun and the pictures turned out
+                        amazing! It was such a joyful experience to have his service on my very special day. Would
+                        love to hire him again, except I'm only getting married once in this life!"</p>
                     </div>
-                    <div className="testimonial-content">
-                      <div className="testimonial-text">
-                        <p>"Ethan is super friendly and always helpful when we ask him questions. This was easily my
-                          favorite class this semester. I loved the positive environment, and I was even inspired to
-                          change my major by this class. Thank you, Ethan! :)"</p>
-                      </div>
+                  </div>
+                </div>
+
+                <div className="testimonial-item">
+                  <div className="testimonial-credits">
+                    <div className="testimonial-picture">
+                      <img src="./images/testimonials/woman.png" alt="" />
+                    </div>
+                    <div className="testimonial-author-info">
+                      <p className="testimonial-author">Caitlyn G.</p>
+                      <p className="testimonial-firm">Student at University of Pittsburgh, MATH 0125, Business
+                        Calculus</p>
+                    </div>
+                  </div>
+                  <div className="testimonial-content">
+                    <div className="testimonial-text">
+                      <p>"Ethan is super friendly and always helpful when we ask him questions. This was easily my
+                        favorite class this semester. I loved the positive environment, and I was even inspired to
+                        change my major by this class. Thank you, Ethan! :)"</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
       </div>
+
     </section>
   )
 };
