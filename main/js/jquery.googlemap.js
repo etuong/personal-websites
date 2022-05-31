@@ -1,5 +1,6 @@
 $(function () {
 
+  // Fort Wayne, Indiana
   $.fn.googleMap = function (params) {
     params = $.extend({
       zoom: 10,

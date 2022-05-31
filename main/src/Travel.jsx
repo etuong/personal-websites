@@ -1,7 +1,7 @@
 const { useState } = React;
 const { createRoot } = ReactDOM;
 
-const TravelComponent = (props) => {
+const TravelComponent = () => {
     return (
         <section className="pt-page" data-id="travel">
             <div className="section-inner custom-page-content">
@@ -13,7 +13,6 @@ const TravelComponent = (props) => {
         </section>
     )
 };
-
 
 const container = document.getElementById('travel_container');
 const root = createRoot(container);
