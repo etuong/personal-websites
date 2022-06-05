@@ -50,6 +50,44 @@ const ResumeComponent = () => {
             ]
         }
     ]
+
+    const groups = [
+        {
+            name: "Design",
+            skills: [
+                {
+                    name: "Web Design (HTML/CSS/JS)",
+                    level: 1,
+                },
+                {
+                    name: "Mobile Design (Android)",
+                    level: 3,
+                },
+                {
+                    name: "Software Design (OOP)",
+                    level: 2,
+                },
+            ]
+        },
+        {
+            name: "Coding",
+            skills: [
+                {
+                    name: "Java",
+                    level: 4,
+                },
+                {
+                    name: "Python",
+                    level: 5,
+                },
+                {
+                    name: "React + Angular + Vue",
+                    level: 8,
+                },
+            ]
+        }
+    ]
+
     return (
         <section className="pt-page" data-id="resume">
             <div className="section-inner custom-page-content">
@@ -86,57 +124,27 @@ const ResumeComponent = () => {
                     </div>
 
                     <div className="row">
-                        <div className="col-sm-6 col-md-6 col-lg-6">
-                            <div className="block">
-                                <div className="block-title">
-                                    <h3>Design <span>Skills</span></h3>
-                                </div>
-
-                                <div className="skills-info">
-                                    <h4>Web Design (HTML/CSS/JS)</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-1"></div>
-                                    </div>
-
-                                    <h4>Mobile Design (Android)</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-3"></div>
-                                    </div>
-
-                                    <h4>Software Design (OOP)</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-2"></div>
+                        {
+                            groups.map((group, index) => {
+                                return <div key={index} className="col-sm-6 col-md-6 col-lg-6">
+                                    <div className="block">
+                                        <div className="block-title">
+                                            <h3>{group.name} <span>Skills</span></h3>
+                                        </div>
+                                        {
+                                            group.skills.map((skill, index) => {
+                                                return <div key={index} className="skills-info">
+                                                    <h4>{skill.name}</h4>
+                                                    <div className="skill-container">
+                                                        <div className={`skill-percentage skill-${skill.level}`}></div>
+                                                    </div>
+                                                </div>
+                                            })
+                                        }
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-
-                        <div className="col-sm-6 col-md-6 col-lg-6">
-                            <div className="block">
-                                <div className="block-title">
-                                    <h3>Coding <span>Skills</span></h3>
-                                </div>
-
-                                <div className="skills-info">
-                                    <h4>Java</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-4"></div>
-                                    </div>
-
-                                    <h4>Python</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-5"></div>
-                                    </div>
-
-                                    <h4>React + Angular + Vue</h4>
-                                    <div className="skill-container">
-                                        <div className="skill-percentage skill-8"></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                            })
+                        }
                     </div>
 
                     <div className="row">

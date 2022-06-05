@@ -1,11 +1,31 @@
 
 $(function () {
-  var template = `<div class="card mb-4">
-    <img class="card-img-top" src="images/sites/$pic">
-    <h5 class="card-title" style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
-    <div class="card-body"><p class="card-text">$desc</p></div></div>`;
+  var template = `
+    <img style="max-width:-webkit-fill-available" src="images/sites/$pic">
+    <h5  style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
+    <p>$desc</p>`;
 
   var sites = [
+    {
+      lat: 48.856614,
+      lon: 2.352222,
+      flag: 'france.png',
+      title: 'Paris, France',
+      html: template.replace('$pic', 'paris.jpg')
+        .replace('$title', 'Paris, France')
+        .replace('$bgColor', '#313d52')
+        .replace('$desc', 'This city does not need any introduction. Paris is one of the most beautiful cities in the world. It is known worldwide for the Louvre Museum, Notre-Dame cathedral, and the Eiffel tower. It has a reputation of being a romantic and cultural city. The city is also known for its high-quality gastronomy and the terraces of its cafés.')
+    },
+    {
+      lat: 41.902916,
+      lon: 12.453389,
+      flag: 'vatican_city.png',
+      title: 'Vatican City',
+      html: template.replace('$pic', 'vatican.jpg')
+        .replace('$title', 'asdf')
+        .replace('$bgColor', '#c58459')
+        .replace('$desc', 'Vatican City, a city-state surrounded by Rome, Italy, is the headquarters of the Roman Catholic Church. It\'s home to the Pope and a trove of iconic art and architecture. Its Vatican Museums house ancient Roman sculptures as well as Renaissance frescoes in the Raphael Rooms and the Sistine Chapel, famous for Michelangelo\'s ceiling. Fun fact, the Vatican City is the smallest country in the world!')
+    },
     {
       lat: 34.2666656,
       lon: 108.9333296,
@@ -25,6 +45,16 @@ $(function () {
         .replace('$title', 'Tasmania, Australia')
         .replace('$bgColor', '#baa884')
         .replace('$desc', 'Tasmania is Australia\'s only island state and the smallest land area and population. About 12,000 years ago sea level rises and separated Tasmania from the mainland. You\'ll see lots of brick prisons built by convicts themselves. These convicts overpopulated British\'s prisons and were sent to Australia when the continent was found. A roadtrip from Hobart to Launceston will give you an idea of how peaceful and beautiful this island state is.')
+    },
+    {
+      lat: 52.740178,
+      lon: 6.077978,
+      flag: 'netherlands.png',
+      title: 'Giethoorn, Netherlands',
+      html: template.replace('$pic', 'giethoorn.jpg')
+        .replace('$title', 'Giethoorn, Netherlands')
+        .replace('$bgColor', '#95a820')
+        .replace('$desc', 'Giethoorn with its many waterways and bridges is well-known as the Venice of the Netherlands. It is the famous, idyllic village without streets in the northernmost tip of Overijssel. This fairy tale destination is about 2 hours away from Amsterdam. I highly recommend this day trip! 10 out of 10!')
     },
     {
       lat: 38.668997324,
@@ -87,6 +117,16 @@ $(function () {
         .replace('$desc', 'Situated nearly at the center of the north Pacific Ocean, Hawaii marks the northeast corner of Polynesia. While it was once a major hub for the whaling, sugar and pineapple industries, it is now economically dependent on tourism and the U.S. military. The natural beauty of the islands continues to be one of Hawaii\'s greatest assets. Honolulu is the state\'s capital, largest city, and cultural hub.')
     },
     {
+      lat: 52.370216,
+      lon: 4.895168,
+      flag: 'netherlands.png',
+      title: 'asdf',
+      html: template.replace('$pic', 'amsterdam.jpg')
+        .replace('$title', 'Amsterdam, Netherlands')
+        .replace('$bgColor', '#dbd5c0')
+        .replace('$desc', 'Amsterdam is known for its beautiful canals, quirky architecture, and lively nightlife such as the Red Light District. It is also a great place to find Dutch art and culture, and the city has a rich history that dates back to the 13th century. This city has so much to offer and is very walkable and bike friendly. Make sure to rent a bike to explore Zaanse Schans!')
+    },
+    {
       lat: 13.3550,
       lon: 103.8552,
       flag: 'cambodia.png',
@@ -117,6 +157,26 @@ $(function () {
         .replace('$desc', 'Santorini is a Greek volcanic island famous for dramatic views and stunning sunsets. The picturesque towns of cubic white-washed homes and blue-domed churches are some of the most beautiful views I have ever seen in my life. You simply cannot take any bad photos here, it is just simply not possible. Definitely bring a partner here as it is very romantic and a perfect place to propose! ')
     },
     {
+      lat: 41.385064,
+      lon: 2.173404,
+      flag: 'spain.png',
+      title: 'Barcelona, Spain',
+      html: template.replace('$pic', 'barcelona.jpg')
+        .replace('$title', 'Barcelona, Spain')
+        .replace('$bgColor', '#357fda')
+        .replace('$desc', 'Barcelona is famous for its outstanding football team, stunning architecture, lively nightlife, sandy beaches, and world-class cuisine. Not to mention a vibrant cultural heritage and colourful neighbourhood festivals that attract visitors from around the world. You need to be eating tapas everyday and drinking sangria! Oh, and check out all the Gaudi architecture.')
+    },
+    {
+      lat: 51.20998,
+      lon: 3.220402,
+      flag: 'belgium.png',
+      title: 'Bruges, Belgium',
+      html: template.replace('$pic', 'bruges.jpg')
+        .replace('$title', 'Bruges, Belgium')
+        .replace('$bgColor', '#3b4749')
+        .replace('$desc', 'With beautiful squares surrounded by gingerbread houses and cobbled alleys running alongside pretty canals, Bruges is a city adored by lovebirds. They flock to the Belgian town for its picturesque parks, old world hotels and sentimental legends. Bruges is only an hour away from Brussels and is a must stop! This is one of my favorite places in Europe. It is so quaint and beautiful!')
+    },
+    {
       lat: 41.8781,
       lon: -87.6298,
       flag: 'usa.png',
@@ -125,6 +185,16 @@ $(function () {
         .replace('$title', 'Chicago, Illinois, USA')
         .replace('$bgColor', '#76928d')
         .replace('$desc', 'Chicago is a vibrant metropolitan city and home of the blues and jazz. It is arguably where the modern architecture movement started. Chicago is known for many things, including its picturesque skyline, theaters, and world-class museums. The city is called the "White City" because of its restoration after the Chicago Fire in the late 19th century and also the "Windy City" because of its strong winds in the winter. Make sure to check out the Millenium Park and Cloud Gate!')
+    },
+    {
+      lat: 49.282730,
+      lon: -123.120735,
+      flag: 'canada.png',
+      title: 'Vancouver, Canada',
+      html: template.replace('$pic', 'vancouver.jpg')
+        .replace('$title', 'Vancouver, British Columbia, CA')
+        .replace('$bgColor', '#ffc898')
+        .replace('$desc', 'Vancouver is among the world\'s most beautiful cities. It\'s also often considered one of the most liveable, thanks to its well-balanced mix of modern urban features and magnificent natural surroundings. In my opinion, Vancouver is the closest it gets to Asia in North America due to its large Asian population! The Capliano bridge and Night Market are a must!')
     },
     {
       lat: 25.2048,
@@ -177,6 +247,16 @@ $(function () {
         .replace('$desc', 'Istanbul is Turkey\'s most populous city as well as its cultural and financial hub. Istanbul is a city where you can have a European experience with an Islamic grace. Spires and domes of mosques, medival architecture dominate the skyline. I recommend an itinerary of 2-3 days to check out the Blue Mosque and Hagia Sophia. For a more authentic Turkish experience, visit a hamam which is a Turkish bathhouse where a massage feels like a brutal beatdown.')
     },
     {
+      lat: 50.85034,
+      lon: 4.35171,
+      flag: 'belgium.png',
+      title: 'Brussels, Belgium',
+      html: template.replace('$pic', 'brussels.jpg')
+        .replace('$title', 'Brussels, Belgium')
+        .replace('$bgColor', '#56708a')
+        .replace('$desc', 'Belgium is world-famous for its chocolate, waffles, beer, and its national football team, the Red Devils. Belgium is also home to NATO headquarters and to the EU Commission and European Parliament. Brussels is often referred to as the capital of the EU. Not exactly my favorite destination but it still has a lot to offer. Make sure to do a day trip to Ghent and Bruges!')
+    },
+    {
       lat: 54.3520,
       lon: 18.6466,
       flag: 'poland.png',
@@ -185,6 +265,16 @@ $(function () {
         .replace('$title', 'Gdansk, Poland')
         .replace('$bgColor', '#ee8669')
         .replace('$desc', 'Gdansk is a city in Poland on the Baltic Sea and the capital of Pomerania. World War II was ignited by a dispute over the control of the city with the death of 15 Polish soldiers. Gdansk played a vital role in the movement that ended the country\'s communism that was led by Lech Wałęsa. Together with Gydnia and Sopot, the form a metropolitan area called the Tricity. Weather changes drastically on seasons, whereas spring/summer are pleasant with plenty of sunshine, fall/winter are blasted with cold wind and foggy sky.')
+    },
+    {
+      lat: 27.664827,
+      lon: -81.515755,
+      flag: 'usa.png',
+      title: 'Orlando, Florida, USA',
+      html: template.replace('$pic', 'orlando.jpg')
+        .replace('$title', 'Orlando, Florida, USA')
+        .replace('$bgColor', '#76928d')
+        .replace('$desc', 'Florida is world-renowned for its beach resorts, amusement parks, warm and sunny climate, and nautical recreation; attractions such as Walt Disney World, the Kennedy Space Center, and Miami Beach draw tens of millions of visitors annually. I have been to so many places in the world but this definitely the capital of amusement parks!')
     },
     {
       lat: 22.3964,
@@ -257,6 +347,16 @@ $(function () {
         .replace('$desc', 'Kuala Lumpur is the federal capital and the largest city in Malaysia. It has many interesting attractions; like Merdeka Square, Chinatown, Petronas Twin Towers and much more. At first impression, it is nowhere near as clean as its neighbor Singapore, and you will no doubt see a cockroach or two, but its rich culture and history make it a must visit at least once in a lifetime!')
     },
     {
+      lat: 19.432608,
+      lon: -99.133209,
+      flag: 'mexico.png',
+      title: 'Mexico City, Mexico',
+      html: template.replace('$pic', 'mexico_city.jpg')
+        .replace('$title', 'Mexico City, Mexico')
+        .replace('$bgColor', '#b6b4a8')
+        .replace('$desc', 'Built on the ruins of the ancient Aztec city of Tenochtitlan, Mexico City is one of the oldest and largest cities in the Americas. Colonial architecture, iconic artwork, spicy cuisine, and a rich cultural heritage offer visitors an endless array of activities that will satisfy any appetite. There is so much to eat here so be sure to come open minded and hungry!')
+    },
+    {
       lat: 37.9838,
       lon: 23.7275,
       flag: 'gr.png',
@@ -275,6 +375,16 @@ $(function () {
         .replace('$title', 'Munich, Germany')
         .replace('$bgColor', '#737187')
         .replace('$desc', 'Munich is the capital city of Bavaria. It is famous for its beautiful architecture, fine culture, and the annual Oktoberfest beer celebration which ironally does not start in October. Most of the city famous buildings were bombed in WWII but have been restored including the Rathaus (city hall) and its largest church, the Frauenkirche. Aside from its rich history, it is also the international center piece for engineering and technology as exemplified by worldclass technology and science museums like the Deutsches Museum, BMW Museum.')
+    },
+    {
+      lat: 38.707054,
+      lon: -9.135488,
+      flag: 'portugal.png',
+      title: 'Lisbon, Portugal',
+      html: template.replace('$pic', 'lisbon.jpg')
+        .replace('$title', 'Lisbon, Portugal')
+        .replace('$bgColor', '#546432')
+        .replace('$desc', 'Lisbon is famous for its sunny weather, great nightlife, colorful buildings, Fado music, and friendly locals. It is also home to famous landmarks like the Belem Tower and Jerónimos Monastery. As for food, Lisbon is famous for its seafood and Pastéis de Belém, a type of custard tart. I basically ate this and drank sherry and port everyday. Be sure to stop by Sintra for a wonderful day trip!')
     },
     {
       lat: 40.7128,
@@ -317,6 +427,16 @@ $(function () {
         .replace('$desc', 'Rome, or the \'Eternal City\', is the capital and largest city of Italy. It is famous for the Roman Empire, Vatican City, and Trevi Fountains among many more things. Rome is one of the world\'s most visited, famous, influential and beautiful capitals because of its romantic atmosphere, ornate statues and graceful fountains. and millenium-old churches and basilicas. There are so many things to do in this city that never sleeps such as shopping or simply enjoying a shot of expresso! The architecture also bears a high contrast from pompously huge majestic palaces surrounded by tiny alleyways to medival streets with lushful trees.')
     },
     {
+      lat: 21.161907,
+      lon: -86.851524,
+      flag: 'mexico.png',
+      title: 'Cancun, Mexico',
+      html: template.replace('$pic', 'cancun.jpg')
+        .replace('$title', 'Cancun, Mexico')
+        .replace('$bgColor', '#619346')
+        .replace('$desc', 'Cancun is know for white sand beaches, nightlife, water sports, Mayan ruins, nature, and some of the best all inclusive resorts in the world. These are just a few of the things that bring ten million tourists to Cancun, Mexico every year. If you plan to visit here for more than 5 days, I would recommend getting the GoCity pass!')
+    },
+    {
       lat: 25.2854,
       lon: 51.5310,
       flag: 'qatar.png',
@@ -337,6 +457,16 @@ $(function () {
         .replace('$desc', 'Ho Chi Minh City (formerly known as Saigon before the fall of Saigon in 1975) is the largest city in Vietnam and the former capital of the Republic of Vietnam . According to TravelTraffic.com, Ho Chi Minh City is ranked 132 on the list of world\'s most expensive cities for expatriate employees. Rich in history, tourists often themselves in museums learning about the country\'s struggles or at the Củ Chi tunnels to experience the war first-handed. As a native, I can also say that street crossing is a nightmare for them (and everyone else for the same matter)!')
     },
     {
+      lat: 51.178056,
+      lon: -115.571944,
+      flag: 'canada.png',
+      title: 'Banff, Canada',
+      html: template.replace('$pic', 'banff.jpg')
+        .replace('$title', 'Banff, Canada')
+        .replace('$bgColor', '#57779a')
+        .replace('$desc', 'Banff National Park is famous for its surreally coloured lakes, majestic mountains and endless outdoor adventures. Canada\'s first national park and the world\'s third, it has a rich heritage as one of the world\'s most awe-inspiring mountain destinations. I went during non-summer time so I witnessed whiteness and snow at Lake Louise but I hear it is even more beautiful in the summer!')
+    },
+    {
       lat: 18.7061,
       lon: 98.9817,
       flag: 'thailand.png',
@@ -355,6 +485,16 @@ $(function () {
         .replace('$title', 'San Francisco, California, USA')
         .replace('$bgColor', '#545456')
         .replace('$desc', 'San Francisco is a major city in California known for its hilly terrain, liberal community, a world famous bridge, and great diversity. After WWII, San Francisco, being the heart of the Bay area, also became the centerpiece for the gay men and hippie movement. The metro system (BART) is very efficient and there are so many things to do such as enjoying a beautiful walk across the Golden Gate Bridge, eating great seafood at the Fisherman\'s Wharf, and hitching a ride on a cable car! San Francisco is definitely a top tourist spot on my list!')
+    },
+    {
+      lat: 37.38264,
+      lon: -5.996295,
+      flag: 'spain.png',
+      title: 'Seville, Spain',
+      html: template.replace('$pic', 'seville.jpg')
+        .replace('$title', 'Seville, Spain')
+        .replace('$bgColor', '#dbb55b')
+        .replace('$desc', 'Seville, famous for its flamenco dancing and architectural designs, is the largest city in Southern Spain. It was said to have been built by Hercules himself and its fascinating history makes it one of Spain\'s most intriguing places to visit. What I like about Seville is that it does not bear the overpopulated tourism of that in Barcelona but still has fasincating attractions to check out!')
     },
     {
       lat: -37.8136,
@@ -435,6 +575,16 @@ $(function () {
         .replace('$title', 'Toronto, Canada')
         .replace('$bgColor', '#263049')
         .replace('$desc', 'Toronto is the most populous city in Canada and the provincial capital of Ontario. The city is very diversed (with over 80 different ethnic communities) and half of the city\'s residents were born outside Canada. There are six districts with Old Toronto housing the most tourist attractions. Some awesome things to do include walking along the famous Yonge Street (Eaton Mall), eating a peameal bacon sandwich at St. Lawrence Market, and admiring the city\'s beautiful glass architecture! If you have time, make sure to check out the Niagara Falls!')
+    },
+    {
+      lat: 40.416691,
+      lon: -3.700345,
+      flag: 'spain.png',
+      title: 'Madrid, Spain',
+      html: template.replace('$pic', 'madrid.jpg')
+        .replace('$title', 'Madrid, Spain')
+        .replace('$bgColor', '#9f8c7b')
+        .replace('$desc', 'Madrid is known for its historical buildings, food markets, and the royals. It is also known for its renaissance and contemporary art museums, sunny blue skies, unique neighborhoods, and bustling nightlife (one of the best in my opinion). Madrid is a city of joy and life. Be warned that lunches do not start until 1 PM though and dinner at 8 PM! A day trip to Toledo is a must!')
     },
     {
       lat: 48.2082,

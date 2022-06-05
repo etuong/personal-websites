@@ -31,7 +31,7 @@ const ContactComponent = () => {
                                     <i className="fa fa-envelope"></i>
                                 </div>
                                 <div className="ci-text">
-                                    <h5>etuong@hotmail.com</h5>
+                                    <h5><a href="mailto:etuong@hotmail.com">etuong@hotmail.com</a></h5>
                                 </div>
                             </div>
                             <div className="contact-info-block">
@@ -64,7 +64,7 @@ const ContactComponent = () => {
                                     <div className="form-group form-group-with-icon">
                                         <i className="fa fa-user"></i>
                                         <label>Full Name</label>
-                                        <input id="form_name" type="text" name="name" className="form-control" 
+                                        <input id="form_name" type="text" name="name" className="form-control"
                                             required="required" data-error="Name is required." />
                                         <div className="form-control-border"></div>
                                         <div className="help-block with-errors"></div>
