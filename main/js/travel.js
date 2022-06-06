@@ -1,9 +1,10 @@
 
 $(function () {
-  var template = `
-    <img style="max-width:-webkit-fill-available" src="images/sites/$pic">
-    <h5  style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
-    <p>$desc</p>`;
+    var template = `
+    <div class="card mb-4">
+    <img class="card-img-top" src="images/sites/$pic">
+    <h5 class="card-title" style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
+    <p class="card-text" style="font-size:12px;padding:5px 10px;">$desc</p></div>`;
 
   var sites = [
     {

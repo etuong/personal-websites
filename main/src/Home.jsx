@@ -49,7 +49,7 @@ const HomeComponent = () => {
                 <p>I love to solve problems! At a young age, I had a candid characteristic to break things apart
                   and put them back together. My curiosity in engineering and technology led me to pursue my
                   passion in computer science and software development. This website was created out of my vast
-                  collection of photographs that I captured and my portfolio of various projects.</p>
+                  collection of photographs that I captured during my world travels and my portfolio of various technical projects.</p>
               </div>
               <div className="download-resume">
                 <a href="Resume.pdf" target="_blank" className="btn btn-secondary">Download Resume</a>
@@ -80,7 +80,6 @@ const HomeComponent = () => {
     </section>
   )
 };
-
 
 const container = document.getElementById('home_container');
 const root = createRoot(container);

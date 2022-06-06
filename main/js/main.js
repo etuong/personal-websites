@@ -52,41 +52,36 @@
       }
 
       // Initialize Portfolio grid
-      var $portfolio_container = $("#portfolio-grid");
+      setTimeout(function () {
+        var portfolio_grid = $('.portfolio-grid'),
+          portfolio_filter = $('#portfolio_filters');
 
-      $portfolio_container.imagesLoaded(function () {
-        setTimeout(function () {
-          var portfolio_grid = $('#portfolio_grid'),
-            portfolio_filter = $('#portfolio_filters');
+        if (portfolio_grid) {
+          portfolio_grid.shuffle({
+            speed: 450,
+            itemSelector: 'figure'
+          });
 
-          if (portfolio_grid) {
+          $('.site-main-menu').on("click", "a", function (e) {
+            portfolio_grid.shuffle('update');
+          });
 
-            portfolio_grid.shuffle({
-              speed: 450,
-              itemSelector: 'figure'
-            });
+          portfolio_filter.on("click", ".filter", function (e) {
+            portfolio_grid.shuffle('update');
+            e.preventDefault();
+            $('#portfolio_filters .filter').parent().removeClass('active');
+            $(this).parent().addClass('active');
+            portfolio_grid.shuffle('shuffle', $(this).attr('data-group'));
+            setTimeout(function () {
+              subpages_resize();
+            }, 500);
+          });
+        }
+      }, 500);
 
-            $('.site-main-menu').on("click", "a", function (e) {
-              portfolio_grid.shuffle('update');
-            });
-
-            portfolio_filter.on("click", ".filter", function (e) {
-              portfolio_grid.shuffle('update');
-              e.preventDefault();
-              $('#portfolio_filters .filter').parent().removeClass('active');
-              $(this).parent().addClass('active');
-              portfolio_grid.shuffle('shuffle', $(this).attr('data-group'));
-              setTimeout(function () {
-                subpages_resize();
-              }, 500);
-            });
-
-          }
-        }, 500);
-      });
 
       // Portfolio hover effect init
-      $(' #portfolio_grid > figure ').each(function () { $(this).hoverdir(); });
+      $('#ethan > figure ').each(function () { $(this).hoverdir(); });
 
       // Mobile menu
       $('.menu-toggle').on("click", function () {

@@ -1,7 +1,121 @@
 const { useState } = React;
 const { createRoot } = ReactDOM;
 
-const PortfolioComponent = (props) => {
+const assets = [
+    {
+        category: "shop",
+        href: "pcUsa",
+        text: "United States Postcard"
+    },
+    {
+        category: "hdr",
+        href: "hdrChicago",
+        text: "Chicago, Illinois"
+    },
+    {
+        category: "photo",
+        href: "favCappadocia",
+        text: "Cappadocia, Turkey"
+    },
+    {
+        category: "hdr",
+        href: "hdrDancing",
+        text: "Dancing House, Prague, Czech Republic"
+    },
+    {
+        category: "solid",
+        href: "swSkate",
+        text: "Skateboard"
+    },
+    {
+        category: "solid",
+        href: "swDrive",
+        text: "USB Drive"
+    },
+    {
+        category: "photo",
+        href: "favElephant",
+        text: "Elephant, Chiang Mai, Thailand"
+    },
+    {
+        category: "shop",
+        href: "psFlame",
+        text: "Vegeta's Flame"
+    },
+    {
+        category: "photo",
+        href: "favHead",
+        text: "Ayutthaya, Thailand"
+    },
+    {
+        category: "photo",
+        href: "favPenang",
+        text: "Penang, Malaysia"
+    },
+    {
+        category: "solid",
+        href: "swBulb",
+        text: "Lightbulb"
+    },
+    {
+        category: "shop",
+        href: "psSmoke",
+        text: "Smoking Pool"
+    },
+
+
+    {
+        category: "code",
+        page: "project-8",
+        href: "ask",
+        text: "Ask Ethan!"
+    },
+    {
+        category: "code",
+        page: "project-5",
+        href: "wpf",
+        text: "Windows Presentation Foundation && Model-View-ViewModel"
+    },
+    {
+        category: "code",
+        page: "project-3",
+        href: "vision",
+        text: "Computer Vision"
+    },
+    {
+        category: "code",
+        page: "project-7",
+        href: "algo",
+        text: "Data Structures and Algorithms"
+    },
+    {
+        category: "code",
+        page: "project-4",
+        href: "finite",
+        text: "Finite Element"
+    },
+    {
+        category: "code",
+        page: "project-1",
+        href: "light",
+        text: "Personal Website - Light Version"
+    },
+    {
+        category: "code",
+        page: "project-2",
+        href: "dark",
+        text: "Personal Website - Dark Version"
+    },
+    {
+        category: "code",
+        page: "project-6",
+        href: "lorenz",
+        text: "Numerical Analysis"
+    },
+]
+
+
+const PortfolioComponent = () => {
     return (
         <section className="pt-page" data-id="portfolio">
             <div className="section-inner custom-page-content">
@@ -31,199 +145,19 @@ const PortfolioComponent = (props) => {
                         </li>
                     </ul>
 
-                    <div id="portfolio_grid" className="portfolio-grid">
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-8.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/askS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Ask Ethan!</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favColorL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favColorS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "solid"]'>
-                            <a className="d-block h-100" data-fancybox="solid" href="images/portfolio/swPlaneL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/swPlaneS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "shop"]'>
-                            <a className="d-block h-100" data-fancybox="shop" href="images/portfolio/pcUsaL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/pcUsaS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-5.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/wpfS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Windows Presentation Foundation && Model-View-ViewModel</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "hdr"]'>
-                            <a className="d-block h-100" data-fancybox="hdr" href="images/portfolio/hdrWallL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/hdrWallS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "hdr"]'>
-                            <a className="d-block h-100" data-fancybox="hdr" href="images/portfolio/hdrChicagoL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/hdrChicagoS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-3.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/visionS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Computer Vision</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "shop"]'>
-                            <a className="d-block h-100" data-fancybox="shop" href="images/portfolio/pcWarsawL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/pcWarsawS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favCappadociaL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favCappadociaS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-7.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/algoS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Data Structures and Algorithms</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "hdr"]'>
-                            <a className="d-block h-100" data-fancybox="hdr" href="images/portfolio/hdrDancingL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/hdrDancingS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "solid"]'>
-                            <a className="d-block h-100" data-fancybox="solid" href="images/portfolio/swSkateL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/swSkateS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-4.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/finiteS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Finite Element</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "solid"]'>
-                            <a className="d-block h-100" data-fancybox="solid" href="images/portfolio/swDriveL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/swDriveS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favElephantL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favElephantS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-1.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/lightS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Personal Website - Light Version</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "shop"]'>
-                            <a className="d-block h-100" data-fancybox="shop" href="images/portfolio/pcSiemReapL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/pcSiemReapS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "shop"]'>
-                            <a className="d-block h-100" data-fancybox="shop" href="images/portfolio/psFlameL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/psFlameS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-2.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/darkS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Personal Website - Dark Version</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favHeadL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favHeadS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favPenangL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favPenangS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favSantoriniL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favSantoriniS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "solid"]'>
-                            <a className="d-block h-100" data-fancybox="solid" href="images/portfolio/swBulbL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/swBulbS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favTempleL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favTempleS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "code"]'>
-                            <a className="ajax-page-load" href="pages/project/project-6.html">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/lorenzS.jpg" alt="" />
-                                <div>
-                                    <h5 className="name">Numerical Analysis</h5>
-                                </div>
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "shop"]'>
-                            <a className="d-block h-100" data-fancybox="shop" href="images/portfolio/psSmokeL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/psSmokeS.jpg" alt="" />
-                            </a>
-                        </figure>
-
-                        <figure className="item" data-groups='["all", "photo"]'>
-                            <a className="d-block h-100" data-fancybox="photo" href="images/portfolio/favCopenhagenL.jpg">
-                                <img className="img-fluid img-thumbnail" src="./images/portfolio/favCopenhagenS.jpg" alt="" />
-                            </a>
-                        </figure>
-
+                    <div className="portfolio-grid">
+                        {
+                            assets.sort(() => Math.random() - 0.5).map((asset, index) => {
+                                return <figure key={index} className="item" data-groups={`["all", "${asset.category}"]`}>
+                                    <a className={asset.page ? "ajax-page-load" : "d-block h-100"} data-fancybox={`${asset.category}`} href={asset.page ? `pages/project/${asset.page}.html` : `images/portfolio/${asset.href}L.jpg`}>
+                                        <img className="img-fluid img-thumbnail" src={`images/portfolio/${asset.href}S.jpg`} alt="" />
+                                        <div>
+                                            <h5 className="name">{asset.text}</h5>
+                                        </div>
+                                    </a>
+                                </figure>
+                            })
+                        }
                     </div>
                 </div>
             </div>

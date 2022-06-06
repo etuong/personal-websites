@@ -23,7 +23,7 @@ const ContactComponent = () => {
                                     <i className="fa fa-map-marker"></i>
                                 </div>
                                 <div className="ci-text">
-                                    <h5>Fort Wayne, Indiana, USA</h5>
+                                    <span>Fort Wayne, Indiana, USA</span>
                                 </div>
                             </div>
                             <div className="contact-info-block">
@@ -31,7 +31,7 @@ const ContactComponent = () => {
                                     <i className="fa fa-envelope"></i>
                                 </div>
                                 <div className="ci-text">
-                                    <h5><a href="mailto:etuong@hotmail.com">etuong@hotmail.com</a></h5>
+                                    <span><a href="mailto:etuong@hotmail.com">etuong@hotmail.com</a></span>
                                 </div>
                             </div>
                             <div className="contact-info-block">
@@ -39,7 +39,7 @@ const ContactComponent = () => {
                                     <i className="fa fa-phone"></i>
                                 </div>
                                 <div className="ci-text">
-                                    <h5>(412) 397-8149</h5>
+                                    <span>(412) 397-8149</span>
                                 </div>
                             </div>
                             <div className="contact-info-block">
@@ -47,7 +47,7 @@ const ContactComponent = () => {
                                     <i className="fa fa-check"></i>
                                 </div>
                                 <div className="ci-text">
-                                    <h5>Freelance Available</h5>
+                                    <span>Freelance Available</span>
                                 </div>
                             </div>
                         </div>
