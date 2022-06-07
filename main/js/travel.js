@@ -1,6 +1,6 @@
 
 $(function () {
-    var template = `
+  var template = `
     <div class="card mb-4">
     <img class="card-img-top" src="images/sites/$pic">
     <h5 class="card-title" style="background-color:$bgColor;color:white;padding:2px 10px;">$title</h5>
@@ -631,6 +631,7 @@ $(function () {
 
   $(window)
     .on('load', function () {
+      setTimeout(() => { }, 8000);
       var map = new google.maps.Map(document.getElementById('gmap'), {
         zoom: 3,
         center: new google.maps.LatLng(33.9391, 67.7100),

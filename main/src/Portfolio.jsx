@@ -112,6 +112,12 @@ const assets = [
         href: "lorenz",
         text: "Numerical Analysis"
     },
+    {
+        category: "code",
+        page: "project-9",
+        href: "data",
+        text: "Data Science"
+    },
 ]
 
 
