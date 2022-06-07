@@ -62,7 +62,16 @@ const assets = [
         href: "psSmoke",
         text: "Smoking Pool"
     },
-
+    {
+        category: "photo",
+        href: "paris",
+        text: "Tilting House"
+    },
+    {
+        category: "photo",
+        href: "giethoorn",
+        text: "Giethoorn"
+    },
 
     {
         category: "code",
@@ -117,6 +126,12 @@ const assets = [
         page: "project-9",
         href: "data",
         text: "Data Science"
+    },
+    {
+        category: "code",
+        page: "project-10",
+        href: "book",
+        text: "BookSmart"
     },
 ]
 
