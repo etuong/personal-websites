@@ -1,9 +1,3 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}, displayAlign: "left" });
-</script>
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 <div id="ajax-page" class="ajax-page-content">
   <div class="ajax-page-wrapper">
     <div class="ajax-page-nav">
@@ -20,7 +14,7 @@
       <h1>Computer Vision</h1>
     </div>
 
-    <div class="row">
+    <div>
       <p>According to Wikipedia, computer vision is an interdisciplinary field that deals with how
         computers can be made for gaining high-level understanding from digital images or
         videos. Computer vision tasks include methods for acquiring, processing, analyzing and
@@ -178,3 +172,11 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  (function () {
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, displayAlign: "left" });
+    MathJax.Hub.Typeset()
+  })();
+</script>

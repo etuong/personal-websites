@@ -1,7 +1,14 @@
-const { useState } = React;
+const { useState, useEfffect } = React;
 const { createRoot } = ReactDOM;
 
 const ContactComponent = () => {
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "js/contact-form.js";
+        script.type = "text/javascript";
+        document.body.appendChild(script);
+    })
+
     return (
         <section className="pt-page" data-id="contact">
             <div className="section-inner custom-page-content">

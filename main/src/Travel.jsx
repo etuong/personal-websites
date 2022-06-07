@@ -1,7 +1,15 @@
-const { useState } = React;
+
+const { useState, useEffect } = React;
 const { createRoot } = ReactDOM;
 
 const TravelComponent = () => {
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "js/travel.js";
+        script.type = "text/javascript";
+        document.body.appendChild(script);
+    })
+
     return (
         <section className="pt-page" data-id="travel">
             <div className="section-inner custom-page-content">

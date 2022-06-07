@@ -1,9 +1,3 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}, displayAlign: "left" });
-</script>
-<script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 <div id="ajax-page" class="ajax-page-content">
   <div class="ajax-page-wrapper">
     <div class="ajax-page-nav">
@@ -20,7 +14,7 @@
       <h1>Finite Element</h1>
     </div>
 
-    <div class="row">
+    <div>
       <img alt="" src="images/project/GUI.png" width="900">
       <p>I designed and built a simple software package/interface for finite element analysis. The main idea of this
         project was to provide students access to analytical studies of the finite element method. Students should be
@@ -416,3 +410,11 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  (function () {
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [["$", "$"], ["\\(", "\\)"]] }, displayAlign: "left" });
+    MathJax.Hub.Typeset()
+  })();
+</script>
