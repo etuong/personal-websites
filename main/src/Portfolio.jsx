@@ -37,11 +37,11 @@ const assets = [
         href: "favElephant",
         text: "Elephant, Chiang Mai, Thailand"
     },
-    {
-        category: "shop",
-        href: "psFlame",
-        text: "Vegeta's Flame"
-    },
+    // {
+    //     category: "shop",
+    //     href: "psFlame",
+    //     text: "Vegeta's Flame"
+    // },
     {
         category: "photo",
         href: "favHead",
@@ -132,6 +132,12 @@ const assets = [
         page: "project-10",
         href: "book",
         text: "BookSmart"
+    },
+    {
+        category: "code",
+        page: "project-11",
+        href: "blog",
+        text: "Headless CMS"
     },
 ]
 
