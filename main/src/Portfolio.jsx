@@ -47,11 +47,11 @@ const assets = [
     href: "favHead",
     text: "Ayutthaya, Thailand",
   },
-  {
-    category: "photo",
-    href: "favPenang",
-    text: "Penang, Malaysia",
-  },
+  // {
+  //   category: "photo",
+  //   href: "favPenang",
+  //   text: "Penang, Malaysia",
+  // },
   {
     category: "solid",
     href: "swBulb",
@@ -78,6 +78,12 @@ const assets = [
     page: "project-8",
     href: "ask",
     text: "Ask Ethan!",
+  },
+  {
+    category: "code",
+    page: "project-12",
+    href: "cfh",
+    text: "Cards For Humanity",
   },
   {
     category: "code",
