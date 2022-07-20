@@ -6,24 +6,28 @@ const ServicesComponent = () => {
     {
       name: "Web Design",
       icon: "web_design_icon",
-      description: "I design responsive and modern websites. Check out my portfolio for more information!"
+      description:
+        "I design responsive and modern websites. Check out my portfolio for more information!",
     },
     {
       name: "Photography",
       icon: "photography_icon",
-      description: "I specialize in bright high contrast photography with proficient knowledge in Adobe suites including Photoshop and Premiere"
+      description:
+        "I specialize in bright high contrast photography with proficient knowledge in Adobe suites including Photoshop and Premiere",
     },
     {
       name: "Coding",
       icon: "creativity_icon",
-      description: "I write maintainable, deliverable, and scalable software in C++, Java, and Python for desktop, web, and mobile platform"
+      description:
+        "I write maintainable, deliverable, and scalable software in C++, Java, and Python for desktop, web, and mobile platform",
     },
     {
       name: "Teaching",
       icon: "advetising_icon",
-      description: "I have 5 years of teaching experiences ranging from high school calculus to college differential equations"
-    }
-  ]
+      description:
+        "I have 5 years of teaching experiences ranging from high school calculus to college differential equations",
+    },
+  ];
 
   const testimonials = [
     {
@@ -60,13 +64,14 @@ const ServicesComponent = () => {
     },
     {
       author: "Caitlyn G",
-      title: "Student at University of Pittsburgh, MATH 0125, Business Calculus",
+      title:
+        "Student at University of Pittsburgh, MATH 0125, Business Calculus",
       icon: "woman",
       text: `"Ethan is super friendly and always helpful when we ask him questions. This was easily my
       favorite class this semester. I loved the positive environment, and I was even inspired to
       change my major by this class. Thank you, Ethan! :)"`,
-    }
-  ]
+    },
+  ];
 
   return (
     <section className="pt-page" data-id="services">
@@ -75,29 +80,33 @@ const ServicesComponent = () => {
           <h2>Services</h2>
         </div>
         <div className="page-content">
-
           <div className="row">
             <div className="col-sm-12 col-md-12">
               <div className="block-title">
-                <h3>My <span>Services</span></h3>
+                <h3>
+                  My <span>Services</span>
+                </h3>
               </div>
             </div>
-            {
-              services.map((service, index) => {
-                return (<div key={index} className="col-sm-6 col-md-3">
+            {services.map((service, index) => {
+              return (
+                <div key={index} className="col-sm-6 col-md-3">
                   <div className="service-block">
                     <div className="service-info">
-
                       <div className="service-image">
-                        <img src={`./images/service/${service.icon}.png`} alt="Web Design" className="mCS_img_loaded" />
+                        <img
+                          src={`./images/service/${service.icon}.png`}
+                          alt="Web Design"
+                          className="mCS_img_loaded"
+                        />
                       </div>
                       <h4>{service.name}</h4>
                       <p>{service.description}</p>
                     </div>
                   </div>
-                </div>)
-              })
-            }
+                </div>
+              );
+            })}
           </div>
 
           <div className="row">
@@ -106,16 +115,23 @@ const ServicesComponent = () => {
                 <h3>Testimonials</h3>
               </div>
               <div className="testimonials owl-carousel block">
-                {
-                  testimonials.map((testimonial, index) => {
-                    return <div key={index} className="testimonial-item">
+                {testimonials.map((testimonial, index) => {
+                  return (
+                    <div key={index} className="testimonial-item">
                       <div className="testimonial-credits">
                         <div className="testimonial-picture">
-                          <img src={`./images/testimonials/${testimonial.icon}.png`} alt="" />
+                          <img
+                            src={`./images/testimonials/${testimonial.icon}.png`}
+                            alt=""
+                          />
                         </div>
                         <div className="testimonial-author-info">
-                          <p className="testimonial-author">{testimonial.author}</p>
-                          <p className="testimonial-firm">{testimonial.title}</p>
+                          <p className="testimonial-author">
+                            {testimonial.author}
+                          </p>
+                          <p className="testimonial-firm">
+                            {testimonial.title}
+                          </p>
                         </div>
                       </div>
                       <div className="testimonial-content">
@@ -123,21 +139,18 @@ const ServicesComponent = () => {
                           <p>{testimonial.text}</p>
                         </div>
                       </div>
-
                     </div>
-                  })
-                }
+                  );
+                })}
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
-  )
+  );
 };
 
-const container = document.getElementById('services_container');
+const container = document.getElementById("services_container");
 const root = createRoot(container);
 root.render(<ServicesComponent />);

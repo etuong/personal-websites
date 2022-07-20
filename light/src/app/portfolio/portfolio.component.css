@@ -7,15 +7,19 @@
 }
 
 .btn-outline-black {
-  background-color: transparent!important;
-  color: rgb(109, 109, 109)!important;
+  background-color: transparent !important;
+  color: rgb(109, 109, 109) !important;
   padding: 0.2rem 0.5rem;
   margin: auto 10px;
 }
 
-.btn-outline-black:hover, .btn-outline-black:focus, .mixitup-control-active,
-.btn-outline-black:active, .btn-outline-black:active:focus, .btn-outline-black.active {
-  background-color: rgb(76, 214, 117)!important;
+.btn-outline-black:hover,
+.btn-outline-black:focus,
+.mixitup-control-active,
+.btn-outline-black:active,
+.btn-outline-black:active:focus,
+.btn-outline-black.active {
+  background-color: rgb(76, 214, 117) !important;
   color: white !important;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .16), 0 10px 20px 0 rgba(0, 0, 0, .12) !important;
 }
@@ -25,7 +29,8 @@
   margin-left: 0;
 }
 
-.row.no-gutters>[class^=col-], .row.no-gutters>[class*=" col-"] {
+.row.no-gutters>[class^=col-],
+.row.no-gutters>[class*=" col-"] {
   padding-right: 0;
   padding-left: 0;
 }

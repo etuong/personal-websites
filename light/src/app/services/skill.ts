@@ -1,4 +1,4 @@
 export class Skill {
-    percentage : number;
-    name : string;
+  percentage: number;
+  name: string;
 }

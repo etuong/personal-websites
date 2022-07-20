@@ -41,15 +41,18 @@
             <div data-thumb="pictures/thumb/portfolio/flags.jpg" data-src="pictures/enlarge/portfolio/flags.jpg"></div>
             <div data-thumb="pictures/thumb/portfolio/3.jpg" data-src="pictures/enlarge/portfolio/3.jpg"></div>
             <div data-thumb="pictures/thumb/portfolio/4.jpg" data-src="pictures/enlarge/portfolio/4.jpg"></div>
-            <div data-thumb="pictures/thumb/portfolio/everest.jpg" data-src="pictures/enlarge/portfolio/everest.jpg"></div>  
+            <div data-thumb="pictures/thumb/portfolio/everest.jpg" data-src="pictures/enlarge/portfolio/everest.jpg">
+            </div>
             <div data-thumb="pictures/thumb/portfolio/5.jpg" data-src="pictures/enlarge/portfolio/5.jpg"></div>
             <div data-thumb="pictures/thumb/portfolio/6.jpg" data-src="pictures/enlarge/portfolio/6.jpg"></div>
             <div data-thumb="pictures/thumb/portfolio/7.jpg" data-src="pictures/enlarge/portfolio/7.jpg"></div>
-            <div data-thumb="pictures/thumb/portfolio/yamdrok.jpg" data-src="pictures/enlarge/portfolio/yamdrok.jpg"></div>
+            <div data-thumb="pictures/thumb/portfolio/yamdrok.jpg" data-src="pictures/enlarge/portfolio/yamdrok.jpg">
+            </div>
             <div data-thumb="pictures/thumb/portfolio/9.jpg" data-src="pictures/enlarge/portfolio/9.jpg"></div>
-            <div data-thumb="pictures/thumb/portfolio/10.jpg" data-src="pictures/enlarge/portfolio/10.jpg"></div>            
-            <div data-thumb="pictures/thumb/portfolio/terracotta.jpg" data-src="pictures/enlarge/portfolio/terracotta.jpg"></div>
-            <div data-thumb="pictures/thumb/portfolio/13.jpg" data-src="pictures/enlarge/portfolio/13.jpg"></div>  
+            <div data-thumb="pictures/thumb/portfolio/10.jpg" data-src="pictures/enlarge/portfolio/10.jpg"></div>
+            <div data-thumb="pictures/thumb/portfolio/terracotta.jpg"
+                data-src="pictures/enlarge/portfolio/terracotta.jpg"></div>
+            <div data-thumb="pictures/thumb/portfolio/13.jpg" data-src="pictures/enlarge/portfolio/13.jpg"></div>
         </div>
         <!-- #camera_wrap_3 -->
 
@@ -66,7 +69,7 @@
     <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='js/camera.min.js'></script>
     <script type='text/javascript'>
-        jQuery(function() {
+        jQuery(function () {
             jQuery('#camera_wrap_4').camera({
                 height: 'auto',
                 loader: 'bar',
@@ -86,8 +89,8 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            $(".btn-slide").click(function() {
+        $(document).ready(function () {
+            $(".btn-slide").click(function () {
                 $("#panel").slideToggle("slow");
                 $(this).toggleClass("active");
                 return false;
@@ -103,7 +106,7 @@
 
             $("body").fadeIn(1200);
 
-            $("a").not(".btn-slide").click(function(e) {
+            $("a").not(".btn-slide").click(function (e) {
                 e.preventDefault();
                 linkLocation = this.href;
                 $("body").fadeOut(1200, NextPage);

@@ -27,6 +27,7 @@
   .card.features {
     margin-bottom: 2rem;
   }
+
   [class^="col-"]:last-child .card.features {
     margin-bottom: 0;
   }
@@ -93,7 +94,8 @@
 .bars-wrap {
   margin: 0 auto;
   width: calc(100% - 15px);
-  max-width: 90%;border-radius:20px;
+  max-width: 90%;
+  border-radius: 20px;
 }
 
 .bar {
@@ -102,7 +104,7 @@
   position: relative;
   background-color: #eee;
   margin: 0 0 10px 0;
-  border-radius:20px;
+  border-radius: 20px;
   align-items: flex-end;
   font-size: 7pt;
 }
@@ -111,10 +113,13 @@
   top: 0;
   left: 0;
   position: absolute;
-  background: #4AC29A;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #BDFFF3, #4AC29A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, rgb(128, 211, 196), #4AC29A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #4AC29A;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BDFFF3, #4AC29A);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, rgb(128, 211, 196), #4AC29A);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .bar .tag {
@@ -123,7 +128,7 @@
   position: absolute;
   background-color: #4AC29A;
   color: #fff;
-  border-radius:20px;
+  border-radius: 20px;
   height: 100%;
   width: 110px;
   width: 70px;
@@ -138,12 +143,15 @@
   .skills-wrapper {
     margin: 50px 0 0 0;
   }
+
   .skills-wrapper>.flex:first-child {
     padding: 3px 10px;
   }
+
   .flex.row-gt-sm {
     flex-direction: row;
   }
+
   .flex-50-gt-sm {
     -webkit-flex: 1 1 50%;
     -ms-flex: 1 1 50%;
@@ -152,6 +160,7 @@
     max-height: 100%;
     box-sizing: border-box;
   }
+
   .bar {
     max-width: 90%;
     height: 28px;
@@ -164,17 +173,21 @@
   .skills-wrapper .desc {
     margin: 15px;
   }
+
   .skills-wrapper>.flex:first-child {
     padding: 0px 10px;
   }
+
   .bar {
     height: 24px;
     margin: 0 0 15px 0;
     font-size: 11pt;
   }
+
   .bar .tag {
     width: 110px;
   }
+
   .bar span {
     display: initial;
   }
