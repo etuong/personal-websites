@@ -2,11 +2,9 @@
 //  BLOG
 // ========================================================================= */
 
-
 #blog {
   background-color: var(--even-color);
 }
-
 
 #blog .card-body {
   text-align: left;

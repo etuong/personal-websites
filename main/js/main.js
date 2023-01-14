@@ -1,49 +1,49 @@
 (function ($) {
   "use strict";
   function subpages_resize() {
-    var subpagesHeight = $('.pt-page-current').height();
+    var subpagesHeight = $(".pt-page-current").height();
     $(".subpages").height(subpagesHeight + 50);
   }
 
   function mobileMenuHide() {
     var windowWidth = $(window).width();
     if (windowWidth < 1024) {
-      $('#site_header').addClass('mobile-menu-hide');
+      $("#site_header").addClass("mobile-menu-hide");
     }
   }
 
   $(window)
-    .on('load', function () {
+    .on("load", function () {
       $(".preloader").fadeOut("slow");
 
-      var ptPage = $('.subpages');
+      var ptPage = $(".subpages");
       if (ptPage[0]) {
         PageTransitions.init({
-          menu: 'ul.site-main-menu',
+          menu: "ul.site-main-menu",
         });
       }
 
       // Initialize Portfolio grid
       setTimeout(function () {
-        var portfolio_grid = $('.portfolio-grid'),
-          portfolio_filter = $('#portfolio_filters');
+        var portfolio_grid = $(".portfolio-grid"),
+          portfolio_filter = $("#portfolio_filters");
 
         if (portfolio_grid) {
           portfolio_grid.shuffle({
             speed: 450,
-            itemSelector: 'figure'
+            itemSelector: "figure",
           });
 
-          $('.site-main-menu').on("click", "a", function (e) {
-            portfolio_grid.shuffle('update');
+          $(".site-main-menu").on("click", "a", function (e) {
+            portfolio_grid.shuffle("update");
           });
 
           portfolio_filter.on("click", ".filter", function (e) {
-            portfolio_grid.shuffle('update');
+            portfolio_grid.shuffle("update");
             e.preventDefault();
-            $('#portfolio_filters .filter').parent().removeClass('active');
-            $(this).parent().addClass('active');
-            portfolio_grid.shuffle('shuffle', $(this).attr('data-group'));
+            $("#portfolio_filters .filter").parent().removeClass("active");
+            $(this).parent().addClass("active");
+            portfolio_grid.shuffle("shuffle", $(this).attr("data-group"));
             setTimeout(function () {
               subpages_resize();
             }, 500);
@@ -51,23 +51,24 @@
         }
       }, 500);
 
-
       // Portfolio hover effect init
-      $('#ethan > figure ').each(function () { $(this).hoverdir(); });
+      $("#ethan > figure ").each(function () {
+        $(this).hoverdir();
+      });
 
       // Mobile menu
-      $('.menu-toggle').on("click", function () {
-        $('#site_header').toggleClass('mobile-menu-hide');
+      $(".menu-toggle").on("click", function () {
+        $("#site_header").toggleClass("mobile-menu-hide");
       });
 
       // Mobile menu hide on main menu item click
-      $('.site-main-menu').on("click", "a", function (e) {
+      $(".site-main-menu").on("click", "a", function (e) {
         mobileMenuHide();
       });
 
       // Sidebar toggle
-      $('.sidebar-toggle').on("click", function () {
-        $('#blog-sidebar').toggleClass('open');
+      $(".sidebar-toggle").on("click", function () {
+        $("#blog-sidebar").toggleClass("open");
       });
 
       // Testimonials Slider
@@ -92,13 +93,12 @@
           },
           1200: {
             items: 2,
-          }
-        }
+          },
+        },
       });
 
-
       // Text rotation
-      $('.text-rotation').owlCarousel({
+      $(".text-rotation").owlCarousel({
         loop: true,
         dots: false,
         nav: false,
@@ -107,91 +107,93 @@
         autoplay: true,
         autoplayHoverPause: false,
         autoplayTimeout: 1650,
-        animateOut: 'zoomOut',
-        animateIn: 'zoomIn'
+        animateOut: "zoomOut",
+        animateIn: "zoomIn",
       });
 
       // Lightbox init
-      $('body').magnificPopup({
-        delegate: 'a.lightbox',
-        type: 'image',
+      $("body").magnificPopup({
+        delegate: "a.lightbox",
+        type: "image",
         removalDelay: 300,
 
         // Class that is added to popup wrapper and background
         // make it unique to apply your CSS animations just to this exact popup
-        mainClass: 'mfp-fade',
+        mainClass: "mfp-fade",
         image: {
           // options for image content type
-          titleSrc: 'title',
+          titleSrc: "title",
           gallery: {
-            enabled: true
+            enabled: true,
           },
         },
 
         iframe: {
-          markup: '<div class="mfp-iframe-scaler">' +
+          markup:
+            '<div class="mfp-iframe-scaler">' +
             '<div class="mfp-close"></div>' +
             '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
             '<div class="mfp-title mfp-bottom-iframe-title"></div>' +
-            '</div>', // HTML markup of popup, `mfp-close` will be replaced by the close button
+            "</div>", // HTML markup of popup, `mfp-close` will be replaced by the close button
 
           patterns: {
             youtube: {
-              index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+              index: "youtube.com/", // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
 
               id: null, // String that splits URL in a two parts, second part should be %id%
               // Or null - full URL will be returned
               // Or a function that should return %id%, for example:
               // id: function(url) { return 'parsed id'; }
 
-              src: '%id%?autoplay=1' // URL that will be set as a source for iframe.
+              src: "%id%?autoplay=1", // URL that will be set as a source for iframe.
             },
             vimeo: {
-              index: 'vimeo.com/',
-              id: '/',
-              src: '//player.vimeo.com/video/%id%?autoplay=1'
+              index: "vimeo.com/",
+              id: "/",
+              src: "//player.vimeo.com/video/%id%?autoplay=1",
             },
             gmaps: {
-              index: '//maps.google.',
-              src: '%id%&output=embed'
-            }
+              index: "//maps.google.",
+              src: "%id%&output=embed",
+            },
           },
 
-          srcAction: 'iframe_src', // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+          srcAction: "iframe_src", // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
         },
 
         callbacks: {
           markupParse: function (template, values, item) {
-            values.title = item.el.attr('title');
-          }
+            values.title = item.el.attr("title");
+          },
         },
       });
 
-      $('.ajax-page-load-link').magnificPopup({
-        type: 'ajax',
+      $(".ajax-page-load-link").magnificPopup({
+        type: "ajax",
         removalDelay: 300,
-        mainClass: 'mfp-fade',
+        mainClass: "mfp-fade",
         gallery: {
-          enabled: true
+          enabled: true,
         },
       });
 
       //Form Controls
-      $('.form-control')
-        .val('')
+      $(".form-control")
+        .val("")
         .on("focusin", function () {
-          $(this).parent('.form-group').addClass('form-group-focus');
+          $(this).parent(".form-group").addClass("form-group-focus");
         })
         .on("focusout", function () {
           if ($(this).val().length === 0) {
-            $(this).parent('.form-group').removeClass('form-group-focus');
+            $(this).parent(".form-group").removeClass("form-group-focus");
           }
         });
 
       //Google Maps
       $("#googlemap").googleMap();
     })
-    .on('resize', function () { //Resize
+    .on("resize", function () {
+      //Resize
       mobileMenuHide();
 
       setTimeout(function () {
@@ -200,9 +202,9 @@
     })
     .scroll(function () {
       if ($(window).scrollTop() < 20) {
-        $('.header').removeClass('sticked');
+        $(".header").removeClass("sticked");
       } else {
-        $('.header').addClass('sticked');
+        $(".header").addClass("sticked");
       }
     })
     .scrollTop(0);
