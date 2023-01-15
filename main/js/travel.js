@@ -21,6 +21,20 @@ $(function () {
         ),
     },
     {
+      lat: 42.3601,
+      lon: -71.0589,
+      flag: "usa.png",
+      title: "Boston, USA",
+      html: template
+        .replace("$pic", "boston.jpg")
+        .replace("$title", "Boston, USA")
+        .replace("$bgColor", "#6b7710")
+        .replace(
+          "$desc",
+          "Boston is known for its research universities, history, and of course, its delicious food. I lived in Boston for free for a year in a beautiful expensive apartment in Downtown Boston and it was by far one of the best experiences of my life. I love how a third of the population is under 30 years old so it's really the best place to be if you are a youngster at heart."
+        ),
+    },
+    {
       lat: 41.902916,
       lon: 12.453389,
       flag: "vatican_city.png",
@@ -74,6 +88,20 @@ $(function () {
         .replace(
           "$desc",
           "Giethoorn with its many waterways and bridges is well-known as the Venice of the Netherlands. It is the famous, idyllic village without streets in the northernmost tip of Overijssel. This fairy tale destination is about 2 hours away from Amsterdam. I highly recommend this day trip! 10 out of 10!"
+        ),
+    },
+    {
+      lat: 28.6139,
+      lon: 77.209,
+      flag: "india.png",
+      title: "Delhi, India",
+      html: template
+        .replace("$pic", "delhi.jpg")
+        .replace("$title", "Delhi, India")
+        .replace("$bgColor", "#ffbb22")
+        .replace(
+          "$desc",
+          "Delhi is best known as the location of India's national government. New Delhi has great historical significance as it was home to powerful people, such as the Pāṇḍavas and the Mughals. The city has many historical monuments and tourist attractions as well as lively marketplaces and great food, such as chaat. Have fun walking on the streets with Tuk Tuk!"
         ),
     },
     {
@@ -147,6 +175,20 @@ $(function () {
         ),
     },
     {
+      lat: 10.0889,
+      lon: 77.0595,
+      flag: "india.png",
+      title: "Munnar, India",
+      html: template
+        .replace("$pic", "munnar.jpg")
+        .replace("$title", "Munnar, India")
+        .replace("$bgColor", "#b6f112")
+        .replace(
+          "$desc",
+          "Munnar is a famous destination for honeymooners due to its beautiful scenery. To get here, I flew to the closest airport in Kochi and took a 5 hour bus ride. Known for its evergreen tea plantations, the hills of Munnar with their rolling beauty and charm can cast a magical spell on the visitors! "
+        ),
+    },
+    {
       lat: 21.3069,
       lon: -157.8583,
       flag: "usa.png",
@@ -200,6 +242,20 @@ $(function () {
         .replace(
           "$desc",
           'Chengdu is the capital of China\'s Sichuan province. It is one of the three most populous cities in Western China (the other two are Chongqing and Xi\'an). Chengdu has a reputation of being a very "chilled" and "relaxed" prosperous city in China. I was told that people in Chengdu are so calm that in the recent major flood they would play Mahjong standing! Chengdu is known to be cloudy most of the time but I absolutely adore this city. It\'s definitely one of my favorite cities in China!'
+        ),
+    },
+    {
+      lat: 27.1767,
+      lon: 78.0081,
+      flag: "india.png",
+      title: "Agra, India",
+      html: template
+        .replace("$pic", "agra.jpg")
+        .replace("$title", "Agra, India")
+        .replace("$bgColor", "#eba45e")
+        .replace(
+          "$desc",
+          "I took a train from Delhi to Agra primarily for the Taj Mahal. The Taj is an ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favorite wife, Mumtaz Mahal."
         ),
     },
     {
@@ -315,6 +371,20 @@ $(function () {
         ),
     },
     {
+      lat: 26.9124,
+      lon: 75.7873,
+      flag: "india.png",
+      title: "Jaipur, India",
+      html: template
+        .replace("$pic", "jaipur.jpg")
+        .replace("$title", "Jaipur, India")
+        .replace("$bgColor", "#eba45e")
+        .replace(
+          "$desc",
+          "The Pink City! Maharaja Sawai Ram Singh II, who was the then ruler of Jaipur, in his infinite spirit of hospitality, had the whole city painted pink terracotta in honour of the royal guest. Pink was considered the color of hospitality. Since then it became a law to have all buildings and homes painted in pink."
+        ),
+    },
+    {
       lat: 43.769562,
       lon: 11.255814,
       flag: "italy.png",
@@ -413,6 +483,20 @@ $(function () {
         ),
     },
     {
+      lat: 34.7973,
+      lon: 114.3073,
+      flag: "china.png",
+      title: "Kaifeng, China",
+      html: template
+        .replace("$pic", "kaifeng.jpg")
+        .replace("$title", "Kaifeng, China")
+        .replace("$bgColor", "#7a1601")
+        .replace(
+          "$desc",
+          "Kaifeng is a prefecture-level city in east-central Henan province, China. It is one of the Eight Ancient Capitals of China, having been the capital seven times in history, and is best known for being the Chinese capital in the Northern Song dynasty. Kaifeng was the first Chinese capital to be primarily a commercial metropolis. Under the Song it was probably the most important centre of trade in East Asia."
+        ),
+    },
+    {
       lat: 55.6761,
       lon: 12.5683,
       flag: "dk.png",
@@ -424,6 +508,20 @@ $(function () {
         .replace(
           "$desc",
           "Copenhagen is big enough to be a metropolis with shopping, culture and nightlife par excellence, yet still small enough to be intimate, safe and easy to navigate.  Originally known as a fishing town, it is now a place to visit for exquisite cuisines and modern lifestyle. Dyrehavsbakken or Bakken is the world's oldest amusement park. In fact, the second biggest is also here as well! This city is extremely bike friendly and more than half of the populate commute by bike."
+        ),
+    },
+    {
+      lat: 19.076,
+      lon: 72.8777,
+      flag: "india.png",
+      title: "Mumbai, India",
+      html: template
+        .replace("$pic", "mumbai.jpg")
+        .replace("$title", "Mumbai, India")
+        .replace("$bgColor", "#d5a953")
+        .replace(
+          "$desc",
+          "Mumbai is a mix of iconic old-world charm architecture, strikingly modern high rises, cultural and traditional structures, and whatnot. The city is known as the commercial capital of India, but there is more to it than that. Mumbai is all about art, history, culture, food, theatre, cinema, nightlife and a lot more."
         ),
     },
     {
@@ -511,6 +609,20 @@ $(function () {
         ),
     },
     {
+      lat: 16.0545,
+      lon: 108.0717,
+      flag: "vietnam.png",
+      title: "Da Nang, Vietnam",
+      html: template
+        .replace("$pic", "danang.jpg")
+        .replace("$title", "Da Nang, Vietnam")
+        .replace("$bgColor", "#c3a845")
+        .replace(
+          "$desc",
+          "Da Nang is famous for its Golden Bridge in the Ba Na hills. Hue is also only 1.5 hours away so is Hoi An which is only 30 minutes away by car. When you're in Hue make sure to try the spicy beef noodle. Hoi An is popular for its beautiful lanterns and street food. This region of Vietnam is also a lot more affordable compared to other areas and countries I visited so be sure to splurge!"
+        ),
+    },
+    {
       lat: 48.1351,
       lon: 11.582,
       flag: "germany.png",
@@ -592,6 +704,20 @@ $(function () {
         .replace(
           "$desc",
           "Rome, or the 'Eternal City', is the capital and largest city of Italy. It is famous for the Roman Empire, Vatican City, and Trevi Fountains among many more things. Rome is one of the world's most visited, famous, influential and beautiful capitals because of its romantic atmosphere, ornate statues and graceful fountains. and millenium-old churches and basilicas. There are so many things to do in this city that never sleeps such as shopping or simply enjoying a shot of expresso! The architecture also bears a high contrast from pompously huge majestic palaces surrounded by tiny alleyways to medival streets with lushful trees."
+        ),
+    },
+    {
+      lat: 21.0278,
+      lon: 105.8342,
+      flag: "vietnam.png",
+      title: "Hanoi, Vietnam",
+      html: template
+        .replace("$pic", "hanoi.jpg")
+        .replace("$title", "Hanoi, Vietnam")
+        .replace("$bgColor", "#99989d")
+        .replace(
+          "$desc",
+          "Hanoi is one of the oldest capitals in the world, so you definitely shouldn't miss it if you're planning a trip to Vietnam. Hanoi is home to the second largest airport in Vietnam and houses the country's foremost collection, such as ancient Cham artifacts and impressionist pieces. The train street is a bit overrated and very dangerous if you ask me but be sure to try the egg coffee and check out the Hoan Kiem area!"
         ),
     },
     {
@@ -704,6 +830,20 @@ $(function () {
         .replace(
           "$desc",
           "Melbourne serves as Australia's undisputed cultural capital with Victorian-era architecture, famed cafés, great bars and restaurants, extensive shopping, museums, galleries, theatres, and large parks and gardens. Consistently ranked as the World's Most Liveable City, Melbourne is a melting pot for all. I can totally see myself settling here!"
+        ),
+    },
+    {
+      lat: 20.9101,
+      lon: 107.1839,
+      flag: "vietnam.png",
+      title: "Ha Long Bay, Vietnam",
+      html: template
+        .replace("$pic", "halongbay.jpg")
+        .replace("$title", "Ha Long Bay, Vietnam")
+        .replace("$bgColor", "#618c6d")
+        .replace(
+          "$desc",
+          "Halong Bay is definitely a go-to destination if you are a nature lover. From untouched beaches to ancient floating villages, secluded islands, and an amazing system of natural caves and grottoes, natural beauty is what the bay draws your attention to. You can do a day tour trip from Hanoi but I personally would encourage you to do what I did which is to take public transportation and stay in the Ha Long city for a few days because this area is so magical!"
         ),
     },
     {
