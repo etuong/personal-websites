@@ -1,5 +1,8 @@
 # ethanuong.com
+
 I made a personal website in three themes.
+
+Repo contains Github Actions to deploy static website onto my AWS S3 bucket. AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY can be stored as secrets on Github settings. Pipeline can be manually triggered under the Actions tab.
 
 ## Main Version
 
@@ -9,7 +12,6 @@ My main theme written in React. Here you get to see my portfolio and travels and
 
 ![Main](screenshots/main.png)
 
-
 ## Light Version
 
 http://light.ethanuong.com/
@@ -17,7 +19,6 @@ http://light.ethanuong.com/
 A light theme in Bootstrap 4 and Angular 6. The idea behind this theme was inspired by "less is more." You will need Node.js and Angular CLI to get the modules and build.
 
 ![Light](screenshots/light.png)
-
 
 ## Dark Version
 
