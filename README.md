@@ -8,7 +8,7 @@ Repo contains Github Actions to deploy static website onto my AWS S3 bucket. AWS
 
 https://www.ethanuong.com
 
-My main theme written in React. Here you get to see my portfolio and travels and learn a thing or two about me.
+My main theme written in React. Here you get to see my portfolio and travels and learn a thing or two about me. Note that this codebase does not require or use Node.js. For my React repo on this website using Create-React-App, please check click [here](https://github.com/etuong/personal-website).
 
 ![Main](screenshots/main.png)
 
