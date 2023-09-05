@@ -70,8 +70,6 @@ const ContactComponent = () => {
               </div>
               <form
                 id="contact-form"
-                method="post"
-                action="contact_form/contact_form.php"
               >
                 <div className="messages"></div>
 
